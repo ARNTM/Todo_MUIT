@@ -1,0 +1,26 @@
+
+<parameter_sweep>
+  <settings>
+    <sweep_type>list</sweep_type>
+  </settings>
+  <file>
+    <variable name='gap_offset_fac' value='-0.15271380318644'/>
+    <path>gap_offset_fac\BiQuad_pol_circular_01</path>
+  </file>
+  <file>
+    <variable name='gap_offset_fac' value='-0.17271380318644'/>
+    <path>gap_offset_fac\BiQuad_pol_circular_02</path>
+  </file>
+  <file>
+    <variable name='gap_offset_fac' value='-0.19271380318644'/>
+    <path>gap_offset_fac\BiQuad_pol_circular_03</path>
+  </file>
+  <file>
+    <variable name='gap_offset_fac' value='-0.21271380318644'/>
+    <path>gap_offset_fac\BiQuad_pol_circular_04</path>
+  </file>
+  <file>
+    <variable name='gap_offset_fac' value='-0.23271380318644'/>
+    <path>gap_offset_fac\BiQuad_pol_circular_05</path>
+  </file>
+</parameter_sweep>

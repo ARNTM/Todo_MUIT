@@ -1,0 +1,19 @@
+#==================================================================
+# Default machines file for Altair Feko.
+# Automatically created during Altair Feko installation.
+#==================================================================
+
+# This file must contain a list of hostnames of machines where
+# Altair Feko has been installed, and where Altair Feko processes shall be
+# started.  If machines have multiple CPUs/cores, then the number
+# of processes that shall be used by Altair Feko can be added after a
+# colon, e.g.
+#     hostname1:4
+#     hostname2:2
+#     hostname3
+# Note that there is one host per line, and the given hostname
+# should match the computername.  The first hostname must be the
+# machine where the input and output files reside.  On Windows
+# systems this should be this PC.
+
+DESKTOP-RFBVQSN:8

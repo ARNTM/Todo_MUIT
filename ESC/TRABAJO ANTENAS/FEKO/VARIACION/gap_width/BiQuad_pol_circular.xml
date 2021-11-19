@@ -1,0 +1,26 @@
+
+<parameter_sweep>
+  <settings>
+    <sweep_type>list</sweep_type>
+  </settings>
+  <file>
+    <variable name='gap_width' value='0.0022925507112826'/>
+    <path>gap_width\BiQuad_pol_circular_01</path>
+  </file>
+  <file>
+    <variable name='gap_width' value='0.0032925507112826'/>
+    <path>gap_width\BiQuad_pol_circular_02</path>
+  </file>
+  <file>
+    <variable name='gap_width' value='0.0042925507112826'/>
+    <path>gap_width\BiQuad_pol_circular_03</path>
+  </file>
+  <file>
+    <variable name='gap_width' value='0.0052925507112826'/>
+    <path>gap_width\BiQuad_pol_circular_04</path>
+  </file>
+  <file>
+    <variable name='gap_width' value='0.0062925507112826'/>
+    <path>gap_width\BiQuad_pol_circular_05</path>
+  </file>
+</parameter_sweep>

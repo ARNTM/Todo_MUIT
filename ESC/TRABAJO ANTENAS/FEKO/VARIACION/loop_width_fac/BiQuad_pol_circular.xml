@@ -1,0 +1,26 @@
+
+<parameter_sweep>
+  <settings>
+    <sweep_type>list</sweep_type>
+  </settings>
+  <file>
+    <variable name='loop_width_fac' value='1.7524299269483'/>
+    <path>loop_width_fac\BiQuad_pol_circular_01</path>
+  </file>
+  <file>
+    <variable name='loop_width_fac' value='1.8024299269483'/>
+    <path>loop_width_fac\BiQuad_pol_circular_02</path>
+  </file>
+  <file>
+    <variable name='loop_width_fac' value='1.8524299269483'/>
+    <path>loop_width_fac\BiQuad_pol_circular_03</path>
+  </file>
+  <file>
+    <variable name='loop_width_fac' value='1.9024299269483'/>
+    <path>loop_width_fac\BiQuad_pol_circular_04</path>
+  </file>
+  <file>
+    <variable name='loop_width_fac' value='1.9524299269483'/>
+    <path>loop_width_fac\BiQuad_pol_circular_05</path>
+  </file>
+</parameter_sweep>

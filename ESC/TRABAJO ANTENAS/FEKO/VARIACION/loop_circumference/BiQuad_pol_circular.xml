@@ -1,0 +1,26 @@
+
+<parameter_sweep>
+  <settings>
+    <sweep_type>list</sweep_type>
+  </settings>
+  <file>
+    <variable name='loop_circumference' value='0.24906344084838'/>
+    <path>loop_circumference\BiQuad_pol_circular_01</path>
+  </file>
+  <file>
+    <variable name='loop_circumference' value='0.26906344084838'/>
+    <path>loop_circumference\BiQuad_pol_circular_02</path>
+  </file>
+  <file>
+    <variable name='loop_circumference' value='0.28906344084838'/>
+    <path>loop_circumference\BiQuad_pol_circular_03</path>
+  </file>
+  <file>
+    <variable name='loop_circumference' value='0.30906344084838'/>
+    <path>loop_circumference\BiQuad_pol_circular_04</path>
+  </file>
+  <file>
+    <variable name='loop_circumference' value='0.32906344084838'/>
+    <path>loop_circumference\BiQuad_pol_circular_05</path>
+  </file>
+</parameter_sweep>

@@ -1,0 +1,26 @@
+
+<parameter_sweep>
+  <settings>
+    <sweep_type>list</sweep_type>
+  </settings>
+  <file>
+    <variable name='element_height' value='0.036950356516955'/>
+    <path>..\param_sweep\BiQuad_pol_circular_original_01</path>
+  </file>
+  <file>
+    <variable name='element_height' value='0.046950356516955'/>
+    <path>..\param_sweep\BiQuad_pol_circular_original_02</path>
+  </file>
+  <file>
+    <variable name='element_height' value='0.056950356516955'/>
+    <path>..\param_sweep\BiQuad_pol_circular_original_03</path>
+  </file>
+  <file>
+    <variable name='element_height' value='0.066950356516955'/>
+    <path>..\param_sweep\BiQuad_pol_circular_original_04</path>
+  </file>
+  <file>
+    <variable name='element_height' value='0.076950356516955'/>
+    <path>..\param_sweep\BiQuad_pol_circular_original_05</path>
+  </file>
+</parameter_sweep>
