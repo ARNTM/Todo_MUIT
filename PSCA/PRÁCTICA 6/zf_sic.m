@@ -1,5 +1,4 @@
 function [x_zfsic] = zf_sic(y,H,M,Ntx)
-
     [Q,R]=qr(H);
     z=Q'*y;
     
@@ -11,11 +10,10 @@ function [x_zfsic] = zf_sic(y,H,M,Ntx)
     
     for i = Ntx-1:-1:1
         sum = 0;
-        for j = i+1:1:Ntx
-            sum = sum + R(i,j).*x_zfsic(j);
+        for l = i+1:1:Ntx
+            sum = sum + R(i,l).*x_zfsic(l);
         end
         s(i) = (z(i)-sum)/R(i,i);
         x_zfsic(i) = cuantif(s(i),M,Ntx);
-    
     end
 end

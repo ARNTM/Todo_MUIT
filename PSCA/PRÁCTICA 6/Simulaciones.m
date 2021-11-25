@@ -3,8 +3,8 @@
 %Programa para evaluar las prestaciones de los decodificadores
 
  %% Configuración de los parámetros
-        Ntx = 4 ; %antenas transmisoras
-        Nr  = 4 ; %antenas receptoras
+        Ntx = 8 ; %antenas transmisoras
+        Nr  = 8 ; %antenas receptoras
         M   = 32 ; %Modulación empleada M-QAM
         SNR_dB =  5 : 5 : 30 ;
         Num_transmisiones = 10000;   %Número de transmisiones enviadas     
@@ -64,6 +64,7 @@ end
 
   figure
   semilogy( SNR_dB, BER_zf, 'mx-' )
+  grid on
   hold on
   semilogy ( SNR_dB, BER_mmse, 'bo-' )
   semilogy ( SNR_dB, BER_zf_sic, 'gd-' )
