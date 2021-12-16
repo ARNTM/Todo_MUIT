@@ -1,0 +1,9 @@
+19:41:13 **** Incremental Build of configuration Nios II for project backpropagation_Tecnica3 ****
+make all 
+Info: Building ../backpropagation_Tecnica3_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../backpropagation_Tecnica3_bsp/
+[BSP build complete]
+[backpropagation_Tecnica3 build complete]
+
+19:41:14 Build Finished (took 965ms)
+

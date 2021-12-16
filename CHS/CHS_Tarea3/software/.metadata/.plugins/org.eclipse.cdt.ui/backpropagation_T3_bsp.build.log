@@ -1,0 +1,6 @@
+17:17:06 **** Clean-only build of configuration Nios II for project backpropagation_T3_bsp ****
+make clean 
+[BSP clean complete]
+
+17:17:06 Build Finished (took 273ms)
+
