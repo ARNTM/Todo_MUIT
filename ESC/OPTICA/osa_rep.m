@@ -12,6 +12,7 @@ figure
 Espectro_dB=20*log10(abs(fftshift((fft(signal)))));
 Espectro_dB=Espectro_dB-max(Espectro_dB);
 plot(frec,Espectro_dB);
+title('Espectro óptico')
 a=axis;
 a(1)=-rango;
 a(2)=rango;

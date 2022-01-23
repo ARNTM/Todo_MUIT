@@ -2,9 +2,9 @@ close all
 clear all
 
 % OOK ejemplo
-%M=1; % bits por símbolo
-%V=[1 0]; % vector de simbolos (con parte real y compleja)
-%V=V/max(real(V));
+% M=1; % bits por símbolo
+% V=[1 0]; % vector de simbolos (con parte real y compleja)
+% V=V/max(real(V));
 
 %BPSK ejemplo
 % M=1;
@@ -12,15 +12,16 @@ clear all
 % V=V/max(real(V));
 
 % QPSK
-M=2;
-V=[1+1i -1+1i 1-1i -1-1i];
-V=V/max(real(V));
+% M=2;
+% V=[1+1i -1+1i 1-1i -1-1i];
+% V=V/max(real(V));
+
 
 % 16-QAM
-% M = 4;
-% X = 0:2^M-1;
-% V = qammod(X, 2^M);
-% V = V/max(real(V));
+M = 4;
+X = 0:2^M-1;
+V = qammod(X, 2^M);
+V = V/max(real(V));
 
 % 64-QAM
 % M = 6;
@@ -34,14 +35,14 @@ N_bits=N_simbols*M;
 data=idinput(N_bits,'PRBS',[0 1],[0 1])';
 
 puntos_por_simbolo=100;
-B=10e9;
+B=40e9;
 Tb=1/B;
 ts=Tb/puntos_por_simbolo;
 
 puntos=puntos_por_simbolo* N_simbols;
 t=(1:1:puntos)*ts;
 
-RZ=1; % Retorno cero (control)
+RZ=0; % Retorno cero (control)
 vI1 = [];
 vQ1 = [];
 %%%%%%% Niveles de I / Q %%%%%%%%%%%%%%%%%%%
@@ -60,24 +61,24 @@ for n=1:1:N_simbols
     vx(n,:)=[vI1 vI2 vQ1 vQ2];
 end
 
-figure()
-subplot(411)
-stem(vx(:,1)); title('VI1')
-xlim([100 120])
-ylim([-5 5])
-subplot(412)
-stem(vx(:,2)); title('VI2')
-xlim([100 120])
-ylim([-5 5])
-subplot(413)
-stem(vx(:,3)); title('VQ1')
-xlim([100 120])
-ylim([-5 5])
-subplot(414)
-stem(vx(:,4)); title('VQ2')
-xlim([100 120])
-ylim([-5 5])
-xlabel('Número de símbolo')
+% figure()
+% subplot(411)
+% stem(vx(:,1)); title('VI1')
+% xlim([100 120])
+% ylim([-5 5])
+% subplot(412)
+% stem(vx(:,2)); title('VI2')
+% xlim([100 120])
+% ylim([-5 5])
+% subplot(413)
+% stem(vx(:,3)); title('VQ1')
+% xlim([100 120])
+% ylim([-5 5])
+% subplot(414)
+% stem(vx(:,4)); title('VQ2')
+% xlim([100 120])
+% ylim([-5 5])
+% xlabel('Número de símbolo')
 
 %%%%%%%% construir las señales electicas
 e_signal_I1=[];
@@ -94,34 +95,33 @@ for n=1:1:N_simbols
 end
 
 vent=10;
-e_signal_I1=conv(e_signal_I1,1+cos(pi*[-vent:1:vent]/vent),'same');
-e_signal_I1=e_signal_I1/sum(1+cos(pi*[-vent:1:vent]/vent));
-e_signal_I2=conv(e_signal_I2,1+cos(pi*[-vent:1:vent]/vent),'same');
-e_signal_I2=e_signal_I2/sum(1+cos(pi*[-vent:1:vent]/vent));
-e_signal_Q1=conv(e_signal_Q1,1+cos(pi*[-vent:1:vent]/vent),'same');
-e_signal_Q1=e_signal_Q1/sum(1+cos(pi*[-vent:1:vent]/vent));
-e_signal_Q2=conv(e_signal_Q2,1+cos(pi*[-vent:1:vent]/vent),'same');
-e_signal_Q2=e_signal_Q2/sum(1+cos(pi*[-vent:1:vent]/vent));
+e_signal_I1=conv(e_signal_I1,1+cos(pi*(-vent:1:vent)/vent),'same');
+e_signal_I1=e_signal_I1/sum(1+cos(pi*(-vent:1:vent)/vent));
+e_signal_I2=conv(e_signal_I2,1+cos(pi*(-vent:1:vent)/vent),'same');
+e_signal_I2=e_signal_I2/sum(1+cos(pi*(-vent:1:vent)/vent));
+e_signal_Q1=conv(e_signal_Q1,1+cos(pi*(-vent:1:vent)/vent),'same');
+e_signal_Q1=e_signal_Q1/sum(1+cos(pi*(-vent:1:vent)/vent));
+e_signal_Q2=conv(e_signal_Q2,1+cos(pi*(-vent:1:vent)/vent),'same');
+e_signal_Q2=e_signal_Q2/sum(1+cos(pi*(-vent:1:vent)/vent));
 
-figure()
-subplot(411)
-plot(t,e_signal_I1)
-xlim([1*10^-8 1.5*10^-8])
-ylim([-5 5])
-subplot(412)
-plot(t,e_signal_I2)
-xlim([1*10^-8 1.5*10^-8])
-ylim([-5 5])
-subplot(413)
-plot(t,e_signal_Q1)
-xlim([1*10^-8 1.5*10^-8])
-ylim([-5 5])
-subplot(414)
-plot(t,e_signal_Q2)
-xlim([1*10^-8 1.5*10^-8])
-ylim([-5 5])
-
-xlabel('Tiempo (s)')
+% figure()
+% subplot(411)
+% plot(t,e_signal_I1)
+% xlim([1*10^-8 1.5*10^-8])
+% ylim([-5 5])
+% subplot(412)
+% plot(t,e_signal_I2)
+% xlim([1*10^-8 1.5*10^-8])
+% ylim([-5 5])
+% subplot(413)
+% plot(t,e_signal_Q1)
+% xlim([1*10^-8 1.5*10^-8])
+% ylim([-5 5])
+% subplot(414)
+% plot(t,e_signal_Q2)
+% xlim([1*10^-8 1.5*10^-8])
+% ylim([-5 5])
+%xlabel('Tiempo (s)')
 
 fi_I1 = pi*(e_signal_I1/Vpi);
 fi_I2 = pi*(e_signal_I2/Vpi);
@@ -139,29 +139,30 @@ else
     salida = (1/2)*(brazo_I+1i*brazo_Q);
 end
 
-figure()
-plot(t,real(salida),'b');
-hold on
-plot(t,imag(salida),'r');
-plot(t,abs(salida),'g');
-xlim([1.2*10^-8 1.3*10^-8])
-ylim([-1 1])
-xlabel('Tiempo (s)')
+ figure()
+ plot(t,real(salida),'b');
+ title('Señales ópticas de salida del transmisor')
+ hold on
+ plot(t,imag(salida),'r');
+ plot(t,abs(salida),'g');
+ xlim([1.2*10^-8 1.3*10^-8])
+ ylim([-1 1])
+ xlabel('Tiempo (s)')
 
-IQ_rep(t,(salida),Tb,N_simbols,0.5)
-%scope_rep(t,abs(salida),2,puntos_por_simbolo)
-%osa_rep(t,real(salida),Tb)
+ IQ_rep(t,(salida),Tb,N_simbols,0.5)
+ scope_rep(t,salida,2,puntos_por_simbolo)
+ osa_rep(t,real(salida),Tb)
 
 %% FIBRA OPTICA
 c = 3e5;
-ll = 1550;
+lambda = 1550;
 
-D = 17;
-S = 0.08;
-L = 50;
+D = 0*17;
+S = 0*0.08;
+L = 10;
 
-beta2 = -D*(ll^2/(2*pi*c))*1e-24;
-beta3 = 1e-36*S*(11^2/(2*pi*c))^2;
+beta2 = -D*(lambda^2/(2*pi*c))*1e-24;
+beta3 = 1e-36*S*(lambda^2/(2*pi*c))^2;
 
 p=length(t);
 dw=2*pi*((((-p/2)+1:1:p/2)/p)*(1/ts));
@@ -175,41 +176,56 @@ filtro = sqrt(exp(-(dw/(2*pi*W_1_e)).^(2*m)));
 beta2L = beta2*L;
 beta3L = beta3*L;
 
-espectro_salida_fibra = fftshift(fft(salida)).*exp(1j*(1/2)*beta2L*dw.^2).*exp(1j*(1/6)*beta3L*dw.^3).*filtro;
-tras_fibra=ifft(fftshift(espectro_salida_fibra));
+espectro_salida_fibra=fftshift(fft(salida)).*exp(1j*(1/2)*beta2L*dw.^2).*exp(1j*(1/6)*beta3L*dw.^3).*filtro;
+tras_fibra = ifft(fftshift(espectro_salida_fibra));
 
 %% RECEPTOR
 
-fi = 0*pi/10;
-oscilador_local = exp(1j*fi)*ones(size(t));
+fi = 0*pi/10;   %Desfase
+oscilador_local = exp(1i*fi)*ones(size(t));
 df = 0*0.5e6;
-oscilador_local = oscilador_local.*exp(1j*2*pi*df*t);
-a = tras_fibra;
-b = oscilador_local;
-s1 = (a+b)/2;
-s2 = (a-b)/2;
-s3 = (a+1j*b)/2;
-s4 = (a-1j*b)/2;
-i1 = abs(s1).^2;
-i2 = abs(s2).^2;
-i3 = abs(s3).^2;
-i4 = abs(s4).^2;
+LO = oscilador_local.*exp(1i*2*pi*df*t);
+Trx = tras_fibra;
+%a = salida;
+b = LO;
+i1 = abs((Trx + LO)/2).^2;
+i2 = abs((Trx - LO)/2).^2;
+i3 = abs((Trx + 1i*LO)/2).^2;
+i4 = abs((Trx - 1i*LO)/2).^2;
 i_I = i1-i2;
 i_Q = i3-i4;
-i_Total = i_I + 1j*i_Q;
+i_Total1 = i_I+1j*i_Q;
 
-IQ_rep(t,i_Total,Tb,N_simbols,0.5)
-%scope_rep(t,abs(i_Total),2,puntos_por_simbolo)
-% osa_rep(t,i_Total,Tb)
+% figure()
+% subplot(211)
+% plot(t,i1); title('I1')
+% xlim([1e-8 1.1e-8])
+% ylim([-0.5 1])
+% subplot(212)
+% plot(t,i2); title('I2')
+% xlim([1e-8 1.1e-8])
+% ylim([-0.5 1])
+% figure()
+% subplot(211)
+% plot(t,i3); title('I3')
+% xlim([1e-8 1.1e-8])
+% ylim([-0.5 1])
+% subplot(212)
+% plot(t,i4); title('I4')
+% xlim([1e-8 1.1e-8])
+% ylim([-0.5 1])
+%IQ_rep(t,i_Total1,Tb,N_simbols,0.5)
+%scope_rep(t,i_Total1,1,puntos_por_simbolo)
+%osa_rep(t,i_Total1,Tb)
 
-figure()
-plot(t,real(i_Total),'b');
-hold on
-plot(t,imag(i_Total),'r');
-plot(t,abs(i_Total),'g');
-xlim([1.2*10^-8 1.3*10^-8])
-ylim([-1 1])
-xlabel('Tiempo (s)')
+% figure()
+% plot(t,real(i_Total),'b');
+% hold on
+% plot(t,imag(i_Total),'r');
+% plot(t,abs(i_Total),'g');
+% xlim([1.2*10^-8 1.3*10^-8])
+% ylim([-1 1])
+% xlabel('Tiempo (s)')
 
 SNR=25;
 SNRlin=10.^(SNR/10);
@@ -230,4 +246,5 @@ i_I = i1-i2;
 i_Q = i3-i4;
 i_Total = i_I + 1j*i_Q;
 
-IQ_rep(t,i_Total,Tb,N_simbols,0.5)
+%IQ_rep(t,i_Total,Tb,N_simbols,0.5)
+%scope_rep(t,i_Total,1,puntos_por_simbolo)

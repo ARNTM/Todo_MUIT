@@ -15,6 +15,7 @@ t_muestras=Tb*(1:1:N_simbols)-(Tb*muestreo);
 sampled=interp1(t,signal,t_muestras);
 figure
 plot(sampled,'r.')
+title('Diagrama I/Q')
 a=axis;
 amp=a(4)-a(3);
 dif_t=a(2)-a(1);

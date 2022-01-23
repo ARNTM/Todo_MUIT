@@ -14,6 +14,7 @@ figure
 for n=1:1:(simbolos/n_ojos)
 t_n=((n-1)*puntos+1:1:(n*puntos));
 plot(t_eje,signal(t_n))
+title('Diagrama de ojos')
 hold on
 end
 a=axis;
