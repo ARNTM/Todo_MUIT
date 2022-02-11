@@ -184,9 +184,10 @@ for nb_v=0:(alt/8)-1
          if verbose_level >= 3
              display('COEFICIENTES DE ALTERNA')
          end
+         
 
          bits_AC=[];         
-         Dqz=Dq(zigzag);      %ponemos en un vector ordenados por zigzag
+         Dqz=D_div(zigzag);      %ponemos en un vector ordenados por zigzag
          runlen = jpeg_runlen(Dqz);
          
          %debug
@@ -227,14 +228,13 @@ for nb_v=0:(alt/8)-1
          	%%%%%%%%%%%%%%%%%%%%%%%
 
             if number_of_zeros == -1
-
                 if cmp == 1
                     bits_AC = strcat(bits_AC, char(HUFF_AC_Y(1)));
                 else
                     bits_AC = strcat(bits_AC, char(HUFF_AC_CROMA(1)));
                 end
             else
-                while number_of_zeros > 15
+                while (number_of_zeros > 15)
                     if cmp == 1
                         bits_AC = strcat(bits_AC, char(HUFF_AC_Y(241)));
                         number_of_zeros = number_of_zeros - 16;
@@ -243,17 +243,17 @@ for nb_v=0:(alt/8)-1
                         number_of_zeros = number_of_zeros - 16;
                     end
                 end
-            end
-            nbits = ceil(log2(abs(coef)+1));
-            code = number_of_zeros*16+nbits+1;
+                nbits = ceil(log2(abs(coef)+1));
+                code = number_of_zeros*16+nbits+1;
 
-            if cmp == 1
-                bits_AC = strcat(bits_AC, char(HUFF_AC_Y(code)));
-            else
-                bits_AC = strcat(bits_AC, char(HUFF_AC_CROMA(code)));
-            end
-            bits_AC = strcat(bits_AC, code_add_bits(coef));
+                if cmp == 1
+                    bits_AC = strcat(bits_AC, char(HUFF_AC_Y(code)));
+                else
+                    bits_AC = strcat(bits_AC, char(HUFF_AC_CROMA(code)));
+                end
+                bits_AC = strcat(bits_AC, code_add_bits(coef));
          	% FIN A REALIZAR  PASO 4
+            end
 
          end % ii=1:n_runlen
          

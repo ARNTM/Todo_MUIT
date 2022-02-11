@@ -1,3 +1,6 @@
+close all
+clear all
+
 %demo_paso4
 % imagen con los siguientes colores
 %blanco, amarillo, cian, verde,magenta, rojo, azul y negro. 
