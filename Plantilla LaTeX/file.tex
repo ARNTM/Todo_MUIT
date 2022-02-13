@@ -1,0 +1,175 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PLANTILLA TFE
+% Realizado por: Andrés Ruz Nieto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Clase de documento (Utilizar la que interese)
+\documentclass[a4paper,onecolumn,openany,twoside]{book}
+
+% Márgenes de las páginas
+\usepackage[
+  inner	=	3.0cm, % Margen interior
+  outer	=	3cm, % Margen exterior
+  top	=	2.5cm, % Margen superior
+  bottom=	2.5cm, % Margen inferior
+  includeheadfoot, % Incluye cabecera y pie de página en los márgenes
+]{geometry}
+
+% Valor de interlineado
+\renewcommand{\baselinestretch}{1.15} % 1 línea de interlineado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PAQUETES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{appendix}
+
+\usepackage[spanish]{babel} % Para cambiar el idioma a español
+\usepackage[backend=bibtex,bibencoding=utf8,sorting=none]{biblatex} % Para poner bibliografía
+\usepackage{booktabs}
+
+\usepackage{capt-of}
+\usepackage{colortbl}
+\usepackage{csquotes} % Recomendado para biblatex
+
+\usepackage{enumitem}
+
+\usepackage[Glenn]{fncychap} % Personalizar capitulo
+\usepackage{fancyhdr} % Para personalizar header y footer
+\usepackage{float}
+\usepackage{fontspec} % Para poder importar las fuentes
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx} % Para cargar imágenes
+
+\usepackage[hidelinks]{hyperref} % Para insertar enlaces y hacer el índice dinámico
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{listings}
+
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{multicol}
+
+\usepackage{rotating}
+
+\usepackage{setspace} % Para modificar los espacios arriba y abajo
+\usepackage{subcaption} % Varias cfiguras
+
+\usepackage{textpos} % Para posicionar bloques de texto
+\usepackage{titlesec}
+
+\usepackage[dvipsnames]{xcolor} % Para personalizar colores
+
+\addbibresource{bibliografia.bib} % Añadimos el archivo .bib (donde se encuentra la bibliografía)
+
+\emergencystretch=1em
+% Modificaciones de header y footer
+\newcommand{\changefont}{%
+    \fontsize{8}{8}\selectfont
+}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\changefont \leftmark} % \leftmark -> Título del capítulo
+\rhead{\changefont \rightmark} % \rightmark -> Título de la sección
+\cfoot{\thepage} % \thepage -> Número de la página
+\setlength{\headheight}{12.41003pt}
+
+% Declaración de colores personalizados
+\definecolor{GrisClaro}{RGB}{89,89,89}
+\definecolor{GrisUPV}{RGB}{75,76,77}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{pythonstyle}{
+    breaklines=true,
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    stringstyle=\color{codepurple},
+    deletekeywords={...}, 
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single
+}
+
+\lstset{style=pythonstyle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INFORMACIÓN DEL TFG/TFM
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Universidad y facultad
+\newcommand{\Universidad}{Universidad Politécnica de Valencia}
+\newcommand{\Facultad}{Escuela Técnica Superior de Ingeniería de Telecomunicación}
+% Titulación
+\newcommand{\Titulacion}{Máster Universitario en Ingeniería de Telecomunicación}
+% Título del trabajo
+\newcommand{\practica}{Titulo X}
+\newcommand{\titulo}{Práctica X}
+% Tipo de trabajo
+\newcommand{\tipotrabajo}{Asignatura}
+% Datos de los autores
+\newcommand{\nombreprimero}{Nombre, Apellidos}
+\newcommand{\emailprimero}{correo@correo.es}
+%\newcommand{\nombresegundo}{Gerardo Arias Martínez}
+%\newcommand{\emailsegundo}{garimar@teleco.upv.es}
+% Datos del tutor/es
+\newcommand{\misTutores}{}
+% Ubicación
+\newcommand{\miUbicacion}{Valencia}
+
+\setmainfont[
+  UprightFont = font/Montserrat-Regular ,
+  BoldFont = font/Montserrat-Bold ,
+  ItalicFont = font/Montserrat-Italic ,
+  BoldItalicFont = font/Montserrat-BoldItalic,
+  Extension = .otf
+]{TFGFont}
+
+\raggedbottom
+
+% Path donde se guardan las imágenes
+\graphicspath{{./img/}}
+\begin{document}
+
+\renewcommand{\listtablename}{Índice de tablas}
+\renewcommand{\tablename}{Tabla}
+\setlength{\parskip}{6mm}
+
+\renewcommand{\appendixname}{Anexo}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixpagename}{Anexos}
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Índice de \lstlistingname s}
+
+%%%%% PORTADA
+\input{portada} % Portada B/N
+
+%%%%% RESUMEN
+% Restablecer color a negro
+\color{Black}
+%%%%% Agradecimientos + resumen
+%\input{resumen}
+
+%%%%% INDICES
+\tableofcontents
+\listoffigures
+\listoftables
+\lstlistoflistings
+
+%%%%% Resto del documento
+\input{codigointeres}
+
+\printbibliography[heading=bibintoc,title={Bibliografía}]
+
+\input{anexos}
+
+\end{document}

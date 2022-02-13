@@ -1,0 +1,95 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PLANTILLA TFE
+% Realizado por: Andrés Ruz Nieto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+
+\newgeometry{ignoreall,top=2.5cm,bottom=1cm,outer=2.5cm,inner=2.5cm}
+\thispagestyle{empty}
+
+% BANDA IZQUIERDA
+\begin{textblock*}{\paperheight}(-3.02cm,-2.85cm)
+    \includegraphics[height=\paperheight]{Portada.png}
+\end{textblock*}
+
+% TEXTO SUPERIOR
+\begin{textblock*}{\textwidth}(1.75cm,0cm)
+    \centering
+    % Universidad
+    \setstretch{2}
+     {\fontsize{20pt}{25pt}
+     {\addfontfeature{LetterSpace=10.0}
+     {\MakeUppercase\Universidad}}}\\[0.5cm]
+    % Facultad
+    \setstretch{1.5}
+     {\fontsize{14pt}{17pt}
+     {\addfontfeature{LetterSpace=2.0}{
+     \textbf{\MakeUppercase\Facultad}}}}\\[0.42cm] 
+    % Titulación
+     {\fontsize{13pt}{16pt}
+     {\addfontfeature{LetterSpace=16.0}{
+     \textbf{\Titulacion}}}}
+    \noindent\rule[-0.22cm]{\textwidth}{5pt} % Linea
+\end{textblock*}
+
+% Relleno hasta el título
+\vfill
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título
+\begin{textblock*}{\textwidth}(1.75cm,-15cm)% Ancho - Pos X,PosY
+    \color{GrisUPV}
+    \noindent
+    \begin{minipage}{\textwidth}
+        \begin{spacing}{2.1}
+            \centering
+            {\fontsize{25pt}{30pt}
+            {\addfontfeature{}
+            \textbf{\titulo}}}
+            {\fontsize{15pt}{20pt}
+            {\addfontfeature{}
+            \\ \practica}}
+        \end{spacing}
+    \end{minipage}
+\end{textblock*}
+
+% Relleno hasta autor y tutores
+\hfill
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tipo, Autor y Tutores
+\begin{textblock*}{7.35cm}(8.65cm,-7.88cm)% Ancho - Pos X,PosY
+    \color{GrisClaro}
+    \begin{flushleft}
+        % Tipo trabajo
+        {\fontsize{12pt}{14pt}
+        {\addfontfeature{}
+        {\textbf{\textit{\MakeUppercase\tipotrabajo}}}}}\\[0.49cm]
+        % Autor
+        {\fontsize{12pt}{14pt}
+        {\addfontfeature{}
+        Autor:}}\\ 
+        {\fontsize{12pt}{14pt}
+        {\addfontfeature{}
+        {\textbf{\href{mailto:\emailprimero}{\nombreprimero}
+        %\\ \href{mailto:\emailsegundo}{\nombresegundo}
+        }}}}\\[0.5cm]
+        % Tutores
+        %{\fontsize{12pt}{14pt}
+        %{\addfontfeature{}
+        %Directores:}}\\
+        %{\fontsize{12pt}{14pt}
+        %{\addfontfeature{}
+        %{\textbf{\misTutores}}}}\\[0.49cm]
+        % Localidad y Fecha
+        {\fontsize{12pt}{14pt}
+        {\addfontfeature{}
+        {\textbf{\textit{\MakeUppercase \miUbicacion, \number\year}}}}}
+    \end{flushleft}
+\end{textblock*}
+
+\end{titlepage} % Fin de portada
+
+% A partir de aquí aplica los márgenes establecidos en configuracioninicial.tex
+\restoregeometry
