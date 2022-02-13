@@ -20,11 +20,11 @@ _A continuación encontrarás un índice con las prácticas que hemos hecho._
 | 1º | TIE | ✔️ |
 | 1º | PSCA | ✔️ |
 | 1º | IST | ✔️ |
-| 1º | IRT | ❌ |
-| 1º | CEAF | ❌ |
-| 1º | GTEPT | ❌ |
-| 1º | RTDC | ❌ |
-| 1º | SSTR | ❌ |
+| 1º | IRT | ✔️ |
+| 1º | CEAF | ✔️ |
+| 1º | GTEPT | ✔️ |
+| 1º | RTDC | ✔️ |
+| 1º | SSTR | ✔️ |
 | | | |
 | 2º | --- | ❌ |
 | 2º | --- | ❌ |
