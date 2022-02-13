@@ -1,0 +1,95 @@
+/*
+ * isr.c
+ *
+ *  Created on: 17 de nov. de 2020
+ *      Author: mpeir
+ */
+
+#include "..\inc\isr.h"
+
+/**
+ * Subrutina de manejo de interrupcion por pulsador incrustada en uCOS
+ */
+
+extern volatile int upDown;
+extern volatile int thG;
+extern volatile int image;
+
+void pushbutton_isr() {
+OSIntEnter();
+	int KEY_value, SW_value;
+	static int num_int=0; 			// static permite que el valor no se inicia a 0 cada vez que se entra en la int
+	char vector[27];
+
+	KEY_value = *(KEY_ptr + 3);		// Leemos registro de pulsadores
+
+	*(KEY_ptr + 3) = 0;				// Borrar la interrupcion
+
+	if (KEY_value & 0x4)// KEY2 ajusta el valor del umbral de diferencia GREEN - RED
+		{
+			// printf("KEY2");
+			if (upDown) {
+				thG = thG + 5;
+			}
+			else {
+				thG = thG - 5;
+			}
+
+			if (thG > 800){
+				thG = 300;
+			}
+			if (thG < 300) {
+				thG = 800;
+			}
+			*(chromaProcessor_ptr) = thG;
+			printf("G - R: %d\n", *(chromaProcessor_ptr));
+		}
+	else if (press & 0x8){
+		readBMPFile(image);
+		image++;
+		if(image == 4) {
+			image = 0;
+		}
+	}
+	LCD_thresholds();
+
+	KEY_value=0;
+OSIntExit();
+}
+
+void switches_isr() {
+	OSIntEnter();
+		int SW_value;
+		SW_value = *(SW_switch_ptr);	// Leemos registro de Switches
+		SW_value = SW_value & 1;
+
+		*(SW_switch_ptr + 3) = 0;
+
+
+		switch(valor) {
+		case 1:
+			printf("Video Enabled\n");
+			*(chromaProcessor_ptr + 3) = *(SW_switch_ptr);
+			break;
+		case 2:
+			printf("Image Enabled\n");
+			*(chromaProcessor_ptr + 3) = *(SW_switch_ptr);
+			break;
+		case 4:
+			if(upDown) {
+				upDown = 0;
+			}
+			else {
+				upDown = 1;
+			}
+			break;
+		default:
+			printf("Ninguna función asignada\n");
+			break;
+		}
+		SW_value = 0;
+		OSIntExit();
+}
+
+
+

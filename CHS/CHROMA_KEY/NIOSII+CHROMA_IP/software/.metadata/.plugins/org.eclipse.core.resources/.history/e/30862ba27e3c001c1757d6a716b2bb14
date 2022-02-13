@@ -1,0 +1,16 @@
+#include "key_codes.h" 	// define los valores de KEY1, KEY2, KEY3
+#include "system.h"
+#include "sys/alt_irq.h"
+
+void scroll_ISR( ){
+	int sw;
+	volatile int * red_LED_ptr = (int *) RED_LEDS_BASE; 	// dirección LED rojos
+	volatile int * SW_switch_ptr = (int *) SWITCHES_BASE; 	// dirección SW
+
+	sw = *(SW_switch_ptr);					// lee el registro de los switches
+	*(SW_switch_ptr) = 0; 					// borra la interrupción
+
+
+
+}
+

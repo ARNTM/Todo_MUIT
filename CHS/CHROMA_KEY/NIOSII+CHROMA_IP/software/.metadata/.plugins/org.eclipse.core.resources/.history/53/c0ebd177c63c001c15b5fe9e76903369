@@ -1,0 +1,42 @@
+#include "key_codes.h" 	// define los valores de KEY1, KEY2, KEY3
+#include "system.h"
+#include "sys/alt_irq.h"
+
+extern volatile int horas, minutos, segundos, cont_reloj, cont_text, leer;
+
+
+void interval_timer_isr( ){
+	volatile int * interval_timer_ptr = (int *) TIMER_BASE;
+
+	*(interval_timer_ptr) = 0; 				// Borra la interrución
+	cont_reloj++;
+	cont_text++;
+
+	// Actualización de horas:minutos:segundos
+	if (cont_reloj == 5){
+		cont_reloj = 0;
+		if (segundos < 59)
+			segundos = segundos + 1;
+		else{
+			segundos = 0;
+			if (minutos < 59)
+				minutos = minutos + 1;
+			else{
+				minutos = 0;
+				if (horas < 23)
+					horas = horas + 1;
+				else
+					horas = 0;
+			}
+		}
+	}
+
+	// Actualización de lectura del fichero
+	if (cont_text == 12){
+		cont_text = 0;
+		leer = 1;
+	}
+
+	return;
+}
+

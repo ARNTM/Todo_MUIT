@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Feb 10 09:08:22 2022
+Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
+Revision Name : DE2_115_Media_Computer
+Top-level Entity Name : DE2_115_Media_Computer
+Family : Cyclone IV E
+Total logic elements : 14,005
+    Total combinational functions : 11,585
+    Dedicated logic registers : 8,285
+Total registers : 8285
+Total pins : 358
+Total virtual pins : 0
+Total memory bits : 416,640
+Embedded Multiplier 9-bit elements : 16
+Total PLLs : 3

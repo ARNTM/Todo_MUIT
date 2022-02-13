@@ -1,0 +1,196 @@
+Info: Starting: Create testbench Platform Designer system
+Info: C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/nios_system_2.ipx
+Info: qsys-generate C:\Users\ajmorflo\Documents\QDesign\CHS_CROMA_KEY\Verification_IP\nios_system_2.qsys --testbench=SIMPLE --output-directory=C:\Users\ajmorflo\Documents\QDesign\CHS_CROMA_KEY\Verification_IP --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading Verification_IP/nios_system_2.qsys
+Progress: Reading input file
+Progress: Adding ChromaProcessor [ChromaProcessor 1.0]
+Progress: Parameterizing module ChromaProcessor
+Progress: Adding clk_50 [clock_source 17.1]
+Progress: Parameterizing module clk_50
+Progress: Adding mm_master_bfm [altera_avalon_mm_master_bfm 17.1]
+Progress: Parameterizing module mm_master_bfm
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Loading IP catalog for testbench.
+Progress: 
+Progress: 
+Progress: 
+Progress: (2) searching C:/intelfpga/17.1/quartus/sopc_builder/bin/root_components.ipx (ipx file)
+Info: Reading index C:\intelfpga\17.1\quartus\sopc_builder\bin\root_components.ipx
+Info: C:\intelfpga\17.1\quartus\sopc_builder\bin\root_components.ipx: Loading now from components.ipx
+Info: Reading index C:\intelfpga\17.1\quartus\sopc_builder\bin\ip_component_categories.ipx
+Info: C:\intelfpga\17.1\quartus\sopc_builder\bin\ip_component_categories.ipx described 0 plugins, 0 paths, in 0,00 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0,00 seconds
+Info: C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/ip/**/* matched 0 files in 0,00 seconds
+Info: Reading index C:\Users\ajmorflo\Documents\QDesign\CHS_CROMA_KEY\Verification_IP\nios_system_2\testbench\nios_system_2.ipx
+Progress: Loading Verification_IP/nios_system.qsys
+Progress: Loading Verification_IP/nios_system_2.qsys
+Info: C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/* matched 25 files in 0,00 seconds
+Progress: Loading ChromaProcessor/ChromaProcessor_hw.tcl
+Info: C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/ip/**/* matched 9 files in 0,04 seconds
+Info: C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/*/* matched 939 files in 0,04 seconds
+Info: C:\Users\ajmorflo\Documents\QDesign\CHS_CROMA_KEY\Verification_IP\nios_system_2\testbench\nios_system_2.ipx described 0 plugins, 3 paths, in 0,08 seconds
+Info: C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/* matched 4 files in 0,08 seconds
+Info: C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/*/* matched 0 files in 0,00 seconds
+Info: W:/.altera.quartus/ip/17.1/**/* matched 0 files in 0,01 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0,00 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0,00 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0,00 seconds
+Info: Reading index C:\intelfpga\17.1\ip\altera\altera_components.ipx
+Info: C:\intelfpga\17.1\ip\altera\altera_components.ipx described 2006 plugins, 0 paths, in 0,11 seconds
+Info: C:/intelfpga/17.1/ip/**/* matched 138 files in 0,11 seconds
+Info: C:/intelfpga/ip/**/* matched 0 files in 0,00 seconds
+Info: Reading index C:\intelfpga\17.1\quartus\sopc_builder\builtin.ipx
+Info: C:\intelfpga\17.1\quartus\sopc_builder\builtin.ipx described 83 plugins, 0 paths, in 0,01 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/**/* matched 8 files in 0,01 seconds
+Info: Reading index C:\intelfpga\17.1\quartus\common\librarian\factories\index.ipx
+Info: C:\intelfpga\17.1\quartus\common\librarian\factories\index.ipx described 151 plugins, 0 paths, in 0,04 seconds
+Info: C:/intelfpga/17.1/quartus/common/librarian/factories/**/* matched 4 files in 0,04 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0,00 seconds
+Info: C:\intelfpga\17.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0,25 seconds
+Info: C:/intelfpga/17.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0,25 seconds
+Progress: 
+Progress: 
+Progress: 
+Info: Running script C:/intelfpga/17.1/quartus/sopc_builder/bin/tbgen.tcl
+Info: send_message Info TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: get_module_property NAME
+Info: send_message Info TB_Gen: System design is: nios_system_2
+Info: TB_Gen: System design is: nios_system_2
+Info: get_interfaces 
+Info: get_connections 
+Info: get_interface_property chromaprocessor_avalon_streaming_source EXPORT_OF
+Info: get_instance_property ChromaProcessor CLASS_NAME
+Info: get_instance_assignment ChromaProcessor testbench.partner.map.avalon_streaming_source
+Info: get_interface_property chromaprocessor_background_sink EXPORT_OF
+Info: get_instance_property ChromaProcessor CLASS_NAME
+Info: get_instance_assignment ChromaProcessor testbench.partner.map.background_sink
+Info: get_interface_property chromaprocessor_foreground_sink EXPORT_OF
+Info: get_instance_property ChromaProcessor CLASS_NAME
+Info: get_instance_assignment ChromaProcessor testbench.partner.map.foreground_sink
+Info: get_interface_property clk_50_in EXPORT_OF
+Info: get_instance_property clk_50 CLASS_NAME
+Info: get_instance_assignment clk_50 testbench.partner.map.clk_in
+Info: get_interface_property reset EXPORT_OF
+Info: get_instance_property clk_50 CLASS_NAME
+Info: get_instance_assignment clk_50 testbench.partner.map.clk_in_reset
+Info: send_message Info TB_Gen: Creating testbench system : nios_system_2_tb with clock and reset BFMs
+Info: TB_Gen: Creating testbench system : nios_system_2_tb with clock and reset BFMs
+Info: create_system nios_system_2_tb
+Info: add_instance nios_system_2_inst nios_system_2 
+Info: set_use_testbench_naming_pattern true nios_system_2
+Info: get_instance_interfaces nios_system_2_inst
+Info: get_instance_interface_property nios_system_2_inst chromaprocessor_avalon_streaming_source CLASS_NAME
+Info: get_instance_interface_property nios_system_2_inst chromaprocessor_background_sink CLASS_NAME
+Info: get_instance_interface_property nios_system_2_inst chromaprocessor_foreground_sink CLASS_NAME
+Info: get_instance_interface_property nios_system_2_inst clk_50_in CLASS_NAME
+Info: get_instance_interface_property nios_system_2_inst reset CLASS_NAME
+Info: get_instance_interface_property nios_system_2_inst clk_50_in CLASS_NAME
+Info: send_message Info TB_Gen: clock_sink found: clk_50_in
+Info: TB_Gen: clock_sink found: clk_50_in
+Info: get_instance_interface_property nios_system_2_inst clk_50_in CLASS_NAME
+Info: add_instance nios_system_2_inst_clk_50_in_bfm altera_avalon_clock_source 
+Info: get_instance_property nios_system_2_inst_clk_50_in_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value nios_system_2_inst clk_50_in clockRate
+Info: set_instance_parameter_value nios_system_2_inst_clk_50_in_bfm CLOCK_RATE 50000000.0
+Info: set_instance_parameter_value nios_system_2_inst_clk_50_in_bfm CLOCK_UNIT 1
+Info: get_instance_property nios_system_2_inst_clk_50_in_bfm CLASS_NAME
+Info: get_instance_interface_property nios_system_2_inst clk_50_in CLASS_NAME
+Info: get_instance_interfaces nios_system_2_inst_clk_50_in_bfm
+Info: get_instance_interface_property nios_system_2_inst_clk_50_in_bfm clk CLASS_NAME
+Info: add_connection nios_system_2_inst_clk_50_in_bfm.clk nios_system_2_inst.clk_50_in
+Info: get_instance_interface_property nios_system_2_inst reset CLASS_NAME
+Info: send_message Info TB_Gen: reset_sink found: reset
+Info: TB_Gen: reset_sink found: reset
+Info: get_instance_interface_property nios_system_2_inst reset CLASS_NAME
+Info: add_instance nios_system_2_inst_reset_bfm altera_avalon_reset_source 
+Info: get_instance_property nios_system_2_inst_reset_bfm CLASS_NAME
+Info: get_instance_interface_ports nios_system_2_inst reset
+Info: get_instance_interface_port_property nios_system_2_inst reset reset_reset_n ROLE
+Info: get_instance_interface_port_property nios_system_2_inst reset reset_reset_n ROLE
+Info: set_instance_parameter_value nios_system_2_inst_reset_bfm ASSERT_HIGH_RESET 0
+Info: set_instance_parameter_value nios_system_2_inst_reset_bfm INITIAL_RESET_CYCLES 50
+Info: get_instance_property nios_system_2_inst_reset_bfm CLASS_NAME
+Info: get_instance_interfaces nios_system_2_inst_reset_bfm
+Info: get_instance_interface_property nios_system_2_inst_reset_bfm clk CLASS_NAME
+Info: get_instance_interface_property nios_system_2_inst_reset_bfm reset CLASS_NAME
+Info: get_instance_property nios_system_2_inst_reset_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value nios_system_2_inst reset associatedClock
+Info: get_instance_interfaces nios_system_2_inst_clk_50_in_bfm
+Info: get_instance_interface_property nios_system_2_inst_clk_50_in_bfm clk CLASS_NAME
+Info: send_message Warning TB_Gen: nios_system_2_inst_reset_bfm is not associated to any clock; connecting nios_system_2_inst_reset_bfm to 'nios_system_2_inst_clk_50_in_bfm.clk'
+Warning: TB_Gen: nios_system_2_inst_reset_bfm is not associated to any clock; connecting nios_system_2_inst_reset_bfm to 'nios_system_2_inst_clk_50_in_bfm.clk'
+Info: add_connection nios_system_2_inst_clk_50_in_bfm.clk nios_system_2_inst_reset_bfm.clk
+Info: get_instance_interface_property nios_system_2_inst reset CLASS_NAME
+Info: get_instance_interfaces nios_system_2_inst_reset_bfm
+Info: get_instance_interface_property nios_system_2_inst_reset_bfm clk CLASS_NAME
+Info: get_instance_interface_property nios_system_2_inst_reset_bfm reset CLASS_NAME
+Info: add_connection nios_system_2_inst_reset_bfm.reset nios_system_2_inst.reset
+Info: send_message Info TB_Gen: Saving testbench system: nios_system_2_tb.qsys
+Info: TB_Gen: Saving testbench system: nios_system_2_tb.qsys
+Info: save_system nios_system_2_tb.qsys
+Info: send_message Info TB_Gen: TBGEN SUCCESSFUL
+Info: TB_Gen: TBGEN SUCCESSFUL
+Info: Testbench system: C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/nios_system_2_tb.qsys
+Info: Done
+Info: qsys-generate C:\Users\ajmorflo\Documents\QDesign\CHS_CROMA_KEY\Verification_IP\nios_system_2.qsys --simulation=VERILOG --allow-mixed-language-simulation --testbench=SIMPLE --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory=C:\Users\ajmorflo\Documents\QDesign\CHS_CROMA_KEY\Verification_IP\nios_system_2\testbench\nios_system_2_tb\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading testbench/nios_system_2_tb.qsys
+Progress: Reading input file
+Progress: Adding nios_system_2_inst [nios_system_2 1.0]
+Progress: Parameterizing module nios_system_2_inst
+Progress: Adding nios_system_2_inst_clk_50_in_bfm [altera_avalon_clock_source 17.1]
+Progress: Parameterizing module nios_system_2_inst_clk_50_in_bfm
+Progress: Adding nios_system_2_inst_reset_bfm [altera_avalon_reset_source 17.1]
+Progress: Parameterizing module nios_system_2_inst_reset_bfm
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: nios_system_2_tb.nios_system_2_inst_clk_50_in_bfm: Elaborate: altera_clock_source
+Info: nios_system_2_tb.nios_system_2_inst_clk_50_in_bfm:            $Revision: #3 $
+Info: nios_system_2_tb.nios_system_2_inst_clk_50_in_bfm:            $Date: 2017/09/19 $
+Info: nios_system_2_tb.nios_system_2_inst_reset_bfm: Elaborate: altera_reset_source
+Info: nios_system_2_tb.nios_system_2_inst_reset_bfm:            $Revision: #3 $
+Info: nios_system_2_tb.nios_system_2_inst_reset_bfm:            $Date: 2017/09/19 $
+Info: nios_system_2_tb.nios_system_2_inst_reset_bfm: Reset is negatively asserted.
+Warning: nios_system_2_tb.nios_system_2_inst.chromaprocessor_avalon_streaming_source: nios_system_2_inst.chromaprocessor_avalon_streaming_source must be connected to an Avalon-ST sink
+Warning: nios_system_2_tb.nios_system_2_inst.chromaprocessor_background_sink: nios_system_2_inst.chromaprocessor_background_sink must be connected to an Avalon-ST source
+Warning: nios_system_2_tb.nios_system_2_inst.chromaprocessor_foreground_sink: nios_system_2_inst.chromaprocessor_foreground_sink must be connected to an Avalon-ST source
+Info: nios_system_2_tb: Generating nios_system_2_tb "nios_system_2_tb" for SIM_VERILOG
+Info: Interconnect is inserted between master mm_master_bfm.m0 and slave ChromaProcessor.avalon_slave because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: nios_system_2_inst: "nios_system_2_tb" instantiated nios_system_2 "nios_system_2_inst"
+Info: nios_system_2_inst_clk_50_in_bfm: "nios_system_2_tb" instantiated altera_avalon_clock_source "nios_system_2_inst_clk_50_in_bfm"
+Info: nios_system_2_inst_reset_bfm: "nios_system_2_tb" instantiated altera_avalon_reset_source "nios_system_2_inst_reset_bfm"
+Info: Reusing file C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/nios_system_2_tb/simulation/submodules/verbosity_pkg.sv
+Info: ChromaProcessor: "nios_system_2_inst" instantiated ChromaProcessor "ChromaProcessor"
+Info: mm_master_bfm: "nios_system_2_inst" instantiated altera_avalon_mm_master_bfm "mm_master_bfm"
+Info: Reusing file C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/nios_system_2_tb/simulation/submodules/verbosity_pkg.sv
+Info: mm_interconnect_0: "nios_system_2_inst" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: rst_controller: "nios_system_2_inst" instantiated altera_reset_controller "rst_controller"
+Info: mm_master_bfm_m0_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "mm_master_bfm_m0_translator"
+Info: ChromaProcessor_avalon_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "ChromaProcessor_avalon_slave_translator"
+Info: nios_system_2_tb: Done "nios_system_2_tb" with 10 modules, 17 files
+Info: qsys-generate succeeded.
+Info: sim-script-gen --spd=C:\Users\ajmorflo\Documents\QDesign\CHS_CROMA_KEY\Verification_IP\nios_system_2_tb.spd --output-directory=C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\ajmorflo\Documents\QDesign\CHS_CROMA_KEY\Verification_IP\nios_system_2_tb.spd --output-directory=C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	10 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system_2/testbench/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create testbench Platform Designer system

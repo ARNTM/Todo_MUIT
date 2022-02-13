@@ -1,0 +1,20 @@
+17:55:25 **** Incremental Build of configuration Nios II for project test_mtl ****
+make all 
+Info: Building ../test_mtl_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../test_mtl_bsp/
+[BSP build complete]
+Info: Compiling interval_timer_ISR.c to obj/default/interval_timer_ISR.o
+nios2-elf-gcc -xc -MP -MMD -c -I../test_mtl_bsp//HAL/inc -I../test_mtl_bsp/ -I../test_mtl_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED -DRO_ZIPFS    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/interval_timer_ISR.o interval_timer_ISR.c
+Info: Compiling switches_ISR.c to obj/default/switches_ISR.o
+nios2-elf-gcc -xc -MP -MMD -c -I../test_mtl_bsp//HAL/inc -I../test_mtl_bsp/ -I../test_mtl_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED -DRO_ZIPFS    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/switches_ISR.o switches_ISR.c
+Info: Linking test_mtl.elf
+nios2-elf-g++  -T'../test_mtl_bsp//linker.x' -msys-crt0='../test_mtl_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../test_mtl_bsp/   -Wl,-Map=test_mtl.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o test_mtl.elf obj/default/interval_timer_ISR.o obj/default/pushbutton_ISR.o obj/default/switches_ISR.o obj/default/test_mtl.o -lm -msys-lib=m
+nios2-elf-insert test_mtl.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x10001040 --timestamp 1634718737 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_system --quartus_project_dir "C:/Users/jotorsua/Documents/QDesign/DE2_115_Media_Computer" --jdi ../..//output_files/DE2_115_Media_Computer.jdi --sopcinfo C:/Users/jotorsua/Documents/QDesign/DE2_115_Media_Computer/software/test_mtl_bsp/../../nios_system.sopcinfo
+Info: (test_mtl.elf) 94 KBytes program size (code + initialized data).
+Info:                130969 KBytes free for stack + heap.
+Info: Creating test_mtl.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source test_mtl.elf >test_mtl.objdump
+[test_mtl build complete]
+
+17:55:28 Build Finished (took 2s.838ms)
+

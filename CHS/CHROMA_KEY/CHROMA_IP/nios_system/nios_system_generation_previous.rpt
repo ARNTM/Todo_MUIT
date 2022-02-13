@@ -1,0 +1,58 @@
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\ajmorflo\Documents\QDesign\CHS_CROMA_KEY\Verification_IP\nios_system.qsys --synthesis=VERILOG --output-directory=C:\Users\ajmorflo\Documents\QDesign\CHS_CROMA_KEY\Verification_IP\nios_system\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading Verification_IP/nios_system.qsys
+Progress: Reading input file
+Progress: Adding ChromaProcessor [ChromaProcessor 1.0]
+Progress: Parameterizing module ChromaProcessor
+Progress: Adding clk_50 [clock_source 17.1]
+Progress: Parameterizing module clk_50
+Progress: Adding mm_master_bfm [altera_avalon_mm_master_bfm 17.1]
+Info: altera_avalon_mm_master_bfm: Preferred Simulation Language is set to None.
+Progress: Parameterizing module mm_master_bfm
+Progress: Adding st_sink_bfm [altera_avalon_st_sink_bfm 17.1]
+Info: altera_avalon_st_sink_bfm: Preferred Simulation Language is set to None.
+Progress: Parameterizing module st_sink_bfm
+Progress: Adding st_source_bfm_background [altera_avalon_st_source_bfm 17.1]
+Info: altera_avalon_st_source_bfm: Preferred Simulation Language is set to None.
+Progress: Parameterizing module st_source_bfm_background
+Progress: Adding st_source_bfm_foreground [altera_avalon_st_source_bfm 17.1]
+Progress: Parameterizing module st_source_bfm_foreground
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: nios_system.st_sink_bfm: Use Empty set to zero - omitting sink_empty port
+Info: nios_system.st_sink_bfm: Use Channels set to zero - omitting sink_channel port
+Info: nios_system.st_sink_bfm: Use Error set to zero - omitting sink_error port
+Warning: nios_system.st_sink_bfm.sink: The channel signal isn't wide enough to support the number of channels.
+Info: nios_system.st_source_bfm_background: Use Empty set to zero - omitting src_empty port
+Info: nios_system.st_source_bfm_background: Use Channels set to zero - omitting src_channel port
+Info: nios_system.st_source_bfm_background: Use Error set to zero - omitting src_error port
+Warning: nios_system.st_source_bfm_background.src: The channel signal isn't wide enough to support the number of channels.
+Info: nios_system.st_source_bfm_foreground: Use Empty set to zero - omitting src_empty port
+Info: nios_system.st_source_bfm_foreground: Use Channels set to zero - omitting src_channel port
+Info: nios_system.st_source_bfm_foreground: Use Error set to zero - omitting src_error port
+Warning: nios_system.st_source_bfm_foreground.src: The channel signal isn't wide enough to support the number of channels.
+Info: nios_system.ChromaProcessor.avalon_streaming_source/st_sink_bfm.sink: Max channel is 0 for source and 1 for sink. Avalon-ST Adapter will be inserted..
+Info: nios_system.ChromaProcessor.avalon_streaming_source/st_sink_bfm.sink: The source has a empty signal of 2 bits, but the sink does not. Avalon-ST Adapter will be inserted.
+Info: nios_system.ChromaProcessor.avalon_streaming_source/st_sink_bfm.sink: The source data signal is 30 bits, but the sink is 40 bits. Avalon-ST Adapter will be inserted.
+Info: nios_system.st_source_bfm_background.src/ChromaProcessor.background_sink: Max channel is 1 for source and 0 for sink. Avalon-ST Adapter will be inserted..
+Info: nios_system.st_source_bfm_background.src/ChromaProcessor.background_sink: The sink has a empty signal of 2 bits, but the source does not. Avalon-ST Adapter will be inserted.
+Info: nios_system.st_source_bfm_background.src/ChromaProcessor.background_sink: The source data signal is 40 bits, but the sink is 30 bits. Avalon-ST Adapter will be inserted.
+Info: nios_system.st_source_bfm_foreground.src/ChromaProcessor.foreground_sink: Max channel is 1 for source and 0 for sink. Avalon-ST Adapter will be inserted..
+Info: nios_system.st_source_bfm_foreground.src/ChromaProcessor.foreground_sink: The sink has a empty signal of 2 bits, but the source does not. Avalon-ST Adapter will be inserted.
+Info: nios_system.st_source_bfm_foreground.src/ChromaProcessor.foreground_sink: The source data signal is 40 bits, but the sink is 30 bits. Avalon-ST Adapter will be inserted.
+Info: nios_system: Generating nios_system "nios_system" for QUARTUS_SYNTH
+Info: Interconnect is inserted between master mm_master_bfm.m0 and slave ChromaProcessor.avalon_slave because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: avalon_st_adapter: Inserting data_format_adapter: data_format_adapter_0
+Error: avalon_st_adapter.data_format_adapter_0: Output symbols per beat:(4) not multiple of input symbols per beat:(3).  Input interface symbols per beat is less than output symbols per beat. In this case, output symbols per beat must be an even multiple of input symbols per beat.
+Error: avalon_st_adapter.data_format_adapter_0: Unsupported adaptation: The input interface uses the empty signal. However, the output interface is not using the empty signal.
+Error: avalon_st_adapter.data_format_adapter_0: The output interface has no empty signal, but this adapter has been configured to adapt a narrow input interface  symbols per beat(3) to a wide output interface symbols per beat(4).
+Info: avalon_st_adapter_001: Inserting data_format_adapter: data_format_adapter_0
+Error: avalon_st_adapter_001.data_format_adapter_0: Input symbols per beat:(4) not multiple of output symbols per beat:(3).  Output interface symbols per beat is less than input symbols per beat. In this case, input symbols per beat must be an even multiple of output symbols per beat.
+Info: avalon_st_adapter_002: Inserting data_format_adapter: data_format_adapter_0
+Error: avalon_st_adapter_002.data_format_adapter_0: Input symbols per beat:(4) not multiple of output symbols per beat:(3).  Output interface symbols per beat is less than input symbols per beat. In this case, input symbols per beat must be an even multiple of output symbols per beat.
+Error: Generation stopped, 10 or more modules remaining
+Info: nios_system: Done "nios_system" with 9 modules, 1 files
+Error: qsys-generate failed with exit code 1: 6 Errors, 3 Warnings
+Info: Finished: Create HDL design files for synthesis

@@ -1,0 +1,622 @@
+/*
+ * task_config.c
+ *
+ *  Created on: 16 de nov. de 2020
+ *      Author: mpeir
+ */
+
+#include "..\inc\task_config.h"
+
+//------------------- MACROS PARA HABILITAR COMPILACION DE EJERCICIOS -------------------------//
+#define EJERCICIO2
+//#define MUTEX
+//#define SENSORS
+//#define EJERCICIO5
+
+
+/* variable globales de uso exclusivo en este fichero, por ello no se incluyen en task_config.h */
+
+INT32U number_of_messages_sent = 0;
+INT32U number_of_messages_received_task1 = 0;
+INT32U number_of_messages_received_task2 = 0;
+INT32U getsem_task1_got_sem = 0;
+INT32U getsem_task2_got_sem = 0;
+INT32U getsem_task3_got_sem = 0;
+INT32U getsem_task4_got_sem = 0;
+INT32U getmutex_task1_got_sem=0;
+INT32U getmutex_task2_got_sem=0;
+INT8U highest;
+char sem_owner_task_name[20];
+
+
+// tarea de lectura de los switches
+void read_switches() {
+	int SW_value;
+
+	while(1){
+	SW_value = *(SW_switch_ptr);
+	SW_value = SW_value & 0xFFFF;
+
+	switch (SW_value){
+	case (0x01):{*(chromaProcessor_ptr + 3) = *(SW_switch_ptr);}
+	break;
+	case (0x02):{*(chromaProcessor_ptr + 3) = *(SW_switch_ptr);}
+	break;
+	case (0x04):{if(upDown) {upDown = 0;}else {upDown = 1;}}
+	break;
+	OSTimeDlyHMSM(0,0,0,300);
+	}
+}
+
+// tarea de lectura de los pushbuttons
+void read_switches() {
+
+	char mensaje[]="The SW ON are: ";
+	char mensajetodo[26];
+	int SW_value;
+
+	while(1){
+	SW_value = *(SW_switch_ptr);
+	SW_value = SW_value & 0xFFFF;
+
+	switch (SW_value){
+	case (0x01):{*(chromaProcessor_ptr + 3) = *(SW_switch_ptr);}
+	break;
+	case (0x02):{*(chromaProcessor_ptr + 3) = *(SW_switch_ptr);}
+	break;
+	case (0x03):{char mensajito[20]="SW ZERO & ONE";sprintf(mensajetodo,"%15s %21s",mensaje,mensajito);}
+	break;
+	case (0x04):{if(upDown) {upDown = 0;}else {upDown = 1;}}
+	break;
+	OSTimeDlyHMSM(0,0,0,300);
+	}
+}
+
+
+/*The next two task compete for a shared resource via a semaphore.  The name of
+ * the task that owns the semaphore is copied into the global variable
+ * sem_owner_task_name[].
+ */
+void getsem_task1(void* pdata)
+{
+  INT8U return_code = OS_NO_ERR;
+
+  while (1)
+  {
+    OSSemPend(shared_resource_sem, 0, &return_code);
+    alt_ucosii_check_return_code(return_code);
+    strcpy(&sem_owner_task_name[0], "getsem_task1");
+    getsem_task1_got_sem++;
+    OSSemPost(shared_resource_sem);
+    OSTimeDlyHMSM(0, 0, 0, 100);
+  }
+}
+
+void getsem_task2(void* pdata)
+{
+  INT8U return_code = OS_NO_ERR;
+  while (1)
+  {
+    OSSemPend(shared_resource_sem, 0, &return_code);
+    strcpy(&sem_owner_task_name[0], "getsem_task2");
+    alt_ucosii_check_return_code(return_code);
+    getsem_task2_got_sem++;
+    OSSemPost(shared_resource_sem);
+    OSTimeDlyHMSM(0, 0, 0, 130);
+  }
+}
+#ifdef EJERCICIO2
+void getsem_task3(void* pdata)
+{
+  INT8U return_code = OS_NO_ERR;
+  while (1)
+  {
+    OSSemPend(shared_resource_sem, 0, &return_code);
+    strcpy(&sem_owner_task_name[0], "getsem_task3");
+    alt_ucosii_check_return_code(return_code);
+    getsem_task3_got_sem++;
+    OSSemPost(shared_resource_sem);
+    OSTimeDlyHMSM(0, 0, 0, 100);
+  }
+}
+
+void getsem_task4(void* pdata)
+{
+  INT8U return_code = OS_NO_ERR;
+  OS_SEM_DATA sem_data;
+  BOOLEAN stopper=1;
+  while (1)
+  {
+// ESTE ACCEPT O ESTE PEND SE DEBE SELECCIONAR UNO DE ELLOS EN FUNCION DEL MOMENTO DE LA PRACTICA
+	OSSemPend(shared_resource_sem, 0, &return_code);
+    //OSSemAccept(shared_resource_sem); //descuenta un valor al semaforo, si teniamos 3 se queda en 2
+	return_code=OSSemQuery(shared_resource_sem,&sem_data);
+	alt_ucosii_check_return_code(return_code);
+	if (sem_data.OSCnt==0){
+		if (stopper){
+			printf("La tarea 4 se ha comido todos los recursos\n"); //recursos=semaforos
+			stopper=0;
+		}
+
+	}
+	else{
+		strcpy(&sem_owner_task_name[0], "getsem_task4");
+		alt_ucosii_check_return_code(return_code);
+		getsem_task4_got_sem++;
+	}
+
+// ESTE POST SE DEBE ACTIVAR O NO EN FUNCIÃ“N DE LO SOLICITADO EN LA PRACTICA
+    OSSemPost(shared_resource_sem); //tengo 3 semaforos y no los voy a devolver
+    OSTimeDlyHMSM(0, 0, 5, 0);
+  }
+}
+
+
+void query_sem(void* pdata)
+{
+INT8U return_code = OS_NO_ERR;
+INT8U x,y;
+while (1)
+{
+	return_code=OSSemQuery(shared_resource_sem,&sem_data);
+	alt_ucosii_check_return_code(return_code);
+	if(sem_data.OSEventGrp!=0x00){
+		y=OSUnMapTbl[sem_data.OSEventGrp];
+		x=OSUnMapTbl[sem_data.OSEventTbl[y]];
+		highest=(y<<3)+x; //quien espera el semaforo
+}
+	OSTimeDlyHMSM(0, 0, 0, 100);
+}
+}
+#endif
+
+#ifdef MUTEX
+void getmutex_task1(void* pdata)
+{
+  INT8U return_code = OS_NO_ERR;
+  while (1)
+  {
+    OSMutexPend(PunteroMutex, 0, &return_code);
+    alt_ucosii_check_return_code(return_code);
+    getmutex_task1_got_sem++;
+    printf("El numero de veces que Task1_Mutex adquiere el mutex es: 02%lu\n",getmutex_task1_got_sem);
+    OSMutexPost(PunteroMutex);
+    OSTimeDlyHMSM(0, 0, 0, 100);
+  }
+}
+
+void getmutex_task2(void* pdata)
+{
+  OS_MUTEX_DATA MutexData;
+  INT8U return_code = OS_NO_ERR;
+  //Puedes cambiar el valor siguiente si quieres o no Query de Mutex
+  INT8U Query=1;
+  while (1)
+  {
+    OSMutexPend(PunteroMutex, 0, &return_code);
+    alt_ucosii_check_return_code(return_code);
+    getmutex_task2_got_sem++;
+    printf("El numero de veces que Task2_Mutex adquiere el mutex es: 02%lu\n",getmutex_task2_got_sem);
+    //Si no posteas el Mutex el Query cambiara de valor ya que una tarea se queda con el semaforo
+    OSMutexPost(PunteroMutex);
+    OSTimeDlyHMSM(0, 0, 0, 100);
+    OSMutexQuery(PunteroMutex, &MutexData);
+    if (Query){
+    	printf("La tarea que tiene el mutex es: %02d\n",MutexData.OSOwnerPrio);
+    	printf("Y ha heredado la prioridad %02d\n",MutexData.OSMutexPIP);
+    }
+  }
+}
+#endif
+/*The following task fills up a message queue with incrementing data.  The data
+ * is not actually used by the application.  If the queue is full the task is
+ * suspended for 1 second.
+ */
+#ifdef EJERCICIO5
+void send_task(void* pdata)
+{
+  INT8U return_code = OS_NO_ERR;
+  char mensaje[]=		"The Queue Message is: ";
+  char  mensajito[] =	"...ME GUSTA EL REGGETON!";
+
+
+  char mensaje_m[]="ESTE ES EL MALDITO MENSAJE";
+   char mensaje1[]="ESTE ES EL MENSAJE SECRETO";
+   char mensajetodo[50];
+
+
+
+   OS_Q_DATA queue_data;
+
+   printf("El mensaje es %s\n",mensaje);
+   printf("La cola de mensajes se inicia en la posicion de memoria %ld\n", (unsigned long int) &msgqueueTbl[0]);
+
+   while (1) //llenamos la cola de mensajes cada vez que llamamos a esta funcion, no pasamos un unico mensaje
+   {
+     return_code = OSQQuery(msgqueue, &queue_data); //hacemos un query
+     alt_ucosii_check_return_code(return_code);
+    if(queue_data.OSNMsgs < MSG_QUEUE_SIZE) /*Check the number of messages*/
+     {                                       /*in the message queue*/
+       if (queue_data.OSNMsgs==MSG_QUEUE_SIZE-1)
+       {
+     	  return_code = OSQPostFront(msgqueue, (void *)&mensaje1[0]); //introducimos el mensaje secreto como LIFO sin Broadcast
+     	  alt_ucosii_check_return_code(return_code);
+          sprintf(mensajetodo,"%22s %25s",mensaje,mensaje1);
+          MTL_text (2, 20, mensajetodo);
+       }
+       else
+       {
+     	  return_code = OSQPostOpt(msgqueue, (void *)&mensaje_m[0], OS_POST_OPT_BROADCAST);
+     	  alt_ucosii_check_return_code(return_code);
+          sprintf(mensajetodo,"%22s %25s",mensaje,mensaje_m);
+          MTL_text (2, 20, mensajetodo);
+       }
+
+
+       number_of_messages_sent++;
+
+       printf("La cola tiene %d mensajes y el tamaño de la cola es %d\n",queue_data.OSNMsgs,queue_data.OSQSize);
+     }
+
+    OSTimeDlyHMSM(0, 0, 0,500); //cada 500 ms
+   }
+}
+#endif
+
+#ifndef EJERCICIO5
+void send_task(void* pdata)
+{
+  INT8U return_code = OS_NO_ERR;
+  char mensaje[]=		"The Queue Message is: ";
+  char mensajito[] =	"...ME GUSTA EL REGGETON!";
+  INT8U msg;
+  char mensajetodo[50];
+  OS_Q_DATA queue_data;
+
+  while (1)
+  {
+    return_code = OSQQuery(msgqueue, &queue_data);
+    alt_ucosii_check_return_code(return_code);
+    if(queue_data.OSNMsgs < MSG_QUEUE_SIZE) /*Check the number of messages*/
+    {                                       /*in the message queue*/
+      return_code = OSQPostOpt(msgqueue, (void *)&mensajito, OS_POST_OPT_BROADCAST);
+      alt_ucosii_check_return_code(return_code);
+      msg++;
+      number_of_messages_sent++;
+      sprintf(mensajetodo,"%22s %25s",mensaje,mensajito);
+	  MTL_text (2, 20, mensajetodo);
+    }
+    else
+    {
+      OSTimeDlyHMSM(0, 0, 1, 0);
+    }
+  }
+}
+#endif
+/*The next two task pull messages in the queue at different rates.  The number
+ * of messages received by the task is incremented when a new message is received
+ */
+#ifndef EJERCICIO5
+void receive_task1(void* pdata)
+{
+  INT8U return_code = OS_NO_ERR;
+  void *msg;
+  char mensaje[]="Queue Rx message in 1: ";
+  char mensajetodo[50];
+
+  while (1)
+  {
+    msg = (INT32U *)OSQPend(msgqueue, 0, &return_code);
+    alt_ucosii_check_return_code(return_code);
+
+    number_of_messages_received_task1++;
+
+    sprintf(mensajetodo,"%22s %23s",mensaje,(char *)msg);
+    MTL_text (2, 25, mensajetodo);
+    OSTimeDlyHMSM(0, 0, 0, 333);
+  }
+}
+
+void receive_task2(void* pdata)
+{
+  INT8U return_code = OS_NO_ERR;
+  void *msg;
+  char mensaje[]="Queue Rx message in 2: ";
+  char mensajetodo[50];
+  while (1)
+  {
+    msg = (INT32U *)OSQPend(msgqueue, 0, &return_code);
+    alt_ucosii_check_return_code(return_code);
+    number_of_messages_received_task2++;
+    sprintf(mensajetodo,"%22s %23s",mensaje,(char *)msg);
+    MTL_text (2, 27, mensajetodo);
+    OSTimeDlyHMSM(0, 0, 1, 0);
+  }
+}
+#endif
+
+#ifdef EJERCICIO5
+void receive_task1(void* pdata)
+{
+  INT8U return_code = OS_NO_ERR;
+  void * msg;
+  char mensaje[]="Queue Rx message in 1: ";
+  char mensajetodo[50];
+
+  INT8U resultado=1;
+  msg=0;
+  while (1)
+  {
+    msg = OSQPend(msgqueue, 0, &return_code);
+    alt_ucosii_check_return_code(return_code);
+    sprintf(mensajetodo,"%22s %23s",mensaje,(char *)msg);
+    MTL_text (2, 25, mensajetodo);
+	printf("Receive_task1 ha tomado el mensaje %s desde la posicion de memoria %4lu\n",msg,(unsigned long int)&msg);
+    number_of_messages_received_task1++;
+    resultado=strcmp(msg,"ESTE ES EL MENSAJE SECRETO");
+// EJERCICIO 5 APARTADO D //
+    if (resultado==0){
+     return_code=OSQFlush(msgqueue);
+     alt_ucosii_check_return_code(return_code);
+     printf("La cola se ha vaciado\n");
+    }
+    else
+     {
+    }
+
+    OSTimeDlyHMSM(0, 0, 3, 0); //se ejecuta cada 3 s
+
+  }
+}
+
+void receive_task2(void* pdata)
+{
+  INT8U return_code = OS_NO_ERR;
+  void *msg;
+  char mensaje[]="Queue Rx message in 2: ";
+  char mensajetodo[50];
+
+  while (1)
+  {
+    msg = OSQPend(msgqueue, 0, &return_code); //el puntero msg apunta al mensaje de la cola
+    alt_ucosii_check_return_code(return_code);
+    sprintf(mensajetodo,"%22s %23s",mensaje,(char *)msg);
+    MTL_text (2, 27, mensajetodo);
+    printf("Receive_task2 ha tomado el mensaje %s desde la posicion de memoria %4lu\n", msg, (unsigned long int)&msg);
+    number_of_messages_received_task2++;
+    OSTimeDlyHMSM(0, 0, 1, 0);
+  }
+}
+
+
+#endif
+
+
+/* This function simply creates a message queue and a semaphore
+ */
+
+int initOSDataStructs(void)
+{
+  INT8U	ErrorMutex=OS_NO_ERR;
+  INT8U ErrorFlags=OS_NO_ERR;
+  msgqueue = OSQCreate(&msgqueueTbl[0], MSG_QUEUE_SIZE);
+  shared_resource_sem = OSSemCreate(3); //se crea semaforo de nivel 3
+  PunteroMutex=OSMutexCreate(PIP_PRIORITY_INHERITANCE,&ErrorMutex); //Mejor prioridad que todos (4)
+  alt_ucosii_check_return_code(ErrorMutex);
+  EstadoMotor=OSFlagCreate(0x00, &ErrorFlags);
+  alt_ucosii_check_return_code(ErrorFlags);
+  return 0;
+}
+
+
+void Mensaje_TaskMtl(char visualiza_string[40], int posicion)
+	{
+#ifdef PRINT
+    	printf("%s\n",visualiza_string);
+#endif
+    posicion=(linea>ultima_linea)?primera_linea:linea++;
+    if (linea>ultima_linea){linea=primera_linea;}
+    MTL_text (2, posicion, visualiza_string);
+    borra_lineas_pantalla(posicion+1,posicion+2);
+
+    }
+
+
+void TaskInit(void* pdata)
+{
+	char visualiza_string[40] = "Hello from Task Init";
+	int posicion=0;
+	 INT8U return_code = OS_NO_ERR;
+  while (1)
+  {
+		ledg_OFF_All();
+		blinky_ledg(green_LED_ptr,8);
+		OSSchedLock();	 /* entramos en seccion critica*/
+		Mensaje_TaskMtl(visualiza_string, posicion);
+		OSSchedUnlock(); /* salimos SC */
+
+	    /*create os data structures */
+	    initOSDataStructs();
+
+	    /* create the tasks */
+	    initCreateTasks();
+
+	    /*This task is deleted because there is no need for it to run again */
+	    return_code = OSTaskDel(OS_PRIO_SELF);
+	    alt_ucosii_check_return_code(return_code);
+
+  }
+}
+
+void CreateTasks (void)
+{
+	INT8U return_code = OS_NO_ERR;
+
+	 return_code= OSTaskCreateExt(TaskInit,
+	                  NULL,
+	                  (void *)&initialize_task_stk[TASK_STACKSIZE-1],
+					  INITIALIZE_TASK_PRIORITY,
+					  INITIALIZE_TASK_PRIORITY,
+					  initialize_task_stk,
+	                  TASK_STACKSIZE,
+	                  NULL,
+	                  0);
+	  alt_ucosii_check_return_code(return_code);
+}
+
+
+/*This function creates the tasks used in this example
+ */
+
+int initCreateTasks(void)
+{
+  INT8U return_code = OS_NO_ERR;
+
+  return_code = OSTaskCreateExt(getsem_task1,
+                             NULL,
+                             (void *)&getsem_task1_stk[TASK_STACKSIZE],
+                             GETSEM_TASK1_PRIORITY,
+                             GETSEM_TASK1_PRIORITY,
+                             getsem_task1_stk,
+                             TASK_STACKSIZE,
+                             NULL,
+                             0);
+  alt_ucosii_check_return_code(return_code);
+
+  return_code = OSTaskCreateExt(getsem_task2,
+                             NULL,
+                             (void *)&getsem_task2_stk[TASK_STACKSIZE],
+                             GETSEM_TASK2_PRIORITY,
+                             GETSEM_TASK2_PRIORITY,
+                             getsem_task2_stk,
+                             TASK_STACKSIZE,
+                             NULL,
+                             0);
+  alt_ucosii_check_return_code(return_code);
+#ifdef EJERCICIO2
+  return_code = OSTaskCreateExt(getsem_task3,
+                             NULL,
+                             (void *)&getsem_task3_stk[TASK_STACKSIZE],
+                             GETSEM_TASK3_PRIORITY,
+                             GETSEM_TASK3_PRIORITY,
+                             getsem_task3_stk,
+                             TASK_STACKSIZE,
+                             NULL,
+                             0);
+  alt_ucosii_check_return_code(return_code);
+
+  return_code = OSTaskCreateExt(getsem_task4,
+                             NULL,
+                             (void *)&getsem_task4_stk[TASK_STACKSIZE],
+                             GETSEM_TASK4_PRIORITY,
+                             GETSEM_TASK4_PRIORITY,
+                             getsem_task4_stk,
+                             TASK_STACKSIZE,
+                             NULL,
+                             0);
+  alt_ucosii_check_return_code(return_code);
+
+  return_code = OSTaskCreateExt(query_sem,
+                             NULL,
+                             (void *)&querysem_stk[TASK_STACKSIZE],
+                             QUERYSEM_PRIORITY,
+                             QUERYSEM_PRIORITY,
+                             querysem_stk,
+                             TASK_STACKSIZE,
+                             NULL,
+                             0);
+  alt_ucosii_check_return_code(return_code);
+#endif
+#ifdef MUTEX
+  return_code = OSTaskCreateExt(getmutex_task1,
+                             NULL,
+                             (void *)&getmutex_task1_stk[TASK_STACKSIZE],
+							 GETMUTEX_TASK1_PRIO ,
+							 GETMUTEX_TASK1_PRIO ,
+							 getmutex_task1_stk,
+                             TASK_STACKSIZE,
+                             NULL,
+                             0);
+  alt_ucosii_check_return_code(return_code);
+
+  return_code = OSTaskCreateExt(getmutex_task2,
+                             NULL,
+                             (void *)&getmutex_task2_stk[TASK_STACKSIZE],
+							 GETMUTEX_TASK2_PRIO ,
+							 GETMUTEX_TASK2_PRIO ,
+							 getmutex_task2_stk,
+                             TASK_STACKSIZE,
+                             NULL,
+                             0);
+  alt_ucosii_check_return_code(return_code);
+#endif
+  return_code = OSTaskCreateExt(receive_task1,
+                             NULL,
+                             (void *)&receive_task1_stk[TASK_STACKSIZE],
+                             RECEIVE_TASK1_PRIORITY,
+                             RECEIVE_TASK1_PRIORITY,
+                             receive_task1_stk,
+                             TASK_STACKSIZE,
+                             NULL,
+                             0);
+  alt_ucosii_check_return_code(return_code);
+
+  return_code = OSTaskCreateExt(receive_task2,
+                             NULL,
+                             (void *)&receive_task2_stk[TASK_STACKSIZE],
+                             RECEIVE_TASK2_PRIORITY,
+                             RECEIVE_TASK2_PRIORITY,
+                             receive_task2_stk,
+                             TASK_STACKSIZE,
+                             NULL,
+                             0);
+  alt_ucosii_check_return_code(return_code);
+
+  return_code = OSTaskCreateExt(send_task,
+                             NULL,
+                             (void *)&send_task_stk[TASK_STACKSIZE],
+                             SEND_TASK_PRIORITY,
+                             SEND_TASK_PRIORITY,
+                             send_task_stk,
+                             TASK_STACKSIZE,
+                             NULL,
+                             0);
+  alt_ucosii_check_return_code(return_code);
+
+  return_code = OSTaskCreateExt(print_status_task,
+                             NULL,
+                             (void *)&print_status_task_stk[TASK_STACKSIZE],
+                             PRINT_STATUS_TASK_PRIORITY,
+                             PRINT_STATUS_TASK_PRIORITY,
+                             print_status_task_stk,
+                             TASK_STACKSIZE,
+                             NULL,
+                             0);
+  alt_ucosii_check_return_code(return_code);
+
+  return_code = OSTaskCreateExt(read_switches,
+                              NULL,
+                              (void *)&read_switches_stk[TASK_STACKSIZE],
+                              READ_SWITCHES_PRIORITY,
+                              READ_SWITCHES_PRIORITY,
+                              read_switches_stk,
+                              TASK_STACKSIZE,
+                              NULL,
+                              0);
+   alt_ucosii_check_return_code(return_code);
+#ifdef SENSORS
+   return_code = OSTaskCreateExt(CHEQUEO_MOTOR,
+                               NULL,
+                               (void *)&chequeomotor_stk[TASK_STACKSIZE],
+                               CHEQUEOMOTOR_PRIORITY,
+                               CHEQUEOMOTOR_PRIORITY,
+                               chequeomotor_stk,
+                               TASK_STACKSIZE,
+                               NULL,
+                               0);
+    alt_ucosii_check_return_code(return_code);
+#endif
+  return 0;
+}
+
+

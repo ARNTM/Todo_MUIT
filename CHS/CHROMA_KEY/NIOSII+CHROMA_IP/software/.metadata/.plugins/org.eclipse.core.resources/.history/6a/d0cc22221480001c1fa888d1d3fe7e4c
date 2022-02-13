@@ -1,0 +1,22 @@
+#include "key_codes.h" 	// define los valores de KEY1, KEY2, KEY3
+#include "system.h"
+#include "sys/alt_irq.h"
+
+extern volatile int pausaTelepronter;
+
+void switches_ISR( )
+{
+	volatile int * slider_switch_ptr = (int *) SWITCHES_BASE;
+	*(slider_switch_ptr + 3) = 0; 					// borra la interrupción
+
+	int valor = *(slider_switch_ptr);
+
+	if(valor == 1){
+		pausaTelepronter = 1;
+	}
+	else {
+		pausaTelepronter = 0;
+	}
+
+	return;
+}

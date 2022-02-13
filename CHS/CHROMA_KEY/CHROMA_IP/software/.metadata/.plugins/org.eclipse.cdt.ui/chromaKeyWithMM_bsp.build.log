@@ -1,0 +1,6 @@
+15:59:24 **** Clean-only build of configuration Nios II for project chromaKeyWithMM_bsp ****
+make clean 
+[BSP clean complete]
+
+15:59:24 Build Finished (took 288ms)
+

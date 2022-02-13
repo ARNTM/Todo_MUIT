@@ -1,0 +1,24 @@
+#include "key_codes.h" 	// define los valores de KEY1, KEY2, KEY3
+#include "system.h"
+#include "sys/alt_irq.h"
+
+/*extern volatile int hour;
+extern volatile int min;*/
+
+void pushbutton_ISR( )
+{
+	volatile int * KEY_ptr = (int *) PUSHBUTTONS_BASE;
+	int press;
+
+	press = *(KEY_ptr + 3);					// lee el registro de los pulsadores
+	*(KEY_ptr + 3) = 0; 					// borra la interrupción
+
+	if (press & 0x2)				// KEY2
+		printf("KEY1");
+	else if (press & 0x4)				// KEY2
+		printf("KEY2");
+	else if (press & 0x8)					// KEY3
+		printf("KEY3");
+
+	return;
+}

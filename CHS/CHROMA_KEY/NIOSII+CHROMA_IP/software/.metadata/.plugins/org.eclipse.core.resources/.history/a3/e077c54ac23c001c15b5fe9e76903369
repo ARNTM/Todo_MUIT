@@ -1,0 +1,12 @@
+#include "key_codes.h" 	// define los valores de KEY1, KEY2, KEY3
+#include "system.h"
+#include "sys/alt_irq.h"
+
+
+extern volatile int red;
+void switches_ISR(){
+
+
+	KEY_value = *(KEY_ptr);
+		*(red_LED_ptr) = KEY_value;
+}

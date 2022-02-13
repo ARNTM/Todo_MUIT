@@ -1,0 +1,60 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst unsaved.video_pll.reset_from_locked -pg 1
+preplace inst unsaved.mtl_clk -pg 1 -lvl 4 -y 200
+preplace inst unsaved.cpu.clock_bridge -pg 1
+preplace inst unsaved.clk_50_3 -pg 1 -lvl 2 -y 310
+preplace inst unsaved.flash_controller.tdt -pg 1
+preplace inst unsaved.cpu.cpu -pg 1
+preplace inst unsaved.audio_pll.audio_pll -pg 1
+preplace inst unsaved.vga_clk -pg 1 -lvl 4 -y 620
+preplace inst unsaved.sys_clk -pg 1 -lvl 4 -y 280
+preplace inst unsaved.audio_pll -pg 1 -lvl 3 -y 310
+preplace inst unsaved.flash_controller.reset -pg 1
+preplace inst unsaved.cpu -pg 1 -lvl 4 -y 50
+preplace inst unsaved.sdram -pg 1 -lvl 5 -y 300
+preplace inst unsaved.flash_controller -pg 1 -lvl 5 -y 470
+preplace inst unsaved.video_pll -pg 1 -lvl 3 -y 50
+preplace inst unsaved.onchip_memory -pg 1 -lvl 5 -y 220
+preplace inst unsaved.flash_controller.slave_translator -pg 1
+preplace inst unsaved.audio_clk -pg 1 -lvl 4 -y 400
+preplace inst unsaved.sys_sdram_pll.reset_from_locked -pg 1
+preplace inst unsaved.video_pll.video_pll -pg 1
+preplace inst unsaved.reset_bridge -pg 1 -lvl 1 -y 330
+preplace inst unsaved.audio_pll.reset_from_locked -pg 1
+preplace inst unsaved.sys_sdram_pll -pg 1 -lvl 3 -y 190
+preplace inst unsaved.flash_controller.tda -pg 1
+preplace inst unsaved.flash_bridge -pg 1 -lvl 6 -y 300
+preplace inst unsaved.cpu.reset_bridge -pg 1
+preplace inst unsaved.clk_50 -pg 1 -lvl 2 -y 190
+preplace inst unsaved.sys_sdram_pll.sys_pll -pg 1
+preplace inst unsaved.sdram_clk -pg 1 -lvl 4 -y 580
+preplace inst unsaved -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst unsaved.flash_controller.clk -pg 1
+preplace inst unsaved.clk_50_2 -pg 1 -lvl 2 -y 70
+preplace netloc FAN_OUT<net_container>unsaved</net_container>(SLAVE)clk_50_3.clk_in_reset,(SLAVE)clk_50_2.clk_in_reset,(MASTER)reset_bridge.out_reset,(SLAVE)clk_50.clk_in_reset) 1 1 1 300
+preplace netloc FAN_OUT<net_container>unsaved</net_container>(SLAVE)onchip_memory.clk1,(SLAVE)sdram.clk,(MASTER)sys_sdram_pll.sys_clk,(SLAVE)flash_controller.clk,(SLAVE)cpu.clk,(SLAVE)flash_bridge.clk,(SLAVE)sys_clk.in_clk) 1 3 3 780 270 1220 430 1410
+preplace netloc POINT_TO_POINT<net_container>unsaved</net_container>(SLAVE)audio_clk.in_clk,(MASTER)audio_pll.audio_clk) 1 3 1 NJ
+preplace netloc POINT_TO_POINT<net_container>unsaved</net_container>(SLAVE)mtl_clk.in_clk,(MASTER)video_pll.lcd_clk) 1 3 1 NJ
+preplace netloc POINT_TO_POINT<net_container>unsaved</net_container>(SLAVE)audio_pll.ref_reset,(MASTER)clk_50_3.clk_reset) 1 2 1 N
+preplace netloc EXPORT<net_container>unsaved</net_container>(MASTER)mtl_clk.out_clk,(MASTER)unsaved.mtl_clk_out) 1 4 3 NJ 210 NJ 210 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)clk_50.clk_in,(SLAVE)unsaved.clk_50_in) 1 0 2 NJ 200 NJ
+preplace netloc POINT_TO_POINT<net_container>unsaved</net_container>(MASTER)video_pll.vga_clk,(SLAVE)vga_clk.in_clk) 1 3 1 NJ
+preplace netloc POINT_TO_POINT<net_container>unsaved</net_container>(MASTER)clk_50_2.clk,(SLAVE)video_pll.ref_clk) 1 2 1 N
+preplace netloc EXPORT<net_container>unsaved</net_container>(MASTER)unsaved.audio_clk_out,(MASTER)audio_clk.out_clk) 1 4 3 NJ 410 NJ 410 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(MASTER)unsaved.vga_clk_out,(MASTER)vga_clk.out_clk) 1 4 3 NJ 630 NJ 630 NJ
+preplace netloc POINT_TO_POINT<net_container>unsaved</net_container>(MASTER)flash_controller.tcm,(SLAVE)flash_bridge.tcs) 1 5 1 1450
+preplace netloc POINT_TO_POINT<net_container>unsaved</net_container>(MASTER)clk_50.clk_reset,(SLAVE)sys_sdram_pll.ref_reset) 1 2 1 N
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)clk_50_2.clk_in,(SLAVE)unsaved.clk_50_in_2) 1 0 2 NJ 80 NJ
+preplace netloc POINT_TO_POINT<net_container>unsaved</net_container>(SLAVE)video_pll.ref_reset,(MASTER)clk_50_2.clk_reset) 1 2 1 N
+preplace netloc POINT_TO_POINT<net_container>unsaved</net_container>(SLAVE)sys_sdram_pll.ref_clk,(MASTER)clk_50.clk) 1 2 1 N
+preplace netloc EXPORT<net_container>unsaved</net_container>(MASTER)unsaved.sdram_clk_out,(MASTER)sdram_clk.out_clk) 1 4 3 NJ 590 NJ 590 NJ
+preplace netloc INTERCONNECT<net_container>unsaved</net_container>(MASTER)cpu.instruction_master,(SLAVE)onchip_memory.s1,(SLAVE)flash_controller.uas,(SLAVE)cpu.debug_mem_slave,(MASTER)cpu.data_master,(SLAVE)sdram.s1) 1 3 2 840 190 1240
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)unsaved.flash_bridge_out,(SLAVE)flash_bridge.out) 1 0 6 NJ 570 NJ 570 NJ 570 NJ 570 NJ 570 NJ
+preplace netloc POINT_TO_POINT<net_container>unsaved</net_container>(MASTER)clk_50_3.clk,(SLAVE)audio_pll.ref_clk) 1 2 1 N
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)unsaved.reset_bridge_in,(SLAVE)reset_bridge.in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)clk_50_3.clk_in,(SLAVE)unsaved.clk_50_in_3) 1 0 2 NJ 320 NJ
+preplace netloc INTERCONNECT<net_container>unsaved</net_container>(SLAVE)flash_bridge.reset,(SLAVE)sdram.reset,(MASTER)sys_sdram_pll.reset_source,(SLAVE)flash_controller.reset,(SLAVE)cpu.reset,(MASTER)cpu.debug_reset_request,(SLAVE)onchip_memory.reset1) 1 3 3 800 250 1200 650 1470
+preplace netloc POINT_TO_POINT<net_container>unsaved</net_container>(SLAVE)sdram_clk.in_clk,(MASTER)sys_sdram_pll.sdram_clk) 1 3 1 NJ
+levelinfo -pg 1 0 110 1720
+levelinfo -hier unsaved 120 150 330 560 960 1300 1510 1610

@@ -1,0 +1,45 @@
+#include "key_codes.h" 	// define los valores de KEY1, KEY2, KEY3
+#include "system.h"
+#include "sys/alt_irq.h"
+
+/*extern volatile int hour;
+extern volatile int min;
+extern volatile int sec;
+extern volatile int linea;
+extern volatile int timerTelepronter;
+extern volatile int pausaTelepronter;
+extern volatile int timerReloj;*/
+
+void interval_timer_isr( )
+{
+	/*volatile int * interval_timer_ptr = (int *) MYTIMER_0_BASE;
+	*(interval_timer_ptr) = 0x3;
+	*(interval_timer_ptr) = 0x1;
+
+	timerReloj++;
+	if (timerReloj == 5) {
+		timerReloj = 0;
+		sec++;
+		if (sec == 60) {
+			min++;
+			sec = 0;
+		}
+		if (min == 60) {
+			hour++;
+			min = 0;
+		}
+		if (hour == 24) {
+			hour = 0;
+		}
+	}
+	if(pausaTelepronter == 0){
+		timerTelepronter++;
+		if(timerTelepronter == 12){
+			timerTelepronter = 0;
+			linea = 1;
+		}
+	}*/
+
+	return;
+}
+

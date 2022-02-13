@@ -1,0 +1,119 @@
+/*
+ * task_config.h
+ *
+ *  Created on: 16 de nov. de 2020
+ *      Author: mpeir
+ */
+
+#ifndef BASESW_CONFIG_TASK_CONFIG_H_
+#define BASESW_CONFIG_TASK_CONFIG_H_
+
+/******************************************************************************/
+/*----------------------------------Includes----------------------------------*/
+/******************************************************************************/
+#include <stdio.h>
+#include <string.h>
+#include "includes.h"
+#include "app_config.h"
+
+/******************************************************************************/
+/*-----------------------------------Macros-----------------------------------*/
+/******************************************************************************/
+
+// Opcion de eliminar los printf por JTAG
+#define PRINT
+
+
+/* Definition of Task Stacks */
+#define   TASK_STACKSIZE       2048
+OS_STK    initialize_task_stk[TASK_STACKSIZE];
+OS_STK    print_status_task_stk[TASK_STACKSIZE];
+OS_STK    getsem_task1_stk[TASK_STACKSIZE];
+OS_STK    getsem_task2_stk[TASK_STACKSIZE];
+OS_STK    getsem_task3_stk[TASK_STACKSIZE];
+OS_STK    getsem_task4_stk[TASK_STACKSIZE];
+OS_STK    getmutex_task1_stk[TASK_STACKSIZE];
+OS_STK    getmutex_task2_stk[TASK_STACKSIZE];
+OS_STK    receive_task1_stk[TASK_STACKSIZE];
+OS_STK    receive_task2_stk[TASK_STACKSIZE];
+OS_STK    send_task_stk[TASK_STACKSIZE];
+OS_STK	  read_switches_stk[TASK_STACKSIZE];
+OS_STK	  read_pushbuttons_stk[TASK_STACKSIZE];
+OS_STK    querysem_stk[TASK_STACKSIZE];
+OS_STK    chequeomotor_stk[TASK_STACKSIZE];
+
+
+
+/* Definition of Task Priorities */
+#define INITIALIZE_TASK_PRIORITY   6
+#define PRINT_STATUS_TASK_PRIORITY 7
+#define GETSEM_TASK1_PRIORITY      8
+#define GETSEM_TASK2_PRIORITY      9
+#define RECEIVE_TASK1_PRIORITY    10
+#define RECEIVE_TASK2_PRIORITY    11
+#define SEND_TASK_PRIORITY        12
+#define READ_SWITCHES_PRIORITY	  5
+#define GETSEM_TASK3_PRIORITY      13
+#define GETSEM_TASK4_PRIORITY      14
+#define QUERYSEM_PRIORITY      15
+#define PIP_PRIORITY_INHERITANCE 4
+#define GETMUTEX_TASK1_PRIO      16
+#define GETMUTEX_TASK2_PRIO      17
+#define CHEQUEOMOTOR_PRIORITY      19
+
+/******************************************************************************/
+/*--------------------------------Enumerations--------------------------------*/
+/******************************************************************************/
+
+
+
+
+/******************************************************************************/
+/*-----------------------------Data Structures--------------------------------*/
+/******************************************************************************/
+
+/* Definition of Message Queue */
+#define   MSG_QUEUE_SIZE  30           /*Size of message queue used in example*/
+
+OS_EVENT  *msgqueue;                   /*Message queue pointer */
+void      *msgqueueTbl[MSG_QUEUE_SIZE];/*Storage for messages*/
+
+#define TEMP_ACEITE_MOTOR_OK 0x02
+#define PRESION_ACEITE_OK 0x04
+#define MOTOR_START 0x08
+
+
+/* Definition of Semaphore */
+OS_EVENT *shared_resource_sem;
+OS_EVENT *PunteroMutex;
+OS_SEM_DATA sem_data;
+OS_FLAG_GRP *EstadoMotor;
+
+
+/******************************************************************************/
+/*------------------------------Global variables------------------------------*/
+/******************************************************************************/
+
+
+
+
+/******************************************************************************/
+/*-------------------------Function Prototypes--------------------------------*/
+/******************************************************************************/
+
+/* Local Function Prototypes */
+int initOSDataStructs(void);
+void CreateTasks(void);
+int initCreateTasks(void);
+
+/*extern void Mensaje_TaskMtl();
+*/
+
+
+/******************************************************************************/
+/*----------------------------Task Prototypes---------------------------------*/
+/******************************************************************************/
+
+
+
+#endif /* APPSW_CONFIG_TASK_CONFIG_H_ */

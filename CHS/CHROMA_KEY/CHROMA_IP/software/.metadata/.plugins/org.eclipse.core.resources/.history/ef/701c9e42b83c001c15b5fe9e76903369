@@ -1,0 +1,157 @@
+#include "key_codes.h" 	// define los valores de KEY1, KEY2, KEY3
+#include "system.h"
+#include "sys/alt_irq.h"
+
+extern volatile int horas, minutos, segundos;
+void LCD_cursor( int, int );
+void LCD_text( char * );
+void LCD_cursor_off( void );
+
+void interval_timer_isr( )
+{
+	volatile int * interval_timer_ptr = (int *) TIMER_BASE;
+	volatile int * HEX3_HEX0_ptr	= (int *) HEX3_HEX0_BASE;	// Dirección HEX3_HEX0
+	volatile int * HEX7_HEX4_ptr	= (int *) HEX7_HEX4_BASE;	// Dirección HEX7_HEX4
+
+	*(interval_timer_ptr) = 0; 				// Borra la interrución
+
+	// Actualización de horas:minutos:segundos
+	if (segundos < 59)
+		segundos = segundos + 1;
+	else{
+		segundos = 0;
+		if (minutos < 59)
+			minutos = minutos + 1;
+		else{
+			minutos = 0;
+			if (horas < 23)
+				horas = horas + 1;
+			else
+				horas = 0;
+		}
+	}
+
+	int dSec, uSec, dMin, uMin, dHor, uHor;
+	dSec = dec2hex(segundos / 10);
+	uSec = dec2hex(segundos % 10);
+	dMin = dec2hex(minutos / 10);
+	uMin = dec2hex(minutos % 10);
+	dHor = dec2hex(horas / 10);
+	uHor = dec2hex(horas % 10);
+
+	int pattern1, pattern2;
+	pattern1 = (dMin << 24 | uMin << 16 | dSec << 8 | uSec) | 0x80000000;
+	pattern2 = (0x40 << 24 | 0x40 << 16 | dHor << 8 | uHor) | 0x80000000;
+
+	*(HEX3_HEX0_ptr) = pattern1;					// Visualiza en patrón en HEX3 ... HEX0
+	*(HEX7_HEX4_ptr) = pattern2;					// Visualiza en patrón en HEX7 ... HEX4
+
+	printf("Hora: %d:%d:%d\n", horas, minutos, segundos);
+	char mensaje[40] = "Hora: ";
+
+	char hStr[10];
+	if (horas < 10)
+		sprintf(hStr, "0%d", horas);
+	else
+		sprintf(hStr, "%d", horas);
+	char mStr[10];
+	if (minutos < 10)
+		sprintf(mStr, "0%d", minutos);
+	else
+		sprintf(mStr, "%d", minutos);
+	char sStr[10];
+	if (segundos < 10)
+		sprintf(sStr, "0%d", segundos);
+	else
+		sprintf(sStr, "%d", segundos);
+
+	strcat(mensaje, hStr);
+	strcat(mensaje, ":");
+	strcat(mensaje, mStr);
+	strcat(mensaje, ":");
+	strcat(mensaje, sStr);
+	strcat(mensaje, "\0");
+
+	// escribe el texto en el LCD
+	LCD_cursor (0,0);						// fija el cursor del LCD en la fila superior
+	LCD_text (mensaje);
+	LCD_cursor (0,1);						// fija el cursor del LCD en la fila inferior
+	LCD_text ("Guille y Pepe\0");
+	LCD_cursor_off ();						// apaga el cursor del LCD
+
+	return;
+}
+
+int dec2hex(int decimal){
+	int hex;	// gfedcba
+	switch(decimal){
+	case 0:
+		hex = 0x0000003f;
+		break;
+	case 1:
+			hex = 0x0000006;
+			break;
+	case 2:
+			hex = 0x0000005b;
+			break;
+	case 3:
+			hex = 0x0000004f;
+			break;
+	case 4:
+			hex = 0x00000066;
+			break;
+	case 5:
+			hex = 0x0000006d;
+			break;
+	case 6:
+			hex = 0x0000007d;
+			break;
+	case 7:
+			hex = 0x00000007;
+			break;
+	case 8:
+			hex = 0x0000007F;
+			break;
+	case 9:
+			hex = 0x0000006f;
+			break;
+	}
+	return hex;
+}
+
+/****************************************************************************************
+ * Subrutina para mover el cursor del LCD
+****************************************************************************************/
+void LCD_cursor(int x, int y)
+{
+  	volatile char * LCD_display_ptr = (char *) CHAR_LCD_BASE;	// 16x2 character display
+	char instruction;
+
+	instruction = x;
+	if (y != 0) instruction |= 0x40;			// activar el bit 6 para la fila inferior
+	instruction |= 0x80;						// hay que activar el bit 7 para indicar el lugar
+	*(LCD_display_ptr) = instruction;			// escribe registro de instrucciones del LCD
+}
+
+/****************************************************************************************
+ * Subrutina para enviar una cadena de texto al LCD
+****************************************************************************************/
+void LCD_text(char * text_ptr)
+{
+  	volatile char * LCD_display_ptr = (char *) CHAR_LCD_BASE;	// 16x2 character display
+
+	while ( *(text_ptr) )
+	{
+		*(LCD_display_ptr + 1) = *(text_ptr);	// escribe los datos en el LCD
+		++text_ptr;
+	}
+}
+
+/****************************************************************************************
+ * Subrutina para apagar el cursor del LCD
+****************************************************************************************/
+void LCD_cursor_off(void)
+{
+  	volatile char * LCD_display_ptr = (char *) CHAR_LCD_BASE;	// 16x2 character display
+	*(LCD_display_ptr) = 0x0C;										// desactiva el curso del LCD
+}

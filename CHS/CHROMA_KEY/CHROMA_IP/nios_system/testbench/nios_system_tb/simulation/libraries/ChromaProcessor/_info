@@ -1,0 +1,75 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ajmorflo/Documents/QDesign/CHS_CROMA_KEY/Verification_IP/nios_system/testbench/nios_system_tb/simulation
+valtera_up_avalon_chroma_key
+Z1 !s110 1644509680
+!i10b 1
+!s100 07T<eVU3OGc?a>TEjeoj]2
+IQ;5dnHlzeXl_0_RO2ANS=3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1644484466
+8../../nios_system_tb/simulation/submodules/avalon_chroma_processor.v
+F../../nios_system_tb/simulation/submodules/avalon_chroma_processor.v
+L0 34
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1644509680.000000
+!s107 ../../nios_system_tb/simulation/submodules/avalon_chroma_processor.v|
+!s90 -reportprogress|300|../../nios_system_tb/simulation/submodules/avalon_chroma_processor.v|-work|ChromaProcessor|
+!i113 1
+Z6 o-work ChromaProcessor
+Z7 tCvgOpt 0
+vavalon_slave_MM_interface
+R1
+!i10b 1
+!s100 7^8R8kDk>1adO]WL@HDDj1
+IhO`Dc:eE:8jFOSMVa?][X0
+R2
+R0
+R3
+8../../nios_system_tb/simulation/submodules/avalon_slave_MM_interface.v
+F../../nios_system_tb/simulation/submodules/avalon_slave_MM_interface.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 ../../nios_system_tb/simulation/submodules/avalon_slave_MM_interface.v|
+!s90 -reportprogress|300|../../nios_system_tb/simulation/submodules/avalon_slave_MM_interface.v|-work|ChromaProcessor|
+!i113 1
+R6
+R7
+navalon_slave_@m@m_interface
+vchromaProcessor
+R1
+!i10b 1
+!s100 1U>Q8ffJRRUXkHDWFlje40
+ICad4<I>aPN_6FO<n=<JdR1
+R2
+R0
+R3
+8../../nios_system_tb/simulation/submodules/chroma_processor.v
+F../../nios_system_tb/simulation/submodules/chroma_processor.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 ../../nios_system_tb/simulation/submodules/chroma_processor.v|
+!s90 -reportprogress|300|../../nios_system_tb/simulation/submodules/chroma_processor.v|-work|ChromaProcessor|
+!i113 1
+R6
+R7
+nchroma@processor

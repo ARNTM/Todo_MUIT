@@ -1,0 +1,20 @@
+#include "key_codes.h" 	// define los valores de KEY1, KEY2, KEY3
+#include "system.h"
+#include "sys/alt_irq.h"
+
+extern volatile int cent;
+
+void switches_ISR(){
+
+	volatile int * SW_switch_ptr = (int *) SWITCHES_BASE;
+	volatile int * red_LED_ptr = (int *) RED_LEDS_BASE;
+	int SW_value = *(SW_switch_ptr);
+	*(red_LED_ptr) = SW_value;
+
+	*(SW_switch_ptr + 3) = 0;	// Borrar la interrupcion
+	if (SW_value == 0){
+		cent = 0;
+	}else{
+		cent = 1;
+	}
+}

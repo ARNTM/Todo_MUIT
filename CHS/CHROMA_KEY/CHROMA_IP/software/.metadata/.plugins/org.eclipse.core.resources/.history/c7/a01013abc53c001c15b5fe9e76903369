@@ -1,0 +1,313 @@
+// RELOJ + TELEPRONTER
+
+#include "key_codes.h"
+#include "system.h"
+#include "sys/alt_irq.h"
+#include "altera_up_avalon_audio.h"
+#include "altera_up_avalon_character_lcd.h"
+#include "altera_up_avalon_video_character_buffer_with_dma.h"
+#include "altera_up_avalon_video_pixel_buffer_dma.h"
+#include "altera_up_avalon_parallel_port.h"
+#include <stdio.h>
+#include <string.h>
+
+/* funciones */
+void LCD_cursor( int, int );
+void LCD_text( char * );
+void LCD_cursor_off( void );
+void mostrar_hora( );
+void MTL_text (int, int, char *);
+void MTL_box (int, int, int, int, short);
+void MTL_clean( );
+void interval_timer_isr( );
+void pushbutton_ISR( );
+void switches_ISR( );
+void deslizador( );
+int dec2hex(int);
+
+volatile int key_pressed = KEY2;
+volatile int pattern = 0x0000000F;	// patrón para display HEX
+volatile int horas, minutos, segundos, cont_reloj, cont_text, leer, cent;
+
+int main(void)
+{
+	/* Declarar los punteros a registros de I/O como volatile (volatile significa que
+ 	* que tanto las instrucciones de lectura como las de escritura se pueden utilizar
+ 	* para acceder a estas posiciones en lugar de realizar accesos a memoria
+	*/
+	volatile int * interval_timer_ptr = (int *) TIMER_BASE;	// Dirección Temporizador
+	volatile int * red_LED_ptr = (int *) RED_LEDS_BASE; 	// dirección LED rojos
+	volatile int * KEY_ptr = (int *) PUSHBUTTONS_BASE; 		// dirección pulsadores KEY
+	volatile int * SW_switch_ptr = (int *) SWITCHES_BASE; 	// dirección SW
+
+	// int HEX_bits = 0x0000000F; 								// patrón para los display HEX
+	// int SW_value, KEY_value, delay_count;
+
+	// INTEERRUPCIONES DEL RELOJ
+	int counter = 0x989680;				// 1/(50 MHz) x (0x989680) = 200 msec = 0'2sec
+	*(interval_timer_ptr + 0x2) = (counter & 0xFFFF);
+	*(interval_timer_ptr + 0x3) = (counter >> 16) & 0xFFFF;
+
+	/* comienza el timer y habilita las interrupciones */
+	*(interval_timer_ptr + 1) = 0x7;	// STOP = 0, START = 1, CONT = 1, ITO = 1
+	alt_irq_register(TIMER_IRQ, NULL, interval_timer_isr);
+
+	// INTERRUPCIONES DE LOS BOTONES
+	*(KEY_ptr + 2) = 0xE; 		// Mascara de los pulsadores (bit 0 es reset)
+	*(KEY_ptr + 3) = 0;
+	alt_irq_register(PUSHBUTTONS_IRQ, NULL, pushbutton_ISR);
+
+	// INTERRUPCION DE LOS SWITCHES
+	alt_irq_register(SWITCHES_IRQ, NULL, switches_ISR);
+
+	// Variables
+	FILE *fp;
+	char buffer[50];
+	int rFile = 0;
+	int fCounter = 0;
+	char ch;
+	char news[22];
+
+	cont_reloj = 0;
+	cont_text = 0;
+	leer = 0;
+
+	while(1){
+		// Actualizacion de horas:minutos:segundos
+		mostrar_hora();
+		if (cent == 1){
+			cent = 0;
+			if (rFile == 0){
+				MTL_clean();
+				sprintf(news, "/mnt/rozipfs/new0%d.txt", fCounter);
+				fp = fopen(news, "r");
+
+				fCounter++;
+				if(fCounter == 3) fCounter = 0;
+				rFile = 1;
+			}
+
+			if(leer == 1){
+				leer = 0;
+				deslizador();
+				if( fp ){
+					for (int i = 0; i < 50; i++) buffer[i] = ' ';
+					for (int i = 0; i < 50; i++){
+						ch = getc(fp);
+						if (ch != EOF){
+							// buffer[i] = ch;
+
+							if (ch != '\n'){
+								buffer[i] = ch;
+							}else{
+								MTL_text(0, 29, buffer);
+								break;
+							}
+
+						}else{
+							MTL_text(0, 29, buffer);
+							rFile = 0;
+							fclose(fp);
+							break;
+						}
+					}
+					MTL_text(0, 29, buffer);
+				}
+			}
+			for (int i = 0; i < 10000; i++);
+		}
+	}
+}
+
+void mostrar_hora ( ){
+	volatile int * HEX3_HEX0_ptr	= (int *) HEX3_HEX0_BASE;	// Dirección HEX3_HEX0
+	volatile int * HEX7_HEX4_ptr	= (int *) HEX7_HEX4_BASE;	// Dirección HEX7_HEX4
+
+	int dSec, uSec, dMin, uMin, dHor, uHor;
+	dSec = dec2hex(segundos / 10);
+	uSec = dec2hex(segundos % 10);
+	dMin = dec2hex(minutos / 10);
+	uMin = dec2hex(minutos % 10);
+	dHor = dec2hex(horas / 10);
+	uHor = dec2hex(horas % 10);
+
+	int pattern1, pattern2;
+	pattern1 = (0x40 << 24 | dSec << 16 | uSec << 8 | 0x40) | 0x80000000;
+	pattern2 = (dHor << 24 | uHor << 16 | dMin << 8 | uMin) | 0x80000000;
+
+	*(HEX3_HEX0_ptr) = pattern1;					// Visualiza en patrón en HEX3 ... HEX0
+	*(HEX7_HEX4_ptr) = pattern2;					// Visualiza en patrón en HEX7 ... HEX4
+
+	// printf("Hora: %d:%d:%d\n", horas, minutos, segundos);
+	char mensaje[40] = "Hora: ";
+
+	char hStr[10];
+	if (horas < 10)
+		sprintf(hStr, "0%d", horas);
+	else
+		sprintf(hStr, "%d", horas);
+	char mStr[10];
+	if (minutos < 10)
+		sprintf(mStr, "0%d", minutos);
+	else
+		sprintf(mStr, "%d", minutos);
+	char sStr[10];
+	if (segundos < 10)
+		sprintf(sStr, "0%d", segundos);
+	else
+		sprintf(sStr, "%d", segundos);
+
+	strcat(mensaje, hStr);
+	strcat(mensaje, ":");
+	strcat(mensaje, mStr);
+	strcat(mensaje, ":");
+	strcat(mensaje, sStr);
+	strcat(mensaje, "\0");
+
+	// escribe el texto en el LCD
+	LCD_cursor (0,0);						// fija el cursor del LCD en la fila superior
+	LCD_text (mensaje);
+	LCD_cursor (0,1);						// fija el cursor del LCD en la fila inferior
+	LCD_text ("Guille y Pepe\0");
+	LCD_cursor_off ();
+}
+
+int dec2hex(int decimal){
+	int hex;	// gfedcba
+	switch(decimal){
+	case 0:
+		hex = 0x0000003f;
+		break;
+	case 1:
+			hex = 0x0000006;
+			break;
+	case 2:
+			hex = 0x0000005b;
+			break;
+	case 3:
+			hex = 0x0000004f;
+			break;
+	case 4:
+			hex = 0x00000066;
+			break;
+	case 5:
+			hex = 0x0000006d;
+			break;
+	case 6:
+			hex = 0x0000007d;
+			break;
+	case 7:
+			hex = 0x00000007;
+			break;
+	case 8:
+			hex = 0x0000007F;
+			break;
+	case 9:
+			hex = 0x0000006f;
+			break;
+	}
+	return hex;
+}
+
+/****************************************************************************************
+ * Subrutina para mover el cursor del LCD
+****************************************************************************************/
+void LCD_cursor(int x, int y)
+{
+  	volatile char * LCD_display_ptr = (char *) CHAR_LCD_BASE;	// 16x2 character display
+	char instruction;
+
+	instruction = x;
+	if (y != 0) instruction |= 0x40;			// activar el bit 6 para la fila inferior
+	instruction |= 0x80;						// hay que activar el bit 7 para indicar el lugar
+	*(LCD_display_ptr) = instruction;			// escribe registro de instrucciones del LCD
+}
+
+/****************************************************************************************
+ * Subrutina para enviar una cadena de texto al LCD
+****************************************************************************************/
+void LCD_text(char * text_ptr)
+{
+  	volatile char * LCD_display_ptr = (char *) CHAR_LCD_BASE;	// 16x2 character display
+
+	while ( *(text_ptr) )
+	{
+		*(LCD_display_ptr + 1) = *(text_ptr);	// escribe los datos en el LCD
+		++text_ptr;
+	}
+}
+
+/****************************************************************************************
+ * Subrutina para apagar el cursor del LCD
+****************************************************************************************/
+void LCD_cursor_off(void)
+{
+  	volatile char * LCD_display_ptr = (char *) CHAR_LCD_BASE;	// 16x2 character display
+	*(LCD_display_ptr) = 0x0C;										// desactiva el curso del LCD
+}
+
+/****************************************************************************************
+ * Subrutina para enviar una cadena de texto a la pantalla MTL
+****************************************************************************************/
+void MTL_text(int x, int y, char * text_ptr)
+{
+	int offset;
+  	volatile char * character_buffer = (char *)  MTL_CHAR_BUFFER_AVALON_CHAR_BUFFER_SLAVE_BASE;	// MTL character buffer
+
+  	/* asume que la cadena de texto comienza en la primera fila */
+	offset = (y << 6) + x;
+	while ( *(text_ptr) )
+	{
+		*(character_buffer + offset) = *(text_ptr);	// escribe en el buffer
+		++text_ptr;
+		++offset;
+	}
+}
+
+/****************************************************************************************
+ * Dibujar un rectangulo en la pantalla MTL
+****************************************************************************************/
+void MTL_box(int x1, int y1, int x2, int y2, short pixel_color)
+{
+	int offset, row, col;
+	int SRAM_BASE_SIN_CACHE = (SRAM_BASE + 0x080000000);  //Activando el bit más significativo se elude la cache de datos
+  	volatile short * pixel_buffer = (short *) SRAM_BASE_SIN_CACHE;	// MTL pixel buffer
+
+  	/* se asume que las coordenadas del rectangulo son correctas */
+	for (row = y1; row <= y2; row++)
+	{
+		col = x1;
+		while (col <= x2)
+		{
+			offset = (row << 15) + col;
+			*(pixel_buffer + offset) = pixel_color;	//procesa mitad direcciones
+			++col;
+		}
+	}
+}
+
+/****************************************************************************************
+ * Dibujar un rectangulo en la pantalla MTL
+****************************************************************************************/
+void MTL_clean( ){
+	alt_up_char_buffer_dev * char_buffer_dev = alt_up_char_buffer_open_dev("/dev/mtl_char_buffer");
+	alt_up_pixel_buffer_dma_dev * pixel_buffer_dev_MTL = alt_up_pixel_buffer_dma_open_dev("/dev/mtl_pixel_buffer_dma");
+	alt_up_char_buffer_clear(char_buffer_dev);
+	alt_up_pixel_buffer_dma_clear_screen(pixel_buffer_dev_MTL,0);
+}
+
+/****************************************************************************************
+ * Desplazamiento de lineas en la pantalla MTL
+****************************************************************************************/
+void deslizador( ){
+	int off_prev, off_next;
+	volatile char * buff_char = (char *) MTL_CHAR_BUFFER_AVALON_CHAR_BUFFER_SLAVE_BASE;
+
+	for (int i = 1; i < 30; i++){
+		for (int j = 0; j < 50; j++){
+			off_prev = (i<<6) + j;
+			off_next = ((i-1)<<6) + j;
+			*(buff_char + off_next) = *(buff_char + off_prev);
+		}
+	}
+}

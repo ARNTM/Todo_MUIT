@@ -1,0 +1,9 @@
+08:54:16 **** Incremental Build of configuration Nios II for project chromaKey ****
+make all 
+Info: Building ../chromaKey_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../chromaKey_bsp/
+[BSP build complete]
+[chromaKey build complete]
+
+08:54:17 Build Finished (took 1s.116ms)
+
