@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<XML_COMPONENT_DATA>
+
+<COPYRIGHT>The data in this file is copyright 2010 of AWR Corporation</COPYRIGHT>
+<SUMMARY>This file contains data on the AWR Demo RF Board Process</SUMMARY>
+
+   <FILE Name="Capacitors" Icon = "Capacitor">..\XML\AWR_RFBoard_Cap.xml</FILE>
+   <FILE Name="Packages" Icon = "Miscellaneous">..\XML\AWR_RFBoard_Packages.xml</FILE>    
+   <FILE Name="Inductors" Icon="Inductor">..\XML\AWR_RFBoard_Ind.xml</FILE>
+   <FILE Name="Resistors" Icon="Resistor">..\XML\AWR_RFBoard_Res.xml</FILE>
+   <FILE Name="Interconnects" Icon = "Interconnects">..\XML\AWR_RFBoard_Int.xml</FILE>
+</XML_COMPONENT_DATA>

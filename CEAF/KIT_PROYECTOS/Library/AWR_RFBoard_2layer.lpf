@@ -1,0 +1,826 @@
+!--- Process Definition File Exported from NI AWR Design Environment (8167)
+!--- Name: AWR_RFBoard_2layer.lpf
+!--- Project: J:\Untitled Project.emp
+!--- Tue Jul 26 18:11:48 2016
+
+$VERSION_BEGIN 1200 $VERSION_END
+
+$PROCESS_SETUP_BEGIN
+
+	$DEFAULT_UNITS_BEGIN
+		LEN  m
+		FREQ G
+		CAP  p
+		IND  n
+		RES  none
+		COND none
+		TEMP DegC
+		ANG  Deg
+		TIME n
+		VOLT none
+		CUR  m
+		PWR  m
+	$DEFAULT_UNITS_END
+
+	$DBASE_UNIT_BEGIN
+		DRAW_RESOLUTION	1e-006	m
+		GRID_SPACING	0.01	m
+	$DBASE_UNIT_END
+
+	$LINE_TYPE_BEGIN	"Layer01_Cu_01"
+		! -> Layer 		offset 		minWidth 		flags
+		"Cu_01"		0		2.54e-005		0
+		"Cu_01-"		0.000381		2.54e-005		0
+	$LINE_TYPE_END
+
+	$LINE_TYPE_BEGIN	"Layer01_Cu_01_SolderMask"
+		! -> Layer 		offset 		minWidth 		flags
+		"Cu_01"		0		2.54e-005		0
+		"SolderMask_01"		7.6e-005		2.54e-005		0
+		"Cu_01-"		0.000381		2.54e-005		0
+	$LINE_TYPE_END
+
+	$LINE_TYPE_BEGIN	"Layer02_Cu_02"
+		! -> Layer 		offset 		minWidth 		flags
+		"Cu_02"		0		2.54e-005		0
+		"Cu_02-"		0.000381		2.54e-005		0
+	$LINE_TYPE_END
+
+	$LINE_TYPE_BEGIN	"Layer02_Cu_02_SolderMask"
+		! -> Layer 		offset 		minWidth 		flags
+		"Cu_02"		0		2.54e-005		0
+		"SolderMask_02"		7.6e-005		2.54e-005		0
+		"Cu_02-"		0.000381		2.54e-005		0
+	$LINE_TYPE_END
+
+	$STRUCT_TYPE_BEGIN	"VIA0"
+		! -> Layer 		offset 		minWidth 		flags
+		"Cu_01"		0.000127		0		5
+		"Cu_01-"		0.000254		0		9
+		"Via01_02"		0		0		3
+		"Cu_02"		0.000127		0		5
+		"Cu_02-"		0.000254		0		9
+	$STRUCT_TYPE_END
+
+	$STRUCT_TYPE_BEGIN	"VIA1"
+		! -> Layer 		offset 		minWidth 		flags
+		"Cu_01"		0.000127		0		5
+		"Cu_01-"		0.000254		0		9
+		"Via01_02"		0		0		3
+		"Cu_02"		0.000127		0		5
+	$STRUCT_TYPE_END
+
+	$STRUCT_TYPE_BEGIN	"VIA2"
+		! -> Layer 		offset 		minWidth 		flags
+		"Cu_01"		0.000127		0		5
+		"Via01_02"		0		0		3
+		"Cu_02"		0.000127		0		5
+	$STRUCT_TYPE_END
+
+	$STRUCT_TYPE_BEGIN	"AWR_PCB_INET_VIA_CELL_INFO"
+		! -> Layer 		offset 		minWidth 		flags
+		"RFBoard_2layer_VIA.gds"		0		0		0
+		"Thru_0p381mm_15mil"		0		0		0
+		"Thru_0p254mm_10mil"		0		0		0
+		"Thru_1p5875mm_62p5mil"		0		0		0
+		"Thru_6p35mm_250mil"		0		0		0
+	$STRUCT_TYPE_END
+
+	$STRUCT_TYPE_BEGIN	"SMTpad"
+		! -> Layer 		offset 		minWidth 		flags
+		"Cu_01"		0		0		0
+		"SolderMask_01"		7.6e-005		0		0
+		"SolderStencil_01"		0		0		0
+		"Cu_01-"		0.0004		0		1
+		"Ink_01"		0		0.001		2
+		"SMT_C_Top"		-5e-005		0		10
+		"SMT_L_Top"		-5e-005		1		11
+		"SMT_R_Top"		-5e-005		0		12
+		"SMT_Lead_Top"		-0.0001		0		13
+		"SMT_Package_Top"		-5e-005		0		14
+	$STRUCT_TYPE_END
+
+	$STRUCT_TYPE_BEGIN	"SMTpadBottom"
+		! -> Layer 		offset 		minWidth 		flags
+		"Cu_02"		0		2		0
+		"SolderMask_02"		7.6e-005		0		0
+		"SolderStencil_02"		0		0		0
+		"Cu_02-"		0.0004		0		1
+		"Ink_02"		1		0.001		2
+		"SMT_C_Bottom"		-5e-005		0		10
+		"SMT_L_Bottom"		-5e-005		1		11
+		"SMT_R_Bottom"		-5e-005		0		12
+		"SMT_Lead_Bottom"		-0.0001		0		13
+		"SMT_Package_Bottom"		-5e-005		0		14
+	$STRUCT_TYPE_END
+
+	!--- Register drawing utility function used for drawing airbridges ------
+	$BRIDGE_DRAW_BEGIN NONE $BRIDGE_DRAW_END
+
+	!--- Register cell to be used by default for route vias  ------
+	$ROUTE_VIA_CELL_BEGIN AWR_PCB_INET_VIA $ROUTE_VIA_CELL_END
+
+	!--- DRC Rule deck (path relative to lpf file) ------
+	$DRC_RULES_FILE_BEGIN "AWR_RFBoard_2layer_DRCrules.txt" $DRC_RULES_FILE_END
+
+	!--- DRC engine: AWR, CALIBRE, ASSURA, CIRANOVA, or POLYTEDA ------
+	$DRC_ENGINE_BEGIN "AWR" $DRC_ENGINE_END
+
+	!--- Used by Connectivity tracer ------
+	$CONNECT_RULES_BEGIN 
+		External_Connect "BondWires" External
+		Connect "Cu_01" To "BondWires"
+		Connect "Cu_01" To "SMT_L_Top"
+		Connect "Cu_01" To "SMT_R_Top"
+		Connect "Cu_01" To "Cu_02" By "Via01_02"
+		Connect "Cu_02" To "SMT_L_Bottom"
+		Connect "Cu_02" To "SMT_R_Bottom"
+	$CONNECT_RULES_END 
+
+	!--- Used for automatic crossover insertion ----
+	$CROSSOVER_RULES_BEGIN
+		"Layer01_Cu_01:Layer01_Cu_01"	"Layer01_Cu_01"	"Layer02_Cu_02"		0.000889	0.000889	1
+		"Layer01_Cu_01_SolderMask:Layer01_Cu_01_SolderMask"	"Layer01_Cu_01_SolderMask"	"Layer02_Cu_02_SolderMask"		0.000889	0.000889	1
+		"Layer01_Cu_01:Layer01_Cu_01_SolderMask"	"Layer01_Cu_01"	"Layer02_Cu_02_SolderMask"		0.000889	0.000889	1
+		"Layer02_Cu_02:Layer02_Cu_02"	"Layer02_Cu_02"	"Layer01_Cu_01"		0.000889	0.000889	1
+		"Layer02_Cu_02_SolderMask:Layer02_Cu_02_SolderMask"	"Layer02_Cu_02_SolderMask"	"Layer01_Cu_01_SolderMask"		0.000889	0.000889	1
+		"Layer02_Cu_02:Layer02_Cu_02_SolderMask"	"Layer02_Cu_02"	"Layer01_Cu_01_SolderMask"		0.000889	0.000889	1
+	$CROSSOVER_RULES_END
+
+	!--- Default font used for layout ------
+	$DEFAULT_FONT_BEGIN "Calibri" 	1270000	1	0 	$DEFAULT_FONT_END
+
+	$PROPERTY_VALUES_BEGIN
+		"CAP_VIA0"	2e-015
+		"CAP_VIA1"	2e-015
+		"CAP_VIA3"	2e-015
+		"FIXED_CELL_Thru_0p254mm_10mil"	0
+		"FIXED_CELL_Thru_0p381mm_15mil"	0
+		"FIXED_CELL_Thru_1p5875mm_62p5mil"	0
+		"FIXED_CELL_Thru_6p35mm_250mil"	0
+		"IND_VIA0"	4e-011
+		"IND_VIA1"	4e-011
+		"IND_VIA2"	4e-011
+		"RES_VIA0"	0.2
+		"RES_VIA1"	0.2
+		"RES_VIA2"	0.2
+	$PROPERTY_VALUES_END
+
+	$DEFAULT_VALUES_BEGIN
+		W		0.254		m
+		L		10		m
+		H		0.508		m
+		T		0.018001		m
+		Er		3.55
+		Rho		0.714
+		Tand		0.0027
+		C		1		p
+		Li		1		n
+		Rad		1.016		m
+		M		0.6
+		Cs		0.0254		m
+		Extn		1.016		m
+	$DEFAULT_VALUES_END
+
+	$VIA_TYPES_BEGIN
+		"Thru_0p381mm_15mil" LT[0,2] LT[0,3] LT[1,2] LT[1,3]
+		"Thru_0p254mm_10mil" LT[0,2] LT[0,3] LT[1,2] LT[1,3]
+		"Thru_1p5875mm_62p5mil" LT[0,2] LT[0,3] LT[1,2] LT[1,3]
+		"Thru_6p35mm_250mil" LT[0,2] LT[0,3] LT[1,2] LT[1,3]
+	$VIA_TYPES_END
+
+
+$PROCESS_SETUP_END
+
+
+!-------------- Drawing Layer Setup Defined Below ------------------------------
+$LAYER_SETUP_BEGIN
+
+$DRAW_LAYERS_BEGIN
+
+!--Layer Entry Descriptions---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+! Layer_Name              Line_Color    Fill_Color    Line_Style    Hatch_Style    Visible    Hatch_Visible    Frozen    3D_Thickness    3D_Z_Pos        Texture    Trans_Fill    Translucent    Texture_Scale    File_Layer    Options    Cloak    Hatch_Name    
+!-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+"Error"                   255           255           0             6              1          1                0         0               0               ""         0             0              0                "Obsolete"    0          0                      
+"EMSymbols"               8421376       16777215      0             1              1          0                0         0               0               ""         0             0              0                "Obsolete"    0          1                      
+"RefDesignator_Top"       8421376       8421376       0             1              1          1                0         0               0               ""         0             0.5            0                "Obsolete"    0          0                      
+"SMT_Package_Top"         12351568      12351568      0             1              1          0                0         1.27e+006       5.85336e+006    ""         0             0.5            0                "Obsolete"    0          0                      
+"SMT_Lead_Top"            8421504       8421504       0             1              1          0                0         50800           5.803e+006      ""         0             0.5            0                "Obsolete"    0          0                      
+"SMT_C_Top"               16711680      16711680      0             1              1          0                0         254000          5.853e+006      ""         0             0              0                "Obsolete"    0          0                      
+"SMT_L_Top"               65280         1113872       0             1              1          0                0         254000          5.85336e+006    ""         0             0              0                "Obsolete"    0          0                      
+"SMT_R_Top"               255           255           0             1              1          0                0         254000          5.853e+006      ""         0             0              0                "Obsolete"    0          0                      
+"Ink_01"                  10789024      10789024      0             2              1          1                0         25400           5.803e+006      ""         0             0.5            0                "Obsolete"    0          0                      
+"SolderStencil_01"        16763110      255           0             20             1          1                0         25400           5.803e+006      ""         0             0.5            0                "Obsolete"    0          0                      
+"SolderMask_01"           12351568      12351568      0             21             1          1                0         -50800          5.81788e+006    ""         1             0.25           0                "Obsolete"    0          0                      
+"Plate_01"                12639424      12639424      0             1              1          1                0         5000            5.803e+006      ""         0             0.5            0                "Obsolete"    0          0                      
+"Cu_01"                   32896         32896         0             6              1          1                0         35560           5.767e+006      ""         0             1              0                "Obsolete"    0          0                      
+"Cu_01-"                  8421504       16777215      0             6              1          1                0         35560           5.76708e+006    ""         1             0.2            0                "Obsolete"    0          0                      
+"Cu_01+"                  32896         32896         0             6              1          1                0         35560           5.76708e+006    ""         1             0.4            0                "Obsolete"    0          0                      
+"Via01_02"                4210943       255           0             3              1          0                0         -716280         5.76708e+006    ""         1             0.3            0                "Obsolete"    0          0                      
+"Cu_02"                   8388736       8388736       0             4              1          1                0         -35560          5.051e+006      ""         0             0              0                "Obsolete"    0          0                      
+"Cu_02-"                  8421504       16777215      0             16             1          1                0         -35560          5.0508e+006     ""         1             0.2            0                "Obsolete"    0          0                      
+"Cu_02+"                  8388736       8388736       0             4              1          1                0         -35560          5.0508e+006     ""         1             0.4            0                "Obsolete"    0          0                      
+"Plate_02"                16776960      16776960      0             1              1          1                0         -5000           5.015e+006      ""         0             0.5            0                "Obsolete"    0          0                      
+"SolderMask_02"           16711680      12351568      0             15             1          1                0         -50800          5.051e+006      ""         1             0.25           0                "Obsolete"    0          0                      
+"SolderStencil_02"        16763110      16763110      0             14             1          1                0         -25400          5.015e+006      ""         0             0.5            0                "Obsolete"    0          0                      
+"Ink_02"                  8421504       8421504       0             18             1          1                0         -25400          5.015e+006      ""         0             0.5            0                "Obsolete"    0          0                      
+"SMT_Lead_Bottom"         12632256      14671839      0             1              1          0                0         -50800          5.015e+006      ""         0             0.5            0                "Obsolete"    0          0                      
+"SMT_R_Bottom"            255           255           0             1              1          0                0         -254000         4.9642e+006     ""         0             0              0                "Obsolete"    0          0                      
+"SMT_L_Bottom"            65280         65280         0             1              1          0                0         -254000         4.964e+006      ""         0             0              0                "Obsolete"    0          0                      
+"SMT_C_Bottom"            16711680      16711680      0             1              1          0                0         -254000         4.9642e+006     ""         0             0              0                "Obsolete"    0          0                      
+"SMT_Package_Bottom"      8421504       8421504       0             1              1          0                0         -1.905e+006     4.9642e+006     ""         0             0.5            0                "Obsolete"    0          0                      
+"RefDesignator_Bottom"    8388736       8388736       0             1              1          1                0         0               0               ""         0             0.5            0                "Obsolete"    0          0                      
+"BoardRoute"              65280         65280         0             6              1          0                0         -716280         5.76708e+006    ""         1             0.25           0                "Obsolete"    0          0                      
+"MetalCarrier"            8388736       8388736       0             6              1          0                0         -1.27e+006      5.767e+006      ""         0             0.5            0                "Obsolete"    0          0                      
+"BondWires"               128           128           0             1              1          0                0         0               0               ""         0             0              0                "Obsolete"    0          0                      
+"Default"                 16777215      16777215      0             0              1          0                0         0               0               ""         0             0              0                "Obsolete"    0          1                      
+"SubcircuitAnnotation"    4259648       4259648       2             8              1          0                0         0               0               ""         0             0              0                "Obsolete"    0          1                      
+"Annotation"              16776960      16776960      2             8              1          0                0         0               0               ""         0             0              0                "Obsolete"    0          1                      
+"DrillHoles"              14671839      14671839      0             0              1          0                0         530000          0               ""         0             0              0                "Obsolete"    0          1                      
+"DimensionLines"          14671839      14671839      0             0              1          0                0         0               0               ""         0             0              0                "Obsolete"    0          1                      
+"RatsNest"                4210943       4210943       0             0              1          0                0         0               0               ""         0             0              0                "Obsolete"    0          1                      
+"Highlight"               8421376       255           0             5              1          0                0         0               0               ""         0             0              0                "Obsolete"    0          1                      
+"ErrorHighlight"          1113872       1113872       0             5              1          0                0         0               0               ""         0             0              0                "Obsolete"    0          1                      
+"Selection"               65535         65535         0             5              1          0                0         0               0               ""         0             0              0                "Obsolete"    0          1                      
+"SubSelection"            4210943       4210943       0             1              1          0                0         0               0               ""         0             0              0                "Obsolete"    0          1                      
+"DynamicHighlight"        65535         65535         2             0              1          0                0         0               0               ""         0             0              0                "Obsolete"    0          1                      
+"EMBoundary"              6301766       11565206      0             1              1          0                0         0               0               ""         0             0              0                "Obsolete"    0          0                      
+$DRAW_LAYERS_END
+
+$LAYERS_CONFIG_BEGIN
+
+$CONFIG_NAME	"Default"
+! Layer_Name              Line_Color    Fill_Color    Line_Style    Hatch_Style    Visible    Hatch_Visible    Frozen    Trans_Fill    Translucent    Cloak    3D_Thickness    3D_Z_Pos        
+"Annotation"              16776960      16776960      2             8              1          0                0         0             0              1        0               0               
+"BoardRoute"              65280         65280         0             6              1          0                0         1             0.25           0        -716280         5.76708e+006    
+"BondWires"               128           128           0             1              1          0                0         0             0              0        0               0               
+"Cu_01"                   32896         32896         0             6              1          1                0         0             1              0        35560           5.767e+006      
+"Cu_01+"                  32896         32896         0             6              1          1                0         1             0.4            0        35560           5.76708e+006    
+"Cu_01-"                  8421504       16777215      0             6              1          1                0         1             0.2            0        35560           5.76708e+006    
+"Cu_02"                   8388736       8388736       0             4              1          1                0         0             0              0        -35560          5.051e+006      
+"Cu_02+"                  8388736       8388736       0             4              1          1                0         1             0.4            0        -35560          5.0508e+006     
+"Cu_02-"                  8421504       16777215      0             16             1          1                0         1             0.2            0        -35560          5.0508e+006     
+"Default"                 16777215      16777215      0             0              1          0                0         0             0              1        0               0               
+"DimensionLines"          14671839      14671839      0             0              1          0                0         0             0              1        0               0               
+"DrillHoles"              14671839      14671839      0             0              1          0                0         0             0              1        530000          0               
+"DynamicHighlight"        65535         65535         2             0              1          0                0         0             0              1        0               0               
+"EMBoundary"              6301766       11565206      0             1              1          0                0         0             0              0        0               0               
+"EMSymbols"               8421376       16777215      0             1              1          0                0         0             0              1        0               0               
+"Error"                   255           255           0             6              1          1                0         0             0              0        0               0               
+"ErrorHighlight"          1113872       1113872       0             5              1          0                0         0             0              1        0               0               
+"Highlight"               8421376       255           0             5              1          0                0         0             0              1        0               0               
+"Ink_01"                  10789024      10789024      0             2              1          1                0         0             0.5            0        25400           5.803e+006      
+"Ink_02"                  8421504       8421504       0             18             1          1                0         0             0.5            0        -25400          5.015e+006      
+"MetalCarrier"            8388736       8388736       0             6              1          0                0         0             0.5            0        -1.27e+006      5.767e+006      
+"Plate_01"                12639424      12639424      0             1              1          1                0         0             0.5            0        5000            5.803e+006      
+"Plate_02"                16776960      16776960      0             1              1          1                0         0             0.5            0        -5000           5.015e+006      
+"RatsNest"                4210943       4210943       0             0              1          0                0         0             0              1        0               0               
+"RefDesignator_Bottom"    8388736       8388736       0             1              1          1                0         0             0.5            0        0               0               
+"RefDesignator_Top"       8421376       8421376       0             1              1          1                0         0             0.5            0        0               0               
+"SMT_C_Bottom"            16711680      16711680      0             1              1          0                0         0             0              0        -254000         4.9642e+006     
+"SMT_C_Top"               16711680      16711680      0             1              1          0                0         0             0              0        254000          5.853e+006      
+"SMT_L_Bottom"            65280         65280         0             1              1          0                0         0             0              0        -254000         4.964e+006      
+"SMT_L_Top"               65280         1113872       0             1              1          0                0         0             0              0        254000          5.85336e+006    
+"SMT_Lead_Bottom"         12632256      14671839      0             1              1          0                0         0             0.5            0        -50800          5.015e+006      
+"SMT_Lead_Top"            8421504       8421504       0             1              1          0                0         0             0.5            0        50800           5.803e+006      
+"SMT_Package_Bottom"      8421504       8421504       0             1              1          0                0         0             0.5            0        -1.905e+006     4.9642e+006     
+"SMT_Package_Top"         12351568      12351568      0             1              1          0                0         0             0.5            0        1.27e+006       5.85336e+006    
+"SMT_R_Bottom"            255           255           0             1              1          0                0         0             0              0        -254000         4.9642e+006     
+"SMT_R_Top"               255           255           0             1              1          0                0         0             0              0        254000          5.853e+006      
+"Selection"               65535         65535         0             5              1          0                0         0             0              1        0               0               
+"SolderMask_01"           12351568      12351568      0             21             1          1                0         1             0.25           0        -50800          5.81788e+006    
+"SolderMask_02"           16711680      12351568      0             15             1          1                0         1             0.25           0        -50800          5.051e+006      
+"SolderStencil_01"        16763110      255           0             20             1          1                0         0             0.5            0        25400           5.803e+006      
+"SolderStencil_02"        16763110      16763110      0             14             1          1                0         0             0.5            0        -25400          5.015e+006      
+"SubSelection"            4210943       4210943       0             1              1          0                0         0             0              1        0               0               
+"SubcircuitAnnotation"    4259648       4259648       2             8              1          0                0         0             0              1        0               0               
+"Via01_02"                4210943       255           0             3              1          0                0         1             0.3            0        -716280         5.76708e+006    
+
+$LAYERS_CONFIG_END
+
+$MODEL_LAYER_BEGIN
+
+$MAP_NAME	"Board Top"
+"Selection"               "Selection"
+"EMSymbols"               "EMSymbols"
+"Error"                   "Error"
+"RefDesignator_Top"       "RefDesignator_Top"
+"SMT_Package_Top"         "SMT_Package_Top"
+"SMT_Lead_Top"            "SMT_Lead_Top"
+"SMT_C_Top"               "SMT_C_Top"
+"SMT_L_Top"               "SMT_L_Top"
+"SMT_R_Top"               "SMT_R_Top"
+"Ink_01"                  "Ink_01"
+"SolderStencil_01"        "SolderStencil_01"
+"SolderMask_01"           "SolderMask_01"
+"Plate_01"                "Plate_01"
+"Cu_01"                   "Cu_01"
+"Cu_01-"                  "Cu_01-"
+"Cu_01+"                  "Cu_01+"
+"Via01_02"                "Via01_02"
+"Cu_02"                   "Cu_02"
+"Cu_02-"                  "Cu_02-"
+"Cu_02+"                  "Cu_02+"
+"Plate_02"                "Plate_02"
+"SolderMask_02"           "SolderMask_02"
+"SolderStencil_02"        "SolderStencil_02"
+"Ink_02"                  "Ink_02"
+"SMT_Lead_Bottom"         "SMT_Lead_Bottom"
+"SMT_R_Bottom"            "SMT_R_Bottom"
+"SMT_L_Bottom"            "SMT_L_Bottom"
+"SMT_C_Bottom"            "SMT_C_Bottom"
+"SMT_Package_Bottom"      "SMT_Package_Bottom"
+"RefDesignator_Bottom"    "RefDesignator_Bottom"
+"BoardRoute"              "BoardRoute"
+"MetalCarrier"            "MetalCarrier"
+"BondWires"               "BondWires"
+"Default"                 "Default"
+"SubcircuitAnnotation"    "SubcircuitAnnotation"
+"Annotation"              "Annotation"
+"DrillHoles"              "DrillHoles"
+"DimensionLines"          "DimensionLines"
+"RatsNest"                "RatsNest"
+"Highlight"               "Highlight"
+"ErrorHighlight"          "ErrorHighlight"
+"SubSelection"            "SubSelection"
+"DynamicHighlight"        "DynamicHighlight"
+"EMBoundary"              "EMBoundary"
+"1_1"                     "Cu_01"
+"2_1"                     "Cu_02"
+"11_1"                    "Via01_02"
+"21_1"                    "Cu_01-"
+"22_1"                    "Cu_01+"
+"23_1"                    "Cu_02-"
+"24_1"                    "Cu_02+"
+"41_1"                    "Plate_01"
+"42_1"                    "Plate_02"
+"51_1"                    "Ink_01"
+"52_1"                    "SolderMask_01"
+"53_1"                    "SolderStencil_01"
+"54_1"                    "Ink_02"
+"55_1"                    "SolderMask_02"
+"56_1"                    "SolderStencil_02"
+"61_1"                    "BondWires"
+"62_1"                    "MetalCarrier"
+"71_1"                    "BoardRoute"
+"100_1"                   "RefDesignator_Top"
+"101_1"                   "SMT_Lead_Top"
+"102_1"                   "SMT_C_Top"
+"103_1"                   "SMT_L_Top"
+"104_1"                   "SMT_R_Top"
+"105_1"                   "SMT_Package_Top"
+"106_1"                   "SMT_Lead_Bottom"
+"107_1"                   "SMT_C_Bottom"
+"108_1"                   "SMT_L_Bottom"
+"109_1"                   "SMT_R_Bottom"
+"110_1"                   "SMT_Package_Bottom"
+"111_1"                   "RefDesignator_Bottom"
+"162_0"                   "DrillHoles"
+
+$MODEL_LAYER_END
+
+$EM_MAPPING_BEGIN
+$EM_MAP	"ACE_Map" !name
+!layer_name em_layer is_via material via_extent
+"Error"                   0	0	""	1
+"EMSymbols"               0	0	""	1
+"RefDesignator_Top"       0	0	""	1
+"SMT_Package_Top"         0	0	""	1
+"SMT_Lead_Top"            0	0	""	1
+"SMT_C_Top"               0	0	""	1
+"SMT_L_Top"               0	0	""	1
+"SMT_R_Top"               0	0	""	1
+"Ink_01"                  0	0	""	1
+"SolderStencil_01"        0	0	""	1
+"SolderMask_01"           0	0	""	1
+"Plate_01"                0	0	""	1
+"Cu_01"                   0	0	""	1
+"Cu_01-"                  0	0	""	1
+"Cu_01+"                  0	0	""	1
+"Via01_02"                0	0	""	1
+"Cu_02"                   0	0	""	1
+"Cu_02-"                  0	0	""	1
+"Cu_02+"                  0	0	""	1
+"Plate_02"                0	0	""	1
+"SolderMask_02"           0	0	""	1
+"SolderStencil_02"        0	0	""	1
+"Ink_02"                  0	0	""	1
+"SMT_Lead_Bottom"         0	0	""	1
+"SMT_R_Bottom"            0	0	""	1
+"SMT_L_Bottom"            0	0	""	1
+"SMT_C_Bottom"            0	0	""	1
+"SMT_Package_Bottom"      0	0	""	1
+"RefDesignator_Bottom"    0	0	""	1
+"BoardRoute"              0	0	""	1
+"MetalCarrier"            0	0	""	1
+"BondWires"               0	0	""	1
+"Default"                 0	0	""	1
+"SubcircuitAnnotation"    0	0	""	1
+"Annotation"              0	0	""	1
+"DrillHoles"              0	0	""	1
+"DimensionLines"          0	0	""	1
+"RatsNest"                0	0	""	1
+"Highlight"               0	0	""	1
+"ErrorHighlight"          0	0	""	1
+"Selection"               0	0	""	1
+"SubSelection"            0	0	""	1
+"DynamicHighlight"        0	0	""	1
+"EMBoundary"              0	0	""	1
+
+$EM_MAP	"Axiem_Map" !name
+!layer_name em_layer is_via material via_extent
+"Error"                   0	0	""	1
+"EMSymbols"               0	0	""	1
+"RefDesignator_Top"       0	0	""	1
+"SMT_Package_Top"         0	0	""	1
+"SMT_Lead_Top"            0	0	""	1
+"SMT_C_Top"               0	0	""	1
+"SMT_L_Top"               0	0	""	1
+"SMT_R_Top"               0	0	""	1
+"Ink_01"                  0	0	""	1
+"SolderStencil_01"        0	0	""	1
+"SolderMask_01"           0	0	""	1
+"Plate_01"                0	0	""	1
+"Cu_01"                   3	0	"Cu01"	1
+"Cu_01-"                  3	0	"Cu01"	1
+"Cu_01+"                  3	0	"Cu01"	1
+"Via01_02"                3	1	"Cu01"	1
+"Cu_02"                   0	0	""	1
+"Cu_02-"                  0	0	""	1
+"Cu_02+"                  0	0	""	1
+"Plate_02"                0	0	""	1
+"SolderMask_02"           0	0	""	1
+"SolderStencil_02"        0	0	""	1
+"Ink_02"                  0	0	""	1
+"SMT_Lead_Bottom"         0	0	""	1
+"SMT_R_Bottom"            0	0	""	1
+"SMT_L_Bottom"            0	0	""	1
+"SMT_C_Bottom"            0	0	""	1
+"SMT_Package_Bottom"      0	0	""	1
+"RefDesignator_Bottom"    0	0	""	1
+"BoardRoute"              3	1	"Board"	1
+"MetalCarrier"            0	0	""	1
+"BondWires"               0	0	""	1
+"Default"                 0	0	""	1
+"SubcircuitAnnotation"    0	0	""	1
+"Annotation"              0	0	""	1
+"DrillHoles"              0	0	""	1
+"DimensionLines"          0	0	""	1
+"RatsNest"                0	0	""	1
+"Highlight"               0	0	""	1
+"ErrorHighlight"          0	0	""	1
+"Selection"               0	0	""	1
+"SubSelection"            0	0	""	1
+"DynamicHighlight"        0	0	""	1
+"EMBoundary"              0	0	""	1
+
+$EM_MAP	"EM_Sight_Map" !name
+!layer_name em_layer is_via material via_extent
+"Error"                   0	0	""	1
+"EMSymbols"               0	0	""	1
+"RefDesignator_Top"       0	0	""	1
+"SMT_Package_Top"         0	0	""	1
+"SMT_Lead_Top"            0	0	""	1
+"SMT_C_Top"               0	0	""	1
+"SMT_L_Top"               0	0	""	1
+"SMT_R_Top"               0	0	""	1
+"Ink_01"                  0	0	""	1
+"SolderStencil_01"        0	0	""	1
+"SolderMask_01"           0	0	""	1
+"Plate_01"                0	0	""	1
+"Cu_01"                   2	0	"Cu01"	1
+"Cu_01-"                  0	0	""	1
+"Cu_01+"                  0	0	""	1
+"Via01_02"                2	1	"Cu01"	1
+"Cu_02"                   3	0	"Cu02"	1
+"Cu_02-"                  0	0	""	1
+"Cu_02+"                  0	0	""	1
+"Plate_02"                0	0	""	1
+"SolderMask_02"           0	0	""	1
+"SolderStencil_02"        0	0	""	1
+"Ink_02"                  0	0	""	1
+"SMT_Lead_Bottom"         0	0	""	1
+"SMT_R_Bottom"            0	0	""	1
+"SMT_L_Bottom"            0	0	""	1
+"SMT_C_Bottom"            0	0	""	1
+"SMT_Package_Bottom"      0	0	""	1
+"RefDesignator_Bottom"    0	0	""	1
+"BoardRoute"              0	0	""	1
+"MetalCarrier"            0	0	""	1
+"BondWires"               0	0	""	1
+"Default"                 0	0	""	1
+"SubcircuitAnnotation"    0	0	""	1
+"Annotation"              0	0	""	1
+"DrillHoles"              0	0	""	1
+"DimensionLines"          0	0	""	1
+"RatsNest"                0	0	""	1
+"Highlight"               0	0	""	1
+"ErrorHighlight"          0	0	""	1
+"Selection"               0	0	""	1
+"SubSelection"            0	0	""	1
+"DynamicHighlight"        0	0	""	1
+"EMBoundary"              0	0	""	1
+
+$EM_MAP	"Axiem_2layer_Map" !name
+!layer_name em_layer is_via material via_extent
+"Error"                   0	0	""	1
+"EMSymbols"               0	0	""	1
+"RefDesignator_Top"       0	0	""	1
+"SMT_Package_Top"         0	0	""	1
+"SMT_Lead_Top"            0	0	""	1
+"SMT_C_Top"               0	0	""	1
+"SMT_L_Top"               0	0	""	1
+"SMT_R_Top"               0	0	""	1
+"Ink_01"                  0	0	""	1
+"SolderStencil_01"        0	0	""	1
+"SolderMask_01"           0	0	""	1
+"Plate_01"                0	0	""	1
+"Cu_01"                   3	0	"Cu01"	1
+"Cu_01-"                  3	0	"Cu01"	1
+"Cu_01+"                  3	0	"Cu01"	1
+"Via01_02"                3	1	"Cu01"	1
+"Cu_02"                   4	0	"Cu02"	1
+"Cu_02-"                  4	0	"Cu02"	1
+"Cu_02+"                  4	0	"Cu02"	1
+"Plate_02"                0	0	""	1
+"SolderMask_02"           0	0	""	1
+"SolderStencil_02"        0	0	""	1
+"Ink_02"                  0	0	""	1
+"SMT_Lead_Bottom"         0	0	""	1
+"SMT_R_Bottom"            0	0	""	1
+"SMT_L_Bottom"            0	0	""	1
+"SMT_C_Bottom"            0	0	""	1
+"SMT_Package_Bottom"      0	0	""	1
+"RefDesignator_Bottom"    0	0	""	1
+"BoardRoute"              3	1	"Board"	1
+"MetalCarrier"            0	0	""	1
+"BondWires"               0	0	""	1
+"Default"                 0	0	""	1
+"SubcircuitAnnotation"    0	0	""	1
+"Annotation"              0	0	""	1
+"DrillHoles"              0	0	""	1
+"DimensionLines"          0	0	""	1
+"RatsNest"                0	0	""	1
+"Highlight"               0	0	""	1
+"ErrorHighlight"          0	0	""	1
+"Selection"               0	0	""	1
+"SubSelection"            0	0	""	1
+"DynamicHighlight"        0	0	""	1
+"EMBoundary"              0	0	""	1
+
+$EM_MAPPING_END
+
+
+$FILE_MAPPING_BEGIN
+$FILE_MAP	"Gerber Map"	2
+!layer_name file_layer skip
+"Error"                   "N/A"         1
+"EMSymbols"               "N/A"         1
+"RefDesignator_Top"       "N/A"         0
+"SMT_Package_Top"         "N/A"         1
+"SMT_Lead_Top"            "N/A"         1
+"SMT_C_Top"               "N/A"         1
+"SMT_L_Top"               "N/A"         1
+"SMT_R_Top"               "N/A"         1
+"Ink_01"                  "N/A"         0
+"SolderStencil_01"        "N/A"         1
+"SolderMask_01"           "N/A"         0
+"Plate_01"                "N/A"         1
+"Cu_01"                   "N/A"         0
+"Cu_01-"                  "N/A"         1
+"Cu_01+"                  "N/A"         1
+"Via01_02"                "N/A"         1
+"Cu_02"                   "N/A"         0
+"Cu_02-"                  "N/A"         1
+"Cu_02+"                  "N/A"         1
+"Plate_02"                "N/A"         1
+"SolderMask_02"           "N/A"         0
+"SolderStencil_02"        "N/A"         1
+"Ink_02"                  "N/A"         0
+"SMT_Lead_Bottom"         "N/A"         1
+"SMT_R_Bottom"            "N/A"         1
+"SMT_L_Bottom"            "N/A"         1
+"SMT_C_Bottom"            "N/A"         1
+"SMT_Package_Bottom"      "N/A"         1
+"RefDesignator_Bottom"    "N/A"         0
+"BoardRoute"              "N/A"         0
+"MetalCarrier"            "N/A"         1
+"BondWires"               "N/A"         1
+"Default"                 "N/A"         1
+"SubcircuitAnnotation"    "N/A"         1
+"Annotation"              "N/A"         1
+"DrillHoles"              "N/A"         1
+"DimensionLines"          "N/A"         1
+"RatsNest"                "N/A"         1
+"Highlight"               "N/A"         1
+"ErrorHighlight"          "N/A"         1
+"Selection"               "N/A"         1
+"SubSelection"            "N/A"         1
+"DynamicHighlight"        "N/A"         1
+"EMBoundary"              "N/A"         1
+
+$FILE_MAP	"GDSII Map"	0
+!layer_name file_layer skip
+"Error"                   "128"         1	 ! 128_0
+"EMSymbols"               "129"         1	 ! 129_0
+"RefDesignator_Top"       "65636"       0	 ! 100_1
+"SMT_Package_Top"         "65641"       0	 ! 105_1
+"SMT_Lead_Top"            "65637"       0	 ! 101_1
+"SMT_C_Top"               "65638"       0	 ! 102_1
+"SMT_L_Top"               "65639"       0	 ! 103_1
+"SMT_R_Top"               "65640"       0	 ! 104_1
+"Ink_01"                  "65587"       0	 ! 51_1
+"SolderStencil_01"        "65589"       0	 ! 53_1
+"SolderMask_01"           "65588"       0	 ! 52_1
+"Plate_01"                "65577"       0	 ! 41_1
+"Cu_01"                   "65537"       0	 ! 1_1
+"Cu_01-"                  "65557"       0	 ! 21_1
+"Cu_01+"                  "65558"       0	 ! 22_1
+"Via01_02"                "65547"       0	 ! 11_1
+"Cu_02"                   "65538"       0	 ! 2_1
+"Cu_02-"                  "65559"       0	 ! 23_1
+"Cu_02+"                  "65560"       0	 ! 24_1
+"Plate_02"                "65578"       0	 ! 42_1
+"SolderMask_02"           "65591"       0	 ! 55_1
+"SolderStencil_02"        "65592"       0	 ! 56_1
+"Ink_02"                  "65590"       0	 ! 54_1
+"SMT_Lead_Bottom"         "65642"       0	 ! 106_1
+"SMT_R_Bottom"            "65645"       0	 ! 109_1
+"SMT_L_Bottom"            "65644"       0	 ! 108_1
+"SMT_C_Bottom"            "65643"       0	 ! 107_1
+"SMT_Package_Bottom"      "65646"       0	 ! 110_1
+"RefDesignator_Bottom"    "65647"       0	 ! 111_1
+"BoardRoute"              "65607"       0	 ! 71_1
+"MetalCarrier"            "65598"       0	 ! 62_1
+"BondWires"               "65597"       0	 ! 61_1
+"Default"                 "155"         1	 ! 155_0
+"SubcircuitAnnotation"    "156"         1	 ! 156_0
+"Annotation"              "157"         1	 ! 157_0
+"DrillHoles"              "162"         0	 ! 162_0
+"DimensionLines"          "159"         1	 ! 159_0
+"RatsNest"                "160"         1	 ! 160_0
+"Highlight"               "161"         1	 ! 161_0
+"ErrorHighlight"          "162"         1	 ! 162_0
+"Selection"               "12"          1	 ! 12_0
+"SubSelection"            "163"         1	 ! 163_0
+"DynamicHighlight"        "164"         1	 ! 164_0
+"EMBoundary"              "170"         1	 ! 170_0
+
+$FILE_MAP	"DXF Map"	1
+!layer_name file_layer skip
+"Error"                   "Error"       1
+"EMSymbols"               "EMSymbols"   1
+"RefDesignator_Top"       "RefDesignator_Top"0
+"SMT_Package_Top"         "SMT_Package_Top"1
+"SMT_Lead_Top"            "SMT_Lead_Top"1
+"SMT_C_Top"               "SMT_C_Top"   1
+"SMT_L_Top"               "SMT_L_Top"   1
+"SMT_R_Top"               "SMT_R_Top"   1
+"Ink_01"                  "Ink_01"      0
+"SolderStencil_01"        "SolderStencil_01"0
+"SolderMask_01"           "SolderMask_01"0
+"Plate_01"                "Layer1"      0
+"Cu_01"                   "Cu_01"       0
+"Cu_01-"                  "Cu_01-"      1
+"Cu_01+"                  "Cu_01+"      1
+"Via01_02"                "Via01_02"    0
+"Cu_02"                   "Cu_02"       0
+"Cu_02-"                  "Cu_02-"      1
+"Cu_02+"                  "Cu_02+"      1
+"Plate_02"                "Layer1"      0
+"SolderMask_02"           "SolderMask_02"0
+"SolderStencil_02"        "SolderStencil_02"0
+"Ink_02"                  "Ink_02"      0
+"SMT_Lead_Bottom"         "SMT_Lead_Bottom"1
+"SMT_R_Bottom"            "SMT_R_Bottom"1
+"SMT_L_Bottom"            "SMT_L_Bottom"1
+"SMT_C_Bottom"            "SMT_C_Bottom"1
+"SMT_Package_Bottom"      "SMT_Package_Bottom"1
+"RefDesignator_Bottom"    "RefDesignator_Bottom"0
+"BoardRoute"              "BoardRoute"  1
+"MetalCarrier"            "MetalCarrier"1
+"BondWires"               "BondWires"   1
+"Default"                 "Default"     1
+"SubcircuitAnnotation"    "SubcircuitAnnotation"1
+"Annotation"              "Annotation"  1
+"DrillHoles"              "DrillHoles"  1
+"DimensionLines"          "DimensionLines"1
+"RatsNest"                "RatsNest"    1
+"Highlight"               "Highlight"   1
+"ErrorHighlight"          "ErrorHighlight"1
+"Selection"               "Selection"   1
+"SubSelection"            "SubSelection"1
+"DynamicHighlight"        "DynamicHighlight"1
+"EMBoundary"              "EMBoundary"  1
+
+$FILE_MAP	"Pads Map"	4
+!layer_name file_layer skip
+"Error"                   "COPPER COPCLS 1"1
+"EMSymbols"               "COPPER COPCLS 1"1
+"RefDesignator_Top"       "COPPER COPCLS 1"0
+"SMT_Package_Top"         "COPPER COPCLS 1"1
+"SMT_Lead_Top"            "COPPER COPCLS 1"1
+"SMT_C_Top"               "COPPER COPCLS 1"1
+"SMT_L_Top"               "COPPER COPCLS 1"1
+"SMT_R_Top"               "COPPER COPCLS 1"1
+"Ink_01"                  "COPPER COPCLS 1"0
+"SolderStencil_01"        "COPPER COPCLS 1"0
+"SolderMask_01"           "COPPER COPCLS 1"0
+"Plate_01"                "COPPER COPCLS 1"1
+"Cu_01"                   "COPPER COPCLS 1"0
+"Cu_01-"                  "COPPER COPCLS 1"0
+"Cu_01+"                  "COPPER COPCLS 1"0
+"Via01_02"                "COPPER COPCLS 1"0
+"Cu_02"                   "COPPER COPCLS 2"0
+"Cu_02-"                  "COPPER COPCLS 2"0
+"Cu_02+"                  "COPPER COPCLS 2"0
+"Plate_02"                "COPPER COPCLS 1"1
+"SolderMask_02"           "COPPER COPCLS 2"0
+"SolderStencil_02"        "COPPER COPCLS 2"0
+"Ink_02"                  "COPPER COPCLS 2"0
+"SMT_Lead_Bottom"         "COPPER COPCLS 1"1
+"SMT_R_Bottom"            "COPPER COPCLS 1"1
+"SMT_L_Bottom"            "COPPER COPCLS 1"1
+"SMT_C_Bottom"            "COPPER COPCLS 1"1
+"SMT_Package_Bottom"      "COPPER COPCLS 1"1
+"RefDesignator_Bottom"    "COPPER COPCLS 1"0
+"BoardRoute"              "COPPER COPCLS 1"0
+"MetalCarrier"            "COPPER COPCLS 1"1
+"BondWires"               "COPPER COPCLS 1"1
+"Default"                 "COPPER COPCLS 1"1
+"SubcircuitAnnotation"    "COPPER COPCLS 1"1
+"Annotation"              "COPPER COPCLS 1"1
+"DrillHoles"              "COPPER COPCLS 1"1
+"DimensionLines"          "COPPER COPCLS 1"1
+"RatsNest"                "COPPER COPCLS 1"1
+"Highlight"               "COPPER COPCLS 1"1
+"ErrorHighlight"          "COPPER COPCLS 1"1
+"Selection"               "COPPER COPCLS 1"1
+"SubSelection"            "COPPER COPCLS 1"1
+"DynamicHighlight"        "COPPER COPCLS 1"1
+"EMBoundary"              "COPPER COPCLS 1"1
+
+$FILE_MAPPING_END
+
+
+$DRILL_TABLE_BEGIN
+!drill_name drill_number drill_diameter
+"Drill_10mil"             1	0.000254
+"Drill_25mil"             2	0.000635
+"Drill_135mil"            3	0.003429
+
+$DRILL_TABLE_END
+
+$LAYER_SETUP_END
+
+$ROUTER_SETUP_BEGIN
+
+$LAYERS_BEGIN
+!--------------------------------- Layer Entry Descriptions -----------------------------------------------------------
+! layer_name <layer_type> <layer_dir> min_width min_spacing route_grid route_grid_offset
+! <layer_type> = other, nwell, pwell, ndiff, pdiff, nimplant, pimplant, poly, cut, metal, non_contact_metal
+!                diffusion, recognition
+! <layer_dir> = none, horiz, vert
+!----------------------------------------------------------------------------------------------------------------------
+$LAYERS_END
+
+$CONNECT_LAYERS_BEGIN
+!--------------------------------- Connect layer -----------------------------------------------------------
+! <connect_type> <layer>
+! <connect_type> = UNKNOWN CAP_TOP_PLATE CAP_BOTTOM_PLATE SPIRAL_EXIT SPIRAL_TURN RESISTOR RESISTOR_2 RESISTOR_3
+!                 VIA_TOP VIA_BOTTOM DISABLED CAP_TOP_PLATE_2 CAP_BOTTOM_PLATE_2 CAP_TOP_PLATE_3 CAP_BOTTOM_PLATE_3 DEVICE
+!                 DEVICE_2 DEVICE_3
+!-----------------------------------------------------------------------------------------------------------
+$CONNECT_LAYERS_END
+
+$ROUTER_SETUP_END
+
+
+!------------- EM Simulation Setup Defined Below ----------------------------
+
+$EM_SETUP_BEGIN
+	$DEFAULT_EM_ENCLOSURE_BEGIN
+	!-----XDIM-----YDIM-----NX-----NY-----
+	!      (m)      (m)
+		0.01 0.01 100 100
+	$DEFAULT_EM_ENCLOSURE_END
+
+	$DEFAULT_EM_LAYERS_BEGIN
+	!	Hatch Patterns ------(0)  |||||(1)  \\\\\(2)  /////(3)  +++++(4)  xxxxx(5)
+	!
+	!-----T-----Er-----Tand-----Sigma-----Scale-----CondHatch-----ViaHatch-----
+	!    (m)                    (S/m)                 (0-5)         (0-5)
+	  0.001016 1 0 0 1 0 1
+	  0.000508 3.55 0.0027 0 1 2 3
+	$DEFAULT_EM_LAYERS_END
+
+	$EM_CONDUCTORS_BEGIN
+		$PHYSICAL_SPEC_BEGIN
+		!-----Name------T------Sigma-------Red------Green-----Blue------
+		!              (m)     (S/m)     <0-255>   <0-255>   <0-255>
+		   "Cu01" 3.556e-005 5.88e+007 128 128 128
+		   "Cu02" -3.556e-005 5.88e+007 128 128 128
+		$PHYSICAL_SPEC_END
+	$EM_CONDUCTORS_END
+$EM_SETUP_END
+

@@ -1,0 +1,60 @@
+!  Simple DRC rule set for the 2-layer board - dimensions are in nanometers
+! 7 mil lines, 7mil spacing, 15mil via, 7mil capture pad, 10mil clearance to board edge
+! 177800nm is 7mil 
+ERROR_TOLERANCE 1
+BOOLEAN_OPS "Cu_01_tmp" "Cu_01+" SUBTRACT "Cu_01-"
+BOOLEAN_OPS "Cu_01_all" "Cu_01" OR "Cu_01_tmp"
+MINWIDTH   "Cu_01_all"  177800
+BOOLEAN_OPS "Cu_02_tmp" "Cu_02+" SUBTRACT "Cu_02-"
+BOOLEAN_OPS "Cu_02_all" "Cu_02" OR "Cu_02_tmp"
+MINWIDTH   "Cu_02_all"  177800
+MINWIDTH   "SolderMask_01"  152400
+MINWIDTH   "SolderMask_02"  152400
+MINWIDTH   "Via01_02"  254000
+SEPARATION "Cu_01_all" "Cu_01_all" 177800
+SEPARATION "Cu_02_all" "Cu_02_all" 177800
+SEPARATION "Via01_02" "Via01_02" 254000
+SEPARATION "SMT_Package_Top" "SMT_Package_Top" 900000
+SEPARATION "SMT_C_Top" "SMT_C_Top" 900000
+SEPARATION "SMT_L_Top" "SMT_L_Top" 900000
+SEPARATION "SMT_R_Top" "SMT_R_Top" 900000
+SEPARATION "SMT_Package_Bottom" "SMT_Package_Bottom" 900000
+SEPARATION "SMT_C_Bottom" "SMT_C_Bottom" 900000
+SEPARATION "SMT_L_Bottom" "SMT_L_Bottom" 900000
+SEPARATION "SMT_R_Bottom" "SMT_R_Bottom" 900000
+BOOLEAN_OPS "Components_tmp1" "SMT_Package_Top" OR "SMT_C_Top"
+BOOLEAN_OPS "Components_tmp2" "Components_tmp1" OR "SMT_L_Top"
+BOOLEAN_OPS "Components_all_Top" "Components_tmp2" OR "SMT_R_Top"
+SEPARATION "Components_all_Top" "Components_all_Top" 900000
+BOOLEAN_OPS "Components_tmp3" "SMT_Package_Bottom" OR "SMT_C_Bottom"
+BOOLEAN_OPS "Components_tmp4" "Components_tmp3" OR "SMT_L_Bottom"
+BOOLEAN_OPS "Components_all_Bottom" "Components_tmp4" OR "SMT_R_Bottom"
+SEPARATION "Components_all_Bottom" "Components_all_Bottom" 900000
+
+DRC_GROUP_BEGIN <ViaCapturePad_MinExtensions>
+	BOOLEAN_OPS "Cu_01_Via" "Via01_02" SUBTRACT "Cu_01_all"
+	BOOLEAN_OPS "Cu_02_Via" "Via01_02" SUBTRACT "Cu_02_all"
+	MAX_VERTICES "Cu_01_Via" 0
+	MAX_VERTICES "Cu_02_Via" 0
+	EXTENSION "Via01_02" "Cu_01_all" 127000
+	EXTENSION "Via01_02" "Cu_02_all" 127000
+	BOOLEAN_OPS "Cu_01_SolderMask_Swell" "SolderMask_01" SUBTRACT "Cu_01_all"
+	MUST_HAVE_HOLE "Cu_01_SolderMask_Swell"
+	BOOLEAN_OPS "Cu_01_SolderMask_Coverage" "Cu_01_all" SUBTRACT "SolderMask_01"
+	NO_HOLE "Cu_01_SolderMask_Coverage"
+	EXTENSION "Cu_01_all" "SolderMask_01" 076000
+	BOOLEAN_OPS "Cu_02_SolderMask_Swell" "SolderMask_02" SUBTRACT "Cu_02_all"
+	MUST_HAVE_HOLE "Cu_02_SolderMask_Swell"
+	BOOLEAN_OPS "Cu_02_SolderMask_Coverage" "Cu_02_all" SUBTRACT "SolderMask_02"
+	NO_HOLE "Cu_02_SolderMask_Coverage"
+	EXTENSION "Cu_02_all" "SolderMask_02" 076000
+DRC_GROUP_END
+
+DRC_GROUP_BEGIN <Cu_BoardRoute_MinExtension>	
+	BOOLEAN_OPS "MinExtension_Cu_01_BoardRoute" "BoardRoute" SUBTRACT "Cu_01_all"
+	MUST_HAVE_HOLE "MinExtension_Cu_01_BoardRoute"
+	EXTENSION "Cu_01_all" "BoardRoute" 254000
+	BOOLEAN_OPS "MinExtension_Cu_02_BoardRoute" "BoardRoute" SUBTRACT "Cu_02_all"
+	MUST_HAVE_HOLE "MinExtension_Cu_02_BoardRoute"
+	EXTENSION "Cu_02_all" "BoardRoute" 254000
+DRC_GROUP_END

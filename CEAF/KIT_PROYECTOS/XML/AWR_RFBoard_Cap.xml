@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<XML_COMPONENT_DATA>
+<COPYRIGHT>The data in this file is copyright 2015 of AWR Corporation</COPYRIGHT>
+<SUMMARY>This file contains data on the AWR Demo RF Board Process</SUMMARY>
+<LPFNAME>AWR_RFBoard_2layer.lpf</LPFNAME>
+
+<FOLDER Name="0201" Icon="Capacitor">
+	<COMPONENT Name="1pF 0201 Top">
+		<MODEL>SRC</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>1.0 pF 0201 Capacitor Top</DESC>
+		<SYMBOL>Capacitor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">C</PARAM>
+			<PARAM Name="C">1e-12</PARAM>
+			<PARAM Name="R" HideWeak="yes">0.1</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0201"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.35e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="0"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="C"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>			
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+	</COMPONENT>		
+
+	<COMPONENT Name="1pF 0201 Bottom">
+		<MODEL>SRC</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>1.0 pF 0201 Capacitor Bottom</DESC>
+		<SYMBOL>Capacitor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">C</PARAM>
+			<PARAM Name="C">1e-12</PARAM>
+			<PARAM Name="R" HideWeak="yes">0.1</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0201"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.35e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="0"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="C"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>		
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>	
+</FOLDER>
+
+<FOLDER Name="0402" Icon="Capacitor">
+	<COMPONENT Name="1 pF 0402 Top">
+		<MODEL>SRC</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>1.0 pF 0402 Capacitor Top Side</DESC>
+		<SYMBOL>Capacitor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">C</PARAM>
+			<PARAM Name="C">1e-12</PARAM>
+			<PARAM Name="R" HideWeak="yes">0.1</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0402"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.5e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.6e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.5e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="0"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="C"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>		
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+		</COMPONENT>
+
+	<COMPONENT Name="1 pF 0402 Bottom">
+	<MODEL>SRC</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>1.0 pF 0402 Capacitor Bottom Side</DESC>
+	<SYMBOL>Capacitor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">C</PARAM>
+		<PARAM Name="C">1e-12</PARAM>
+		<PARAM Name="R" HideWeak="yes">0.1</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0402"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.5e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="0.6e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="0.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="0"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="C"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>		
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>
+</FOLDER>
+
+<FOLDER Name="0603" Icon="Capacitor">
+	<COMPONENT Name="1 pF 0603 Top">
+	<MODEL>SRC</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>1.0 pF 0603 Capacitor Top Side</DESC>
+	<SYMBOL>Capacitor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">C</PARAM>
+		<PARAM Name="C">1e-12</PARAM>
+		<PARAM Name="R" HideWeak="yes">0.1</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0603"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.6e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="0.9e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="0.9e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="0"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="C"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>		
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+	</COMPONENT>
+
+	<COMPONENT Name="1 pF 0603 Bottom">
+	<MODEL>SRC</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>1.0 pF 0603 Capacitor Bottom Side</DESC>
+	<SYMBOL>Capacitor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">C</PARAM>
+		<PARAM Name="C">1e-12</PARAM>
+		<PARAM Name="R" HideWeak="yes">0.1</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0603"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.6e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="0.9e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="0.9e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="0"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="C"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>		
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>
+</FOLDER>
+
+<FOLDER Name="0805" Icon="Capacitor">
+	<COMPONENT Name="1 pF 0805 Top">
+	<MODEL>SRC</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>1.0 pF 0805 Capacitor Top Side</DESC>
+	<SYMBOL>Capacitor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">C</PARAM>
+		<PARAM Name="C">1e-12</PARAM>
+		<PARAM Name="R" HideWeak="yes">0.1</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0805"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.625e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="1.3e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="1.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="0"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="L"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+	</COMPONENT>
+
+	<COMPONENT Name="1 pF 0805 Bottom">
+	<MODEL>SRC</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>1.0 pF 0805 Capacitor Bottom Side</DESC>
+	<SYMBOL>Capacitor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">C</PARAM>
+		<PARAM Name="C">1e-12</PARAM>
+		<PARAM Name="R" HideWeak="yes">0.1</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0805"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.625e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="1.3e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="1.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="0"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="L"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>
+</FOLDER>
+<FOLDER Name="1206" Icon="Capacitor">
+	<COMPONENT Name="10uF 1206 Top">
+	<MODEL>SRC</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>10uF 1206 Capacitor Top Side</DESC>
+	<SYMBOL>Capacitor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">C</PARAM>
+		<PARAM Name="C">10e-6</PARAM>
+		<PARAM Name="R" HideWeak="yes">0.1</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="1206"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.65e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="1.7e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="2.4e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="0"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="C"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>		
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+	</COMPONENT>
+
+	<COMPONENT Name="10uF 1206 Bottom">
+	<MODEL>SRC</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>10uF 1206 Capacitor Bottom Side</DESC>
+	<SYMBOL>Capacitor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">C</PARAM>
+		<PARAM Name="C">10e-6</PARAM>
+		<PARAM Name="R" HideWeak="yes">0.1</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="1206"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.65e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="1.7e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="2.4e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="0"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="C"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>
+</FOLDER>
+
+<FOLDER Name="2220" Icon="Capacitor">
+	<COMPONENT Name="15uF 2220 Top">
+	<MODEL>SRC</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>15uF 2220 Capacitor Top Side</DESC>
+	<SYMBOL>Capacitor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">C</PARAM>
+		<PARAM Name="C">15e-6</PARAM>
+		<PARAM Name="R" HideWeak="yes">0.1</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="2220"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.75e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="5.1e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="4.7e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="0"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="C"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+	</COMPONENT>
+
+	<COMPONENT Name="15uF 2220 Bottom">
+	<MODEL>SRC</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>15uF 2220 Capacitor Bottom Side</DESC>
+	<SYMBOL>Capacitor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">C</PARAM>
+		<PARAM Name="C">15e-6</PARAM>
+		<PARAM Name="R" HideWeak="yes">0.1</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="2220"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.75e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="5.1e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="4.7e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="0"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="C"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>
+</FOLDER>	
+
+</XML_COMPONENT_DATA>

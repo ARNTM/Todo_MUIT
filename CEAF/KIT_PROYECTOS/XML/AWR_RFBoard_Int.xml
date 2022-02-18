@@ -1,0 +1,456 @@
+<?xml version="1.0"?>
+<XML_COMPONENT_DATA>
+<COPYRIGHT>The data in this file is copyright 2015 of AWR Corporation</COPYRIGHT>
+<SUMMARY>This file contains data on the AWR Demo RF Board Process</SUMMARY>
+<LPFNAME>AWR_RFBoard_2layer.lpf</LPFNAME>
+
+<FOLDER Name="Board Vias" Icon="Interconnects">
+    <COMPONENT Name="10mil">
+    <MODEL>VIA</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+    <DESC>10mil Thru Hole Via</DESC>
+    <SYMBOL>VIA@system.syf</SYMBOL>
+    <CELL>Thru_0p254mm_10mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via10mil_</PARAM>
+        <PARAM Name="D">0.000254</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+    </COMPONENT>
+
+    <COMPONENT Name="10mil Bottom GND Plane">
+    <MODEL>VIA1P</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+    <DESC>10mil Thru Hole Grounded Via</DESC>
+    <SYMBOL>VIA1@system.syf</SYMBOL>
+    <CELL>GNDbottom_0p254mm_10mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via10mil_</PARAM>
+        <PARAM Name="D">0.000254</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+		<PROPERTY Name="User:LayerConnect" Value="Bottom"></PROPERTY>
+    </COMPONENT>
+
+	<COMPONENT Name="10mil Top GND Plane">
+    <MODEL>VIA1P</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+    <DESC>10mil Thru Hole Grounded Via</DESC>
+    <SYMBOL>VIA1@system.syf</SYMBOL>
+    <CELL>GNDtop_0p254mm_10mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via10mil_</PARAM>
+        <PARAM Name="D">0.000254</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+		<PROPERTY Name="User:LayerConnect" Value="Top"></PROPERTY>
+    </COMPONENT>
+	
+	<COMPONENT Name="10mil GND Plane Both Layers">
+    <MODEL>VIA1P</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+    <DESC>10mil Thru Hole Grounded Via</DESC>
+    <SYMBOL>VIA1@system.syf</SYMBOL>
+    <CELL>GNDboth_0p254mm_10mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via10mil_</PARAM>
+        <PARAM Name="D">0.000254</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+		<PROPERTY Name="User:LayerConnect" Value="Both"></PROPERTY>
+    </COMPONENT>
+	
+    <COMPONENT Name="15mil">
+    <MODEL>VIA</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+    <DESC>15 mil Thru Hole Via</DESC>
+    <SYMBOL>VIA@system.syf</SYMBOL>
+    <CELL>Thru_0p381mm_15mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via15mil_</PARAM>
+        <PARAM Name="D">0.000381</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+    </COMPONENT>
+
+    <COMPONENT Name="15mil Bottom GND Plane">
+    <MODEL>VIA1P</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>	
+    <DESC>10mil Thru Hole Grounded Via</DESC>
+    <SYMBOL>VIA1@system.syf</SYMBOL>
+    <CELL>GNDbottom_0p381mm_15mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via15mil_</PARAM>
+        <PARAM Name="D">0.000381</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+		<PROPERTY Name="User:LayerConnect" Value="Bottom"></PROPERTY>
+	</COMPONENT>
+	
+	<COMPONENT Name="15mil Top GND Plane">
+    <MODEL>VIA1P</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>	
+    <DESC>10mil Thru Hole Grounded Via</DESC>
+    <SYMBOL>VIA1@system.syf</SYMBOL>
+    <CELL>GNDtop_0p381mm_15mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via15mil_</PARAM>
+        <PARAM Name="D">0.000381</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+		<PROPERTY Name="User:LayerConnect" Value="Top"></PROPERTY>
+	</COMPONENT>
+	
+	<COMPONENT Name="15mil GND Plane Both Layers">
+    <MODEL>VIA1P</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>	
+    <DESC>10mil Thru Hole Grounded Via</DESC>
+    <SYMBOL>VIA1@system.syf</SYMBOL>
+    <CELL>GNDboth_0p381mm_15mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via15mil_</PARAM>
+        <PARAM Name="D">0.000381</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+		<PROPERTY Name="User:LayerConnect" Value="Both"></PROPERTY>
+	</COMPONENT>
+	
+	<COMPONENT Name="62p5mil">
+    <MODEL>VIA</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>	
+    <DESC>62.5mil Thru Hole Via</DESC>
+    <SYMBOL>VIA@system.syf</SYMBOL>
+    <CELL>Thru_1p5875mm_62p5mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via62p5mil_</PARAM>
+        <PARAM Name="D">0.0015875</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+    </COMPONENT>
+
+    <COMPONENT Name="62p5mil Bottom GND Plane">
+    <MODEL>VIA1P</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>	
+    <DESC>62.5mil Thru Hole Grounded Via</DESC>
+    <SYMBOL>VIA1@system.syf</SYMBOL>
+    <CELL>GNDbottom_1p5875mm_62p5mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via62p5mil_</PARAM>
+        <PARAM Name="D">0.0015875</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+		<PROPERTY Name="User:LayerConnect" Value="Bottom"></PROPERTY>
+    </COMPONENT>
+
+	<COMPONENT Name="62p5mil Top GND Plane">
+    <MODEL>VIA1P</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>	
+    <DESC>62.5mil Thru Hole Grounded Via</DESC>
+    <SYMBOL>VIA1@system.syf</SYMBOL>
+    <CELL>GNDtop_1p5875mm_62p5mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via62p5mil_</PARAM>
+        <PARAM Name="D">0.0015875</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+		<PROPERTY Name="User:LayerConnect" Value="Top"></PROPERTY>
+    </COMPONENT>
+	
+	<COMPONENT Name="62p5mil GND Plane Both Layers">
+    <MODEL>VIA1P</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>	
+    <DESC>62.5mil Thru Hole Grounded Via</DESC>
+    <SYMBOL>VIA1@system.syf</SYMBOL>
+    <CELL>GNDboth_1p5875mm_62p5mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via62p5mil_</PARAM>
+        <PARAM Name="D">0.0015875</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+		<PROPERTY Name="User:LayerConnect" Value="Both"></PROPERTY>
+    </COMPONENT>
+	
+	<COMPONENT Name="250mil">
+    <MODEL>VIA</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>	
+    <DESC>250mil Thru Hole Via</DESC>
+    <SYMBOL>VIA@system.syf</SYMBOL>
+    <CELL>Thru_6p35mm_250mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via250mil_</PARAM>
+        <PARAM Name="D">0.00635</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+    </COMPONENT>
+
+    <COMPONENT Name="250mil Bottom GND Plane">
+    <MODEL>VIA1P</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>	
+    <DESC>250mil Thru Hole Grounded Via</DESC>
+    <SYMBOL>VIA1@system.syf</SYMBOL>
+    <CELL>GNDbottom_6p35mm_250mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via250mil_</PARAM>
+        <PARAM Name="D">0.00635</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+		<PROPERTY Name="User:LayerConnect" Value="Bottom"></PROPERTY>
+    </COMPONENT>
+
+	<COMPONENT Name="250mil Top GND Plane">
+    <MODEL>VIA1P</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>	
+    <DESC>250mil Thru Hole Grounded Via</DESC>
+    <SYMBOL>VIA1@system.syf</SYMBOL>
+    <CELL>GNDtop_6p35mm_250mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via250mil_</PARAM>
+        <PARAM Name="D">0.00635</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+		<PROPERTY Name="User:LayerConnect" Value="Top"></PROPERTY>
+    </COMPONENT>
+	
+	<COMPONENT Name="250mil GND Plane Both Layers">
+    <MODEL>VIA1P</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>	
+    <DESC>250mil Thru Hole Grounded Via</DESC>
+    <SYMBOL>VIA1@system.syf</SYMBOL>
+    <CELL>GNDboth_6p35mm_250mil</CELL>
+    <DATA DataType="awrmodel" Inline="yes">
+        <PARAM Name="ID">Via250mil_</PARAM>
+        <PARAM Name="D">0.00635</PARAM>
+        <PARAM Name="H">Sub_h</PARAM>
+        <PARAM Name="T">1.778e-5</PARAM>
+        <PARAM Name="RHO">0.714</PARAM>
+        <PARAM Name="SNAME">""</PARAM>
+    </DATA>
+		<PROPERTY Name="User:LayerConnect" Value="Both"></PROPERTY>
+    </COMPONENT>
+	
+</FOLDER>
+
+<FOLDER Name="RF Connectors" Icon="RF Elements">
+    <COMPONENT Name="SMA Edge Mount">
+		<MODEL>SRL</MODEL>
+		<SYMBOL>Coax2@txline.syf</SYMBOL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>Edge Mount SMA Land Patterns</DESC>
+		<CELL>SMA_EdgeMount@..\Library\Generic_RFBoard_Lib.gds</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">SMA_</PARAM>
+			<PARAM Name="R">0.1</PARAM>
+			<PARAM Name="L">3e-9</PARAM>
+		</DATA>
+	</COMPONENT>
+	
+	<COMPONENT Name="SMA Surface Mount">
+		<MODEL>SRL</MODEL>
+		<SYMBOL>Coax2@txline.syf</SYMBOL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>Edge Mount SMA Land Patterns</DESC>
+		<CELL>SMA_SurfaceMount@..\Library\Generic_RFBoard_Lib.gds</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">SMA</PARAM>
+			<PARAM Name="R">0.1</PARAM>
+			<PARAM Name="L">3e-9</PARAM>
+		</DATA>
+	</COMPONENT>	
+</FOLDER>	
+
+<FOLDER Name="DC Connectors SMT" Icon="Miscellaneous">
+
+		<COMPONENT Name="DC Pins Header 2x2 Top">
+			<MODEL>SUBCKT</MODEL>
+			<SYMBOL>BASIC_2_2@sys_block.syf</SYMBOL>
+			<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+			<DESC>Top 2x2 DC Header Connector SMT</DESC>
+			<CELL>DC_Pins_2x2@..\Library\Generic_RFBoard_Lib.gds</CELL>
+			<DATA DataType="awrschematic" Inline="no">
+			../Model_Data/DC_Header_2x2.sch
+			</DATA>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+		</COMPONENT>	
+
+		<COMPONENT Name="DC Pins Header 2x3 Top">
+			<MODEL>SUBCKT</MODEL>
+			<SYMBOL>BASIC_3_3@sys_block.syf</SYMBOL>
+			<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+			<DESC>Top 2x3 DC Header Connector SMT</DESC>
+			<CELL>DC_Pins_2x3@..\Library\Generic_RFBoard_Lib.gds</CELL>
+			<DATA DataType="awrschematic" Inline="no">
+			../Model_Data/DC_Header_2x3.sch
+			</DATA>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+		</COMPONENT>
+		
+		<COMPONENT Name="DC Pins Header 2x2 Bottom">
+			<MODEL>SUBCKT</MODEL>
+			<SYMBOL>BASIC_2_2@sys_block.syf</SYMBOL>			
+			<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+			<DESC>Bottom 2x2 DC Header Connector SMT</DESC>
+			<CELL>DC_Pins_2x2_Bottom@..\Library\Generic_RFBoard_Lib.gds</CELL>
+			<DATA DataType="awrschematic" Inline="no">
+			../Model_Data/DC_Header_2x2.sch
+			</DATA>
+			<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		</COMPONENT>	
+		
+		<COMPONENT Name="DC Pins Header 2x3 Bottom">
+			<MODEL>SUBCKT</MODEL>
+			<SYMBOL>BASIC_3_3@sys_block.syf</SYMBOL>			
+			<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+			<DESC>Bottom 2x3 DC Header Connector SMT</DESC>
+			<CELL>DC_Pins_2x3_Bottom@..\Library\Generic_RFBoard_Lib.gds</CELL>
+			<DATA DataType="awrschematic" Inline="no">
+			../Model_Data/DC_Header_2x3.sch
+			</DATA>
+			<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		</COMPONENT>
+		
+</FOLDER>	
+
+<FOLDER Name="Bond Pads" Icon="Ports">
+    <COMPONENT Name="BondPad">
+		<MODEL>SUBCKT</MODEL>
+		<SYMBOL>BondPad@..\Symbols\RFBoard_2layer.syf</SYMBOL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>Bond Pad</DESC>
+		<CELL>BondPad_WxL@..\Library\Generic_RFBoard_Lib.gds</CELL>
+		<DATA DataType="awrschematic" Inline="no">
+		../Model_Data/BondPad_WL.sch
+			<PARAM Name="ID">BP_</PARAM>
+			<PARAM Name="BP_Wide">0.5</PARAM>
+			<PARAM Name="BP_Len">0.5</PARAM>
+		</DATA>
+	</COMPONENT>
+</FOLDER>
+	
+<FOLDER Name="Bond Wires" Icon="Interconnects">
+	<COMPONENT Name="1 BondWire">
+		<MODEL>BWIRES2</MODEL>
+		<SYMBOL>WIRE_BOND_1</SYMBOL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>JEDEC 1 BondWire Model</DESC>
+		<CELL>BWIRES_ML*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">BW_</PARAM>
+			<PARAM Name="N">1</PARAM>
+			<PARAM Name="Dia">0.0000254</PARAM>
+			<PARAM Name="Rho">0.714</PARAM>
+			<PARAM Name="WModel">1</PARAM>
+			<PARAM Name="Alpha">{1.39626340159546}</PARAM>
+			<PARAM Name="Beta">{0.523599}</PARAM>
+			<PARAM Name="H1">{0.0001524}</PARAM>
+			<PARAM Name="H2">{0.0001}</PARAM>
+			<PARAM Name="H3">{0}</PARAM>
+			<PARAM Name="D1_Ratio">{0.25}</PARAM>
+			<PARAM Name="D2_Ratio">{0.25}</PARAM>
+			<PARAM Name="P0">{0,0}</PARAM>
+			<PARAM Name="P1">{0.000508,0}</PARAM>
+			<PARAM Name="IndModel">0</PARAM>
+			<PARAM Name="Er">1</PARAM>
+			<PARAM Name="Tand">0</PARAM>
+		</DATA>
+	</COMPONENT>
+	
+	<COMPONENT Name="2 BondWires">
+		<MODEL>BWIRES2</MODEL>
+		<SYMBOL>WIRE_BOND_2</SYMBOL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>JEDEC 2 BondWire Model</DESC>
+		<CELL>BWIRES_ML*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">BW_</PARAM>
+			<PARAM Name="N">2</PARAM>
+			<PARAM Name="Dia">0.0000254</PARAM>
+			<PARAM Name="Rho">0.714</PARAM>
+			<PARAM Name="WModel">1</PARAM>
+			<PARAM Name="Alpha">{ 1.39626340159546,1.39626340159546 }</PARAM>
+			<PARAM Name="Beta">{ 0.523599,0.523599 }</PARAM>
+			<PARAM Name="H1">{ 0.0001524,0.0001524 }</PARAM>
+			<PARAM Name="H2">{ 0.0001,0.0001 }</PARAM>
+			<PARAM Name="H3">{ 0,0 }</PARAM>
+			<PARAM Name="D1_Ratio">{ 0.25,0.25 }</PARAM>
+			<PARAM Name="D2_Ratio">{ 0.25,0.25 }</PARAM>
+			<PARAM Name="P0">{ 0,0,0,-0.0001524 }</PARAM>
+			<PARAM Name="P1">{ 0.000508,0,0.000508,-0.0001524 }</PARAM>
+			<PARAM Name="IndModel">0</PARAM>
+			<PARAM Name="Er">1</PARAM>
+			<PARAM Name="Tand">0</PARAM>
+		</DATA>
+	</COMPONENT>
+	
+	<COMPONENT Name="3 BondWires">
+		<MODEL>BWIRES2</MODEL>
+		<SYMBOL>WIRE_BOND_3</SYMBOL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>JEDEC 3 BondWire Model</DESC>
+		<CELL>BWIRES_ML*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">BW_</PARAM>
+			<PARAM Name="N">3</PARAM>
+			<PARAM Name="Dia">0.0000254</PARAM>
+			<PARAM Name="Rho">0.714</PARAM>
+			<PARAM Name="WModel">1</PARAM>
+			<PARAM Name="Alpha">{ 1.39626340159546,1.39626340159546,1.39626340159546 }</PARAM>
+			<PARAM Name="Beta">{ 0.523599,0.523599,0.523599 }</PARAM>
+			<PARAM Name="H1">{ 0.0001524,0.0001524,0.0001524 }</PARAM>
+			<PARAM Name="H2">{ 0.0001,0.0001,0.0001 }</PARAM>
+			<PARAM Name="H3">{ 0,0,0 }</PARAM>
+			<PARAM Name="D1_Ratio">{ 0.25,0.25,0.25 }</PARAM>
+			<PARAM Name="D2_Ratio">{ 0.25,0.25,0.25 }</PARAM>
+			<PARAM Name="P0">{ 0,0,0,-0.0001524,0,-0.0003048 }</PARAM>
+			<PARAM Name="P1">{ 0.000508,0,0.000508,-0.0001524,0.000508,-0.0003048 }</PARAM>
+			<PARAM Name="IndModel">0</PARAM>
+			<PARAM Name="Er">1</PARAM>
+			<PARAM Name="Tand">0</PARAM>
+		</DATA>
+	</COMPONENT>
+</FOLDER>	
+</XML_COMPONENT_DATA>

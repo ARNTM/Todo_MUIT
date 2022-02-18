@@ -1,0 +1,753 @@
+<?xml version="1.0"?>
+<XML_COMPONENT_DATA>
+<COPYRIGHT>The data in this file is copyright 2015 of AWR Corporation</COPYRIGHT>
+<SUMMARY>This file contains data on the AWR Demo RF Board Process</SUMMARY>
+<LPFNAME>AWR_RFBoard_2layer.lpf</LPFNAME>
+
+<FOLDER Name="0201" Icon="Resistor">
+	<COMPONENT Name="0 Ohm 0201 Top">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>0 Ohm 0201 Resistor Top</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">0</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0201"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.35e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+	</COMPONENT>		
+
+	<COMPONENT Name="0 Ohm 0201 Bottom">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>0 Ohm 0201 Resistor Bottom</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">0</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0201"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.35e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>
+	
+	<COMPONENT Name="10 Ohm 0201 Top">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>10 Ohm 0201 Resistor Top</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">10</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0201"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.35e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+	</COMPONENT>		
+
+	<COMPONENT Name="10 Ohm 0201 Bottom">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>10 Ohm 0201 Resistor Bottom</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">10</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0201"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.35e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>	
+	
+	<COMPONENT Name="50 Ohm 0201 Top">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>50 Ohm 0201 Resistor Top</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">50</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0201"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.35e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+	</COMPONENT>		
+
+	<COMPONENT Name="50 Ohm 0201 Bottom">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>50 Ohm 0201 Resistor Bottom</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">50</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0201"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.35e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>		
+
+	<COMPONENT Name="75 Ohm 0201 Top">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>75 Ohm 0201 Resistor Top</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">75</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0201"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.35e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+	</COMPONENT>		
+
+	<COMPONENT Name="75 Ohm 0201 Bottom">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>75 Ohm 0201 Resistor Bottom</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">75</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0201"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.35e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.3e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>			
+</FOLDER>
+
+<FOLDER Name="0402" Icon="Resistor">
+	<COMPONENT Name="0 Ohm 0402 Top">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>0 Ohm 0402 Resistor Top Side</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">0</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0402"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.5e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.6e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.5e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+		</COMPONENT>
+	
+	<COMPONENT Name="0 Ohm 0402 Bottom">
+	<MODEL>RES</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>0 Ohm 0402 Resistor Bottom Side</DESC>
+	<SYMBOL>Resistor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">R</PARAM>
+		<PARAM Name="R">0</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0402"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.5e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="0.6e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="0.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="R"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>
+	
+	<COMPONENT Name="10 Ohm 0402 Top">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>10 Ohm 0402 Resistor Top Side</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">10</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0402"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.5e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.6e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.5e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+		</COMPONENT>
+
+	<COMPONENT Name="10 Ohm 0402 Bottom">
+	<MODEL>RES</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>10 Ohm 0402 Resistor Bottom Side</DESC>
+	<SYMBOL>Resistor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">R</PARAM>
+		<PARAM Name="R">10</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0402"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.5e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="0.6e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="0.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="R"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>
+	
+	<COMPONENT Name="50 Ohm 0402 Top">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>50 Ohm 0402 Resistor Top Side</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">50</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0402"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.5e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.6e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.5e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+		</COMPONENT>
+
+	<COMPONENT Name="50 Ohm 0402 Bottom">
+	<MODEL>RES</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>50 Ohm 0402 Resistor Bottom Side</DESC>
+	<SYMBOL>Resistor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">R</PARAM>
+		<PARAM Name="R">50</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0402"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.5e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="0.6e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="0.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="R"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>
+
+	<COMPONENT Name="75 Ohm 0402 Top">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>75 Ohm 0402 Resistor Top Side</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">75</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0402"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.5e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.6e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.5e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+		</COMPONENT>
+
+	<COMPONENT Name="75 Ohm 0402 Bottom">
+	<MODEL>RES</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>75 Ohm 0402 Resistor Bottom Side</DESC>
+	<SYMBOL>Resistor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">R</PARAM>
+		<PARAM Name="R">75</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0402"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.5e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="0.6e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="0.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="R"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>	
+</FOLDER>
+
+<FOLDER Name="0603" Icon="Resistor">
+
+<COMPONENT Name="0 Ohm 0603 Top">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>0 Ohm 0603 Resistor Top Side</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">0</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0603"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.6e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+		</COMPONENT>
+		
+<COMPONENT Name="0 Ohm 0603 Bottom">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>0 Ohm 0603 Resistor Bottom Side</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">0</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0603"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.6e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+		</COMPONENT>		
+
+<COMPONENT Name="10 Ohm 0603 Top">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>10 Ohm 0603 Resistor Top Side</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">10</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0603"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.6e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+		</COMPONENT>
+		
+<COMPONENT Name="10 Ohm 0603 Bottom">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>10 Ohm 0603 Resistor Bottom Side</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">10</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0603"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.6e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+		</COMPONENT>		
+
+<COMPONENT Name="50 Ohm 0603 Top">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>50 Ohm 0603 Resistor Top Side</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">50</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0603"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.6e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+		</COMPONENT>
+		
+<COMPONENT Name="50 Ohm 0603 Bottom">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>50 Ohm 0603 Resistor Bottom Side</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">50</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0603"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.6e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+		</COMPONENT>
+
+<COMPONENT Name="75 Ohm 0603 Top">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>75 Ohm 0603 Resistor Top Side</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">75</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0603"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.6e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+		</COMPONENT>
+		
+<COMPONENT Name="75 Ohm 0603 Bottom">
+		<MODEL>RES</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>75 Ohm 0603 Resistor Bottom Side</DESC>
+		<SYMBOL>Resistor@system.syf</SYMBOL>
+		<CELL>AWR_PCB_SMTpads*</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">R</PARAM>
+			<PARAM Name="R">75</PARAM>
+		</DATA>
+			<PROPERTY Name="User:Case" Value="0603"></PROPERTY>
+			<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+			<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+			<PROPERTY Name="PadLen*" Value="0.6e-3"></PROPERTY>
+			<PROPERTY Name="PadWide*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="PadSpace*" Value="0.9e-3"></PROPERTY>
+			<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+			<PROPERTY Name="Text*" Value="R"></PROPERTY>
+			<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+			<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+			<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+		</COMPONENT>
+		
+</FOLDER>
+
+<FOLDER Name="0805" Icon="Resistor">
+	<COMPONENT Name="0 Ohm 0805 Top">
+	<MODEL>RES</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>0 Ohm 0805 Resistor Top Side</DESC>
+	<SYMBOL>Resistor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">R</PARAM>
+		<PARAM Name="R">0</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0805"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.625e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="1.3e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="1.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="L"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+	</COMPONENT>
+
+	<COMPONENT Name="0 Ohm 0805 Bottom">
+	<MODEL>RES</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>0 Ohm 0805 Resistor Bottom Side</DESC>
+	<SYMBOL>Resistor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">R</PARAM>
+		<PARAM Name="R">0</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0805"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.625e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="1.3e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="1.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="L"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>
+	
+	<COMPONENT Name="10 Ohm 0805 Top">
+	<MODEL>RES</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>10 Ohm 0805 Resistor Top Side</DESC>
+	<SYMBOL>Resistor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">R</PARAM>
+		<PARAM Name="R">10</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0805"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.625e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="1.3e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="1.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="L"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+	</COMPONENT>
+
+	<COMPONENT Name="10 Ohm 0805 Bottom">
+	<MODEL>RES</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>10 Ohm 0805 Resistor Bottom Side</DESC>
+	<SYMBOL>Resistor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">R</PARAM>
+		<PARAM Name="R">10</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0805"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.625e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="1.3e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="1.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="L"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>
+	
+	<COMPONENT Name="50 Ohm 0805 Top">
+	<MODEL>RES</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>50 Ohm 0805 Resistor Top Side</DESC>
+	<SYMBOL>Resistor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">R</PARAM>
+		<PARAM Name="R">50</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0805"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.625e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="1.3e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="1.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="L"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+	</COMPONENT>
+
+	<COMPONENT Name="50 Ohm 0805 Bottom">
+	<MODEL>RES</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>50 Ohm 0805 Resistor Bottom Side</DESC>
+	<SYMBOL>Resistor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">R</PARAM>
+		<PARAM Name="R">50</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0805"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.625e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="1.3e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="1.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="L"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>
+	
+	<COMPONENT Name="75 Ohm 0805 Top">
+	<MODEL>RES</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>75 Ohm 0805 Resistor Top Side</DESC>
+	<SYMBOL>Resistor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">R</PARAM>
+		<PARAM Name="R">75</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0805"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Top"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.625e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="1.3e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="1.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="L"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpad"></PROPERTY>	 	 
+	</COMPONENT>
+
+	<COMPONENT Name="75 Ohm 0805 Bottom">
+	<MODEL>RES</MODEL>
+	<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+	<DESC>75 Ohm 0805 Resistor Bottom Side</DESC>
+	<SYMBOL>Resistor@system.syf</SYMBOL>
+	<CELL>AWR_PCB_SMTpads*</CELL>
+	<DATA DataType="awrmodel" Inline="yes">
+		<PARAM Name="ID">R</PARAM>
+		<PARAM Name="R">75</PARAM>
+	</DATA>
+		<PROPERTY Name="User:Case" Value="0805"></PROPERTY>
+		<PROPERTY Name="User:Layer" Value="Bottom"></PROPERTY>
+		<PROPERTY Name="LineType*" Value="0"></PROPERTY>
+		<PROPERTY Name="PadLen*" Value="0.625e-3"></PROPERTY>
+		<PROPERTY Name="PadWide*" Value="1.3e-3"></PROPERTY>
+		<PROPERTY Name="PadSpace*" Value="1.5e-3"></PROPERTY>
+		<PROPERTY Name="ComponentType*" Value="2"></PROPERTY>	
+		<PROPERTY Name="Text*" Value="L"></PROPERTY>
+		<PROPERTY Name="GetID*" Value="1"></PROPERTY>	
+		<PROPERTY Name="PolygonText*" Value="1"></PROPERTY>
+		<PROPERTY Name="SNAME*" Value="SMTpadBottom"></PROPERTY>	 	 
+	</COMPONENT>	
+</FOLDER>
+
+</XML_COMPONENT_DATA>

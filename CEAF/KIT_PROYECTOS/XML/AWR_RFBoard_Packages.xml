@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<XML_COMPONENT_DATA>
+<COPYRIGHT>The data in this file is copyright 2015 of AWR Corporation</COPYRIGHT>
+<SUMMARY>This file contains data on the AWR Demo RF Board Process</SUMMARY>
+<LPFNAME>AWR_RFBoard_2layer.lpf</LPFNAME>
+
+<FOLDER Name="QFN Pcell Models" Icon="EM Models">
+	<COMPONENT Name="QFN 3x3_12 MMIC Package">
+		<MODEL>QFN_EM</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>QFN 3x3_12 Pcell</DESC>
+		<CELL>QFN_EM</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">IC</PARAM>
+			<PARAM Name="QX"></PARAM>
+			<PARAM Name="QY"></PARAM>
+			<PARAM Name="NLX">3</PARAM>
+			<PARAM Name="NLY">3</PARAM>
+			<PARAM Name="SLX">0.5e-3</PARAM>
+			<PARAM Name="SLY">0.5e-3</PARAM>
+			<PARAM Name="WL">0.25e-3</PARAM>
+			<PARAM Name="LL">0.4e-3</PARAM>
+			<PARAM Name="TL">0.2e-3</PARAM>
+			<PARAM Name="TLW">0.4e-3</PARAM>
+			<PARAM Name="TLL">0.4e-3</PARAM>
+			<PARAM Name="G">0.5e-3</PARAM>
+			<PARAM Name="PX">1.2e-3</PARAM>
+			<PARAM Name="PY">1.2e-3</PARAM>
+			<PARAM Name="HM">0.8e-3</PARAM>
+			<PARAM Name="TMA">0.9e-3</PARAM>
+			<PARAM Name="TLA">0.9e-3</PARAM>
+			<PARAM Name="RhoL">0.7</PARAM>
+			<PARAM Name="RhoLD">1.1</PARAM>
+			<PARAM Name="ErP">4</PARAM>
+			<PARAM Name="TandP">0.001</PARAM>
+			<PARAM Name="ErLD">4.6</PARAM>
+			<PARAM Name="TandLD">0.0037</PARAM>
+			<PARAM Name="LJ">0.6e-3</PARAM>
+			<PARAM Name="WJ">0.25e-3</PARAM>
+			<PARAM Name="EXANG">0</PARAM>
+			<PARAM Name="TestPack">0</PARAM>
+			<PARAM Name="Singul">0</PARAM>
+			<PARAM Name="AirCav">0</PARAM>
+			<PARAM Name="LidMtr">0</PARAM>
+		</DATA>
+	</COMPONENT>
+	<COMPONENT Name="QFN 4x4_16 MMIC Package">
+		<MODEL>QFN_EM</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>QFN 4x4_16 Pcell</DESC>
+		<CELL>QFN_EM</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">IC</PARAM>
+			<PARAM Name="QX"></PARAM>
+			<PARAM Name="QY"></PARAM>
+			<PARAM Name="NLX">4</PARAM>
+			<PARAM Name="NLY">4</PARAM>
+			<PARAM Name="SLX">0.65e-3</PARAM>
+			<PARAM Name="SLY">0.65e-3</PARAM>
+			<PARAM Name="WL">0.23e-3</PARAM>
+			<PARAM Name="LL">0.4e-3</PARAM>
+			<PARAM Name="TL">0.2e-3</PARAM>
+			<PARAM Name="TLW">0.4e-3</PARAM>
+			<PARAM Name="TLL">0.4e-3</PARAM>
+			<PARAM Name="G">0.5e-3</PARAM>
+			<PARAM Name="PX">2.2e-3</PARAM>
+			<PARAM Name="PY">2.2e-3</PARAM>
+			<PARAM Name="HM">0.9e-3</PARAM>
+			<PARAM Name="TMA">0.9e-3</PARAM>
+			<PARAM Name="TLA">0.9e-3</PARAM>
+			<PARAM Name="RhoL">0.7</PARAM>
+			<PARAM Name="RhoLD">1.1</PARAM>
+			<PARAM Name="ErP">4</PARAM>
+			<PARAM Name="TandP">0.001</PARAM>
+			<PARAM Name="ErLD">4.6</PARAM>
+			<PARAM Name="TandLD">0.0037</PARAM>
+			<PARAM Name="LJ">0.6e-3</PARAM>
+			<PARAM Name="WJ">0.25e-3</PARAM>
+			<PARAM Name="EXANG">0</PARAM>
+			<PARAM Name="TestPack">0</PARAM>
+			<PARAM Name="Singul">0</PARAM>
+			<PARAM Name="AirCav">0</PARAM>
+			<PARAM Name="LidMtr">0</PARAM>
+		</DATA>
+	</COMPONENT>
+	<COMPONENT Name="QFN 5x5_20 MMIC Package">
+		<MODEL>QFN_EM</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>QFN 5x5_20 Pcell</DESC>
+		<CELL>QFN_EM</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">IC</PARAM>
+			<PARAM Name="QX"></PARAM>
+			<PARAM Name="QY"></PARAM>
+			<PARAM Name="NLX">5</PARAM>
+			<PARAM Name="NLY">5</PARAM>
+			<PARAM Name="SLX">0.65e-3</PARAM>
+			<PARAM Name="SLY">0.65e-3</PARAM>
+			<PARAM Name="WL">0.3e-3</PARAM>
+			<PARAM Name="LL">0.4e-3</PARAM>
+			<PARAM Name="TL">0.2e-3</PARAM>
+			<PARAM Name="TLW">0.5e-3</PARAM>
+			<PARAM Name="TLL">0.4e-3</PARAM>
+			<PARAM Name="G">0.5e-3</PARAM>
+			<PARAM Name="PX">3.2e-3</PARAM>
+			<PARAM Name="PY">3.2e-3</PARAM>
+			<PARAM Name="HM">0.9e-3</PARAM>
+			<PARAM Name="TMA">0.9e-3</PARAM>
+			<PARAM Name="TLA">0.9e-3</PARAM>
+			<PARAM Name="RhoL">0.7</PARAM>
+			<PARAM Name="RhoLD">1.1</PARAM>
+			<PARAM Name="ErP">4</PARAM>
+			<PARAM Name="TandP">0.001</PARAM>
+			<PARAM Name="ErLD">4.6</PARAM>
+			<PARAM Name="TandLD">0.0037</PARAM>
+			<PARAM Name="LJ">0.45e-3</PARAM>
+			<PARAM Name="WJ">0.3e-3</PARAM>
+			<PARAM Name="EXANG">0</PARAM>
+			<PARAM Name="TestPack">0</PARAM>
+			<PARAM Name="Singul">0</PARAM>
+			<PARAM Name="AirCav">0</PARAM>
+			<PARAM Name="LidMtr">0</PARAM>
+		</DATA>
+	</COMPONENT>
+	<COMPONENT Name="QFN 6x6_28 MMIC Package">
+		<MODEL>QFN_EM</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>QFN 6x6_28 Pcell</DESC>
+		<CELL>QFN_EM</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">IC</PARAM>
+			<PARAM Name="QX"></PARAM>
+			<PARAM Name="QY"></PARAM>
+			<PARAM Name="NLX">7</PARAM>
+			<PARAM Name="NLY">7</PARAM>
+			<PARAM Name="SLX">0.65e-3</PARAM>
+			<PARAM Name="SLY">0.65e-3</PARAM>
+			<PARAM Name="WL">0.3e-3</PARAM>
+			<PARAM Name="LL">0.38e-3</PARAM>
+			<PARAM Name="TL">0.2e-3</PARAM>
+			<PARAM Name="TLW">0.45e-3</PARAM>
+			<PARAM Name="TLL">0.38e-3</PARAM>
+			<PARAM Name="G">0.55e-3</PARAM>
+			<PARAM Name="PX">4.14e-3</PARAM>
+			<PARAM Name="PY">4.14e-3</PARAM>
+			<PARAM Name="HM">0.9e-3</PARAM>
+			<PARAM Name="TMA">0.9e-3</PARAM>
+			<PARAM Name="TLA">0.9e-3</PARAM>
+			<PARAM Name="RhoL">0.7</PARAM>
+			<PARAM Name="RhoLD">1.1</PARAM>
+			<PARAM Name="ErP">4</PARAM>
+			<PARAM Name="TandP">0.001</PARAM>
+			<PARAM Name="ErLD">4.6</PARAM>
+			<PARAM Name="TandLD">0.0037</PARAM>
+			<PARAM Name="LJ">0.5e-3</PARAM>
+			<PARAM Name="WJ">0.275e-3</PARAM>
+			<PARAM Name="EXANG">0</PARAM>
+			<PARAM Name="TestPack">0</PARAM>
+			<PARAM Name="Singul">0</PARAM>
+			<PARAM Name="AirCav">0</PARAM>
+			<PARAM Name="LidMtr">0</PARAM>
+		</DATA>
+	</COMPONENT>
+	<COMPONENT Name="QFN 7x7_32 MMIC Package">
+		<MODEL>QFN_EM</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>QFN 7x7_32 Pcell</DESC>
+		<CELL>QFN_EM</CELL>
+		<DATA DataType="awrmodel" Inline="yes">
+			<PARAM Name="ID">IC</PARAM>
+			<PARAM Name="QX"></PARAM>
+			<PARAM Name="QY"></PARAM>
+			<PARAM Name="NLX">8</PARAM>
+			<PARAM Name="NLY">8</PARAM>
+			<PARAM Name="SLX">0.65e-3</PARAM>
+			<PARAM Name="SLY">0.65e-3</PARAM>
+			<PARAM Name="WL">0.3e-3</PARAM>
+			<PARAM Name="LL">0.38e-3</PARAM>
+			<PARAM Name="TL">0.2e-3</PARAM>
+			<PARAM Name="TLW">0.4e-3</PARAM>
+			<PARAM Name="TLL">0.38e-3</PARAM>
+			<PARAM Name="G">0.57e-3</PARAM>
+			<PARAM Name="PX">5.1e-3</PARAM>
+			<PARAM Name="PY">5.1e-3</PARAM>
+			<PARAM Name="HM">0.9e-3</PARAM>
+			<PARAM Name="TMA">0.9e-3</PARAM>
+			<PARAM Name="TLA">0.9e-3</PARAM>
+			<PARAM Name="RhoL">0.7</PARAM>
+			<PARAM Name="RhoLD">1.1</PARAM>
+			<PARAM Name="ErP">4</PARAM>
+			<PARAM Name="TandP">0.001</PARAM>
+			<PARAM Name="ErLD">4.6</PARAM>
+			<PARAM Name="TandLD">0.0037</PARAM>
+			<PARAM Name="LJ">0.45e-3</PARAM>
+			<PARAM Name="WJ">0.3e-3</PARAM>
+			<PARAM Name="EXANG">0</PARAM>
+			<PARAM Name="TestPack">0</PARAM>
+			<PARAM Name="Singul">0</PARAM>
+			<PARAM Name="AirCav">0</PARAM>
+			<PARAM Name="LidMtr">0</PARAM>
+		</DATA>
+	</COMPONENT>
+</FOLDER>
+<FOLDER Name="QFN Flat Models" Icon="EM Models">
+	<COMPONENT Name="QFN_3x3_12L">
+		<MODEL>QFN_3x3_12L</MODEL>
+		<DESC> 3x3_12L QFN Package</DESC>
+		<PARTNUMBER> </PARTNUMBER>
+		<SYMBOL></SYMBOL>
+		<HELP></HELP>
+		<DATA DataType="emstructure" Inline="no" LinkToFile="no">../Model_Data/QFN_3x3_12L.eml</DATA>
+		<PROPERTY OnInstance ="no" Name="Version" Value="0"/>
+	</COMPONENT>
+	<COMPONENT Name="QFN_4x4_16L">
+		<MODEL>QFN_4x4_16L</MODEL>
+		<DESC> 4x4_16L QFN Package</DESC>
+		<PARTNUMBER> </PARTNUMBER>
+		<SYMBOL></SYMBOL>
+		<HELP></HELP>
+		<DATA DataType="emstructure" Inline="no" LinkToFile="no">../Model_Data/QFN_4x4_16L.eml</DATA>
+		<PROPERTY OnInstance ="no" Name="Version" Value="0"/>
+	</COMPONENT>
+	<COMPONENT Name="QFN_5x5_20L">
+		<MODEL>QFN_5x5_20L</MODEL>
+		<DESC> 5x5_20L QFN Package</DESC>
+		<PARTNUMBER> </PARTNUMBER>
+		<SYMBOL></SYMBOL>
+		<HELP></HELP>
+		<DATA DataType="emstructure" Inline="no" LinkToFile="no">../Model_Data/QFN_5x5_20L.eml</DATA>
+		<PROPERTY OnInstance ="no" Name="Version" Value="0"/>
+	</COMPONENT>
+	<COMPONENT Name="QFN_6x6_28L">
+		<MODEL>QFN_6x6_28L</MODEL>
+		<DESC> 6x6_28 QFN Package</DESC>
+		<PARTNUMBER> </PARTNUMBER>
+		<SYMBOL></SYMBOL>
+		<HELP></HELP>
+		<DATA DataType="emstructure" Inline="no" LinkToFile="no">../Model_Data/QFN_6x6_28L.eml</DATA>
+		<PROPERTY OnInstance ="no" Name="Version" Value="0"/>
+	</COMPONENT>
+	<COMPONENT Name="QFN_7x7_32L">
+		<MODEL>QFN_7x7_32L</MODEL>
+		<DESC> 7x7_32L QFN Package</DESC>
+		<PARTNUMBER> </PARTNUMBER>
+		<SYMBOL></SYMBOL>
+		<HELP></HELP>
+		<DATA DataType="emstructure" Inline="no" LinkToFile="no">../Model_Data/QFN_7x7_32L.eml</DATA>
+		<PROPERTY OnInstance ="no" Name="Version" Value="0"/>
+	</COMPONENT>
+</FOLDER>
+<FOLDER Name="Flat Die" Icon="EM Models">
+	<COMPONENT Name="IC_GaAs">
+		<MODEL>IC_GaAs</MODEL>
+		<DESC> Simple GaAs IC</DESC>
+		<PARTNUMBER> </PARTNUMBER>
+		<SYMBOL></SYMBOL>
+		<HELP></HELP>
+		<DATA DataType="emstructure" Inline="no" LinkToFile="no">../Model_Data/IC_GaAs.eml</DATA>
+		<PROPERTY OnInstance ="no" Name="Version" Value="0"/>
+	</COMPONENT>
+</FOLDER>
+
+<FOLDER Name="QFN Amps" Icon="Active">
+    <COMPONENT Name="QFN 4x4">
+		<MODEL>SUBCKT</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>10dB Amplifer in 4x4 QFN</DESC>
+		<CELL>QFN_4x4@..\Library\Generic_RFBoard_Lib.gds</CELL>
+	<DATA DataType="awrschematic" Inline="no">
+		../Model_Data/Amp_10dB_QFN4x4.sch
+	</DATA>
+    </COMPONENT>	
+</FOLDER>
+
+<FOLDER Name="Packaged FETs" Icon="FET">    
+	<COMPONENT Name="Packaged Small FET">
+		<MODEL>SUBCKT</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>Packaged X-band pHEMT FET 200um</DESC>
+		<SYMBOL>FET2@system.syf</SYMBOL>
+		<HELP></HELP>
+		<CELL>Packaged_FET@..\Library\Generic_RFBoard_Lib.gds</CELL>
+		<DATA DataType="sparameter" Inline="no">
+			../Data_Files/PackagedFET_SourceGrounded.s2p
+			<PARAM Name="ID">Q</PARAM>	
+		</DATA>
+	</COMPONENT>
+	
+	<COMPONENT Name="Packaged Balanced Power FETs">
+		<MODEL>SUBCKT</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>Packaged Balanced LDMOS FET 40W</DESC>
+		<SYMBOL>DualFET2@..\Symbols\RFBoard_2layer.syf</SYMBOL>
+		<HELP></HELP>
+		<CELL>Packaged_BalancedPowerFETs@..\Library\Generic_RFBoard_Lib.gds</CELL>
+	<DATA DataType="awrschematic" Inline="no">
+		../Model_Data/BalancedPowerFETs_EquivZ.sch
+		<PARAM Name="ID">Q</PARAM>
+	</DATA>
+	</COMPONENT>
+	
+	 <COMPONENT Name="QFN 4x4 FET Discrete">
+		<MODEL>SUBCKT</MODEL>
+		<HELP>../Documentation/AWR_RFBoard_2Layer_Help.txt</HELP>
+		<DESC>High Voltage High Gain Packaged FET</DESC>
+		<CELL>QFN_4x4@..\Library\Generic_RFBoard_Lib.gds</CELL>
+	<DATA DataType="awrschematic" Inline="no">
+		../Model_Data/QFN_HV_FET.sch
+		<PARAM Name="ID">Q</PARAM>
+	</DATA>
+	<SUBFILE DataType="awrschematic" Inline="no">
+		../Model_Data/HighVoltageFET.sch
+	</SUBFILE>
+    </COMPONENT>
+</FOLDER>	
+</XML_COMPONENT_DATA>

@@ -1,0 +1,165 @@
+<XML_COMPONENT_DATA xmlns="urn:awr-lib-data">
+ <COPYRIGHT>AWR</COPYRIGHT>
+ <SUMMARY>3D EM Library</SUMMARY>
+ <FOLDER Name="EM Cells" Icon="EM Models">
+<COMPONENT Name="9milInnerDia">
+		<MODEL>SMACONFIG</MODEL>
+		<DESC>9mil Inner Conductor 3D Connector</DESC>
+		<PARTNUMBER> </PARTNUMBER>
+		<SYMBOL>SMA@EM3D.syf</SYMBOL>
+		<HELP>http://mpd.southwestmicrowave.com/products/endLaunch.php</HELP>
+		<DATA DataType="awrschematic" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.gml
+		<PARAM ParamUnits="length"  Name="InDia">0.0002286</PARAM>
+		<PARAM ParamUnits="length"  Name="OutDia">0.0007366</PARAM>
+		<PARAM ParamUnits="resistance"  Name="Imped">50</PARAM>
+		<PARAM ParamUnits="length"  Name="OutThick">0.0002</PARAM>
+		<PARAM ParamUnits="length"  Name="CoaxLen">0.0042418</PARAM>
+		<PARAM   Name="ContactType">0</PARAM>
+		<PARAM ParamUnits="length"  Name="ContactDia">0.000127</PARAM>
+		<PARAM ParamUnits="length"  Name="ContactLen">0.000762</PARAM>
+		<PARAM  Name="PostFlatRatio">0</PARAM>
+		<PARAM ParamUnits="length"  Name="TabThick">0.0002</PARAM>
+		<PARAM   Name="TabLenRatio">0.25</PARAM>
+		<PARAM  Name="TabTranRatio">0.25</PARAM>
+		<PARAM ParamUnits="length"  Name="FlangeThick">0.0042418</PARAM>
+		<PARAM ParamUnits="length"  Name="FlangeH">0.009525</PARAM>
+		<PARAM ParamUnits="length"  Name="FlangeWid">0.0127</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabLen">0.004572</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabWid">0.003175</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabUpH">0.00214</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabLowH">0.00214</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabHOff">0.003175</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabUpVOff">0.0007789926</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabLowVOff">0.0017800074</PARAM>
+		<PARAM   Name="Er">1.92</PARAM>
+		<PARAM   Name="TanD">0.001</PARAM>
+		<PARAM  Name="Rho">1</PARAM>
+			
+		</DATA>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.apz</SUBFILE>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.sat</SUBFILE>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.prop</SUBFILE>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.GP.m3d</SUBFILE>
+	</COMPONENT>
+	
+	<COMPONENT Name="12milInnerDia">
+		<MODEL>SMACONFIG</MODEL>
+		<DESC>12mil Inner Conductor 3D Connector</DESC>
+		<PARTNUMBER> </PARTNUMBER>
+		<SYMBOL>SMA@EM3D.syf</SYMBOL>
+		<HELP>http://mpd.southwestmicrowave.com/products/endLaunch.php</HELP>
+		<DATA DataType="awrschematic" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.gml
+		<PARAM ParamUnits="length"  Name="InDia">0.0003048</PARAM>
+		<PARAM ParamUnits="length"  Name="OutDia">0.0009906</PARAM>
+		<PARAM ParamUnits="resistance"  Name="Imped">50</PARAM>
+		<PARAM ParamUnits="length"  Name="OutThick">0.0002</PARAM>
+		<PARAM ParamUnits="length"  Name="CoaxLen">0.0042418</PARAM>
+		<PARAM   Name="ContactType">0</PARAM>
+		<PARAM ParamUnits="length"  Name="ContactDia">0.0001778</PARAM>
+		<PARAM ParamUnits="length"  Name="ContactLen">0.000762</PARAM>
+		<PARAM  Name="PostFlatRatio">0</PARAM>
+		<PARAM ParamUnits="length"  Name="TabThick">0.0002</PARAM>
+		<PARAM   Name="TabLenRatio">0.25</PARAM>
+		<PARAM  Name="TabTranRatio">0.25</PARAM>
+		<PARAM ParamUnits="length"  Name="FlangeThick">0.0042418</PARAM>
+		<PARAM ParamUnits="length"  Name="FlangeH">0.009525</PARAM>
+		<PARAM ParamUnits="length"  Name="FlangeWid">0.0127</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabLen">0.004572</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabWid">0.003175</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabUpH">0.00214</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabLowH">0.00214</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabHOff">0.003175</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabUpVOff">0.0007789926</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabLowVOff">0.0017616074</PARAM>
+		<PARAM   Name="Er">1.92</PARAM>
+		<PARAM   Name="TanD">0.001</PARAM>
+		<PARAM  Name="Rho">1</PARAM>
+			
+		</DATA>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.apz</SUBFILE>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.sat</SUBFILE>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.prop</SUBFILE>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.GP.m3d</SUBFILE>
+	</COMPONENT>
+	
+	<COMPONENT Name="15milInnerDia">
+		<MODEL>SMACONFIG</MODEL>
+		<DESC>15mil Inner Conductor 3D Connector</DESC>
+		<PARTNUMBER> </PARTNUMBER>
+		<SYMBOL>SMA@EM3D.syf</SYMBOL>
+		<HELP>http://mpd.southwestmicrowave.com/products/endLaunch.php</HELP>
+		<DATA DataType="awrschematic" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.gml
+		<PARAM ParamUnits="length"  Name="InDia">0.000381</PARAM>
+		<PARAM ParamUnits="length"  Name="OutDia">0.0012192</PARAM>
+		<PARAM ParamUnits="resistance"  Name="Imped">50</PARAM>
+		<PARAM ParamUnits="length"  Name="OutThick">0.0002</PARAM>
+		<PARAM ParamUnits="length"  Name="CoaxLen">0.0042418</PARAM>
+		<PARAM   Name="ContactType">0</PARAM>
+		<PARAM ParamUnits="length"  Name="ContactDia">0.0001778</PARAM>
+		<PARAM ParamUnits="length"  Name="ContactLen">0.000762</PARAM>
+		<PARAM  Name="PostFlatRatio">0</PARAM>
+		<PARAM ParamUnits="length"  Name="TabThick">0.0002</PARAM>
+		<PARAM   Name="TabLenRatio">0.25</PARAM>
+		<PARAM  Name="TabTranRatio">0.25</PARAM>
+		<PARAM ParamUnits="length"  Name="FlangeThick">0.0042418</PARAM>
+		<PARAM ParamUnits="length"  Name="FlangeH">0.009525</PARAM>
+		<PARAM ParamUnits="length"  Name="FlangeWid">0.0127</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabLen">0.004572</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabWid">0.003175</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabUpH">0.00214</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabLowH">0.00214</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabHOff">0.003175</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabUpVOff">0.0007789926</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabLowVOff">0.0017546074</PARAM>
+		<PARAM   Name="Er">1.92</PARAM>
+		<PARAM   Name="TanD">0.001</PARAM>
+		<PARAM  Name="Rho">1</PARAM>
+			
+		</DATA>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.apz</SUBFILE>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.sat</SUBFILE>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.prop</SUBFILE>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.GP.m3d</SUBFILE>
+	</COMPONENT>
+	
+	<COMPONENT Name="20milInnerDia">
+		<MODEL>SMACONFIG</MODEL>
+		<DESC>20mil Inner Conductor 3D Connector</DESC>
+		<PARTNUMBER> </PARTNUMBER>
+		<SYMBOL>SMA@EM3D.syf</SYMBOL>
+		<HELP>http://mpd.southwestmicrowave.com/products/endLaunch.php</HELP>
+		<DATA DataType="awrschematic" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.gml
+		<PARAM ParamUnits="length"  Name="InDia">0.000508</PARAM>
+		<PARAM ParamUnits="length"  Name="OutDia">0.0016129</PARAM>
+		<PARAM ParamUnits="resistance"  Name="Imped">50</PARAM>
+		<PARAM ParamUnits="length"  Name="OutThick">0.0002</PARAM>
+		<PARAM ParamUnits="length"  Name="CoaxLen">0.0042418</PARAM>
+		<PARAM   Name="ContactType">0</PARAM>
+		<PARAM ParamUnits="length"  Name="ContactDia">0.000254</PARAM>
+		<PARAM ParamUnits="length"  Name="ContactLen">0.00127</PARAM>
+		<PARAM  Name="PostFlatRatio">0</PARAM>
+		<PARAM ParamUnits="length"  Name="TabThick">0.0002</PARAM>
+		<PARAM   Name="TabLenRatio">0.25</PARAM>
+		<PARAM  Name="TabTranRatio">0.25</PARAM>
+		<PARAM ParamUnits="length"  Name="FlangeThick">0.0042418</PARAM>
+		<PARAM ParamUnits="length"  Name="FlangeH">0.009525</PARAM>
+		<PARAM ParamUnits="length"  Name="FlangeWid">0.0127</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabLen">0.004572</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabWid">0.003175</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabUpH">0.00214</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabLowH">0.00214</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabHOff">0.003175</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabUpVOff">0.0007789926</PARAM>
+		<PARAM ParamUnits="length"  Name="GndTabLowVOff">0.0017165074</PARAM>
+		<PARAM   Name="Er">1.92</PARAM>
+		<PARAM   Name="TanD">0.001</PARAM>
+		<PARAM  Name="Rho">1</PARAM>
+			
+		</DATA>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.apz</SUBFILE>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.sat</SUBFILE>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.prop</SUBFILE>
+		<SUBFILE DataType="downloadonly" Inline="no" LinkToFile="no">http://downloads.awrcorp.com/weblibs/3d/connectors/sma/SMACONFIG.GP.m3d</SUBFILE>
+	</COMPONENT>
+ </FOLDER>
+</XML_COMPONENT_DATA>

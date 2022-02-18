@@ -1,0 +1,145 @@
+Help File for the AWR_RFBoard_2Layer Example Library
+----------------------------------------------------
+
+Description of AWR_RFBoard_2Layer Example Library for Microwave Office:
+•	This library's LPF describes an example 2 layer board with definable top and bottom copper layer, solder mask, silkscreen ink, board route, and SMT components.  
+•	Its intent is to demonstrate the capability of a simple MWO library that contains only a LPF, database XML, and GDS cell library.  This library also incorporates iNETs for easy routing and EM Stackups for easy extraction of layout structures.
+•	Models: All models are fictitious to illustrate functionality only
+•	Design kit setup: Layer setup for Microwave Office, GDS, and  LPF
+•	Any designer can do this type of library.
+
+Known deficiencies:
+• 2011-02-17 The Global Definitions MSUB ErNom is set to 3.38 because 3.55 is not precomputed in shipping AWRDE
+• 2015-08-14 Viewing the 3D mesh when using Axiem on most structures will cause a warning not seen in prior versions of the library
+• 2015-08-14 The pre-configured QFN pcells must be copied into the EM schematic as the custom parameters are changed back to the default if dragged into the EM layout view
+
+Revision History:
+Version 1.2	2017-09-01
+•  Updated both flat and PCELL QFNs to better conform to RF industry standards 
+•  Fixed library 1,2, & 3 bondwires H2 and Beta to connect properly with default parameter
+•  Corrected DXF export mapping for +/- layers export
+•  Updated IC_GaAs library element HiK dielectric value to have more reasonable tand
+•  Configured global page so project units could more easily be changed and relations are unaffected
+•  Added Air_h parameter to Stackups for easier scaling
+•  Added substrate Monte Carlo analysis tolerances to Globals which affect MSUBs & Stackups
+•  Added handy PDK toolbar with SimulateOpenGraphs, GerberFileExport, ToggleBackground Color buttons
+
+Version 1.1     2016-07-27
+•   Added EM cells
+•   Added 31 mil finished thickness substrate configuration
+•   Added v12 functionality
+•   Changed via sizes to 10 mil, 15 mil, 1/16", and 1/4"
+Version 1.05	2011-12-01
+•  	Fixed XML and LPF codes for new pcell
+•  	Added FR4 and RO4350 .ini files
+Version 1.04 	2011-09-06
+•  	Added AWR_PCB_SMTpads pcell
+•	Switched to fixed via LPF configuration
+Version 1.0		2011-01-25
+• "Released" the kit as version 1.0
+
+
+Layer Descriptions
+------------------
+Cu_01	Top layer of copper, typically will be the RF routing layer (includes positive and negative layers)
+Via01_02	Substrate via from top to bottom
+Cu_02	Bottom layer of copper, typically will be Ground plane (includes positive and negative layers)
+SolderStencil_01	Solder Stencil layer for top for solder paste patterns
+SolderStencil_02	Solder Stencil layer for top for solder paste patterns
+SolderMask_01	Solder mask layer for top for solder dams and protection
+SolderMask_02	Solder mask layer for bottom for solder dams and protection
+Ink_01	Silkscreen ink for lettering on top
+Ink_02	Silkscreen ink for lettering on bottom
+BoardRoute	Defines board border and pockets
+MetalCarrier	Metal fixture carrier 
+SMT_Package_Top	Shows package covers for packages on Top
+SMT_Lead_Top	Shows metal contacts for packages on Top
+SMT_C_Top	Capacitors on Top
+SMT_L_Top	Inductors on Top
+SMT_R_Top	Resistors on Top
+SMT_Package_Bottom	Shows package covers for packages on Bottom
+SMT_Lead_Bottom	Shows metal contacts for packages on Bottom
+SMT_C_Bottom	Capacitors on Bottom
+SMT_L_Bottom	Inductors on Bottom
+SMT_R_Bottom	Resistors on Bottom
+BondWires	Bondwire layer
+
+LineType Descriptions
+---------------------
+There are two traces (Cu_01 and Cu_02) but the can be with and without SolderMask layers overlapping them.  The solder mask might define the absence or the presence of SolderMask depends on the user's need.
+
+Layer01_Cu_01	- copper trace on top 
+Layer01_Cu_01_SolderMask	- copper trace on top with solder mask layer overlap
+Layer01_Cu_02	- copper trace on bottom
+Layer01_Cu_02_SolderMask	- copper trace on top with solder mask layer overlap
+
+GDSII Library Component and Pad Dimensions
+----------------------------
+The GDSII library artwork in this PDK is intended to be for example only and are realistic sizes.  But users should consult with their fabrication vendor to determine the exact recommended sizes for the components, pads, and soldermasks according.  The library can be modified to conform with the vendors recommendations by saving any changes to the kit GDS library file.
+
+Component	Size			Pad				Pad Spacing
+			(mm x mm)		(mm x mm)		(mm)
+	0201	0.60x0.30		0.30x0.35		0.3	
+	0402	1.00x0.50		0.50x0.60		0.5
+	0603	1.60x0.80		0.60x0.90		0.9
+	1206	3.40x1.60		0.65x1.70		2.4
+	2220	5.90x5.00		0.75x5.10		4.7
+	
+PCELLS
+-----
+AWR_PCB_SMTpads - created for scalable SMT pad creation with a PCELL
+PadLen -SMT Pad Length x-direction
+PadWide - SMT Pad Width y-direction
+PadSpace - SMT Pad Spacing x-direction
+ComponentType - SMT Type C=0, L=1, R=2, Package=3, None=4
+Text - SMT Text Label
+GetID - 0=set to TextLabel 1=Schem ID label Any Other=No Label in layout
+ID - Instance ID, allows for grabbing the ID off a schematic if PCELL is associated with a Schematic element
+PolygonText - 0=Label Text, 1=Maskable Polygon Text
+PinOrFace - 0=Pin port, 1=Face port affects both pads
+SNAME - LPF Structure Name
+
+Structure_Type flags indicate which layers do what in the PCELL structure
+0 = flag are Layers for End Pads only, 1st layer encountered with flag=0 will be the pin layer and the minWidth field will be the LineType index
+1 = flag around entire structure by Offset value (neg or positive offset) for example like a keep out layer
+2 = text layers, minWidth is TextHeight, offset is 0=Normal 1=Flipped for backside of board
+10 = SMT capacitor layer
+11 = SMT inductance layer
+12 = SMT resistive layer
+13 = SMT lead layer
+14 = SMT Package layer
+
+Example Structure:
+
+	$STRUCT_TYPE_BEGIN	"SMTpad"
+	!  	NormalLayer 		offset 		LineType		flag
+		"Cu_01"		0		0		0
+		"SolderMask_01"		5e-005		0		0
+		"SolderStencil_01"		-5e-005		0		0
+		"Cu_01-"		0.0001		0		1
+	!  	InkLayer 		Normal/Flipped	TextHeight		flag	
+		"Ink_01"		0		0.001		2
+	!  	SMTLayer 		offset 		NotUsed		flag	
+		"SMT_C_Top"		-5e-005		0		10
+		"SMT_L_Top"		-5e-005		1		11
+		"SMT_R_Top"		-5e-005		0		12
+		"SMT_Lead_Top"		-0.00015		0		13
+		"SMT_Package_Top"		-5e-005		0		14
+	$STRUCT_TYPE_END
+
+	$STRUCT_TYPE_BEGIN	"SMTpadBottom"
+	!  	NormalLayer 		offset 		LineType		flag
+		"Cu_02"		0		2		0
+		"SolderMask_02"		5e-005		0		0
+		"SolderStencil_02"		-5e-005		0		0
+		"Cu_02-"		0.0001		0		1
+	!  	InkLayer 		Normal/Flipped	TextHeight		flag			
+		"Ink_02"		1		0.001		2
+	!  	SMTLayer 		offset 		NotUsed		flag
+		"SMT_C_Bottom"		-5e-005		0		10
+		"SMT_L_Bottom"		-5e-005		1		11
+		"SMT_R_Bottom"		-5e-005		0		12
+		"SMT_Lead_Bottom"		-0.00015		0		13
+		"SMT_Package_Bottom"		-5e-005		0		14
+	$STRUCT_TYPE_END
+
