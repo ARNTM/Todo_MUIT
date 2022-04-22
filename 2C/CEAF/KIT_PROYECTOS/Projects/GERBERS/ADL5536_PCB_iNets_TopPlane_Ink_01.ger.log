@@ -1,0 +1,69 @@
+$AWR Design Environment
+$Version 16.01r build 12506 Rev1 (130759)
+$Export time : Fri Apr  1 09:17:32 2022
+$Export Format: Gerber
+$Export File Name: C:\Users\Andres\Documents\GIT\Todo_MUIT\2C\CEAF\KIT_PROYECTOS\Projects\GERBERS\ADL5536_PCB_iNets_TopPlane_Ink_01.ger
+
+
+
+Statistics Of Layers
+
+Drawing Layer      File Layer       Layer DataType Rects Polygons  Paths Ellipses Texts Pins Drillholes
+-------------------------------------------------------------------------------------------------------
+BoardRoute         N/A                35        0     0         0     0        0     0    0         0
+Conn_Body          N/A                59        0     0         0     0        0     0    0         0
+Conn_Pin           N/A                58        0     0         0     0        0     0    0         0
+Cu_01              N/A                18        0     0         0     0        0     0    0         0
+Cu_01+             N/A                20        0     0         0     0        0     0    0         0
+Cu_01-             N/A                19        0     0         0     0        0     0    0         0
+Cu_02              N/A                22        0     0         0     0        0     0    0         0
+Cu_02+             N/A                24        0     0         0     0        0     0    0         0
+Cu_02-             N/A                23        0     0         0     0        0     0    0         0
+Ink_01             N/A                14        0     0        13     0        0     0    0         0
+SMA_Body           N/A                56        0     0         0     0        0     0    0         0
+SMA_Jack           N/A                54        0     0         0     0        0     0    0         0
+SMA_Legs           N/A                57        0     0         0     0        0     0    0         0
+SMA_Pin            N/A                55        0     0         0     0        0     0    0         0
+SMA_Screw1         N/A                51        0     0         0     0        0     0    0         0
+SMA_Screw2         N/A                52        0     0         0     0        0     0    0         0
+SMA_Screw3         N/A                53        0     0         0     0        0     0    0         0
+SMD_Body_0402      SMD_Body_0402       5        0     0         0     0        0     0    0         0
+SMD_Body_0603      SMD_Body_0603       6        0     0         0     0        0     0    0         0
+SMD_Body_0805      SMD_Body_0805       7        0     0         0     0        0     0    0         0
+SMD_Lead_0402      SMD_Lead_0402       8        0     0         0     0        0     0    0         0
+SMD_Lead_0603      SMD_Lead_0603       9        0     0         0     0        0     0    0         0
+SMD_Lead_0805      SMD_Lead_0805      10        0     0         0     0        0     0    0         0
+SMT_Lead_Top       N/A                 4        0     0         0     0        0     0    0         0
+SMT_Package_Top    N/A                 3        0     0         0     0        0     0    0         0
+SolderMask_01      N/A                16        0     0         0     0        0     0    0         0
+SolderMask_02      N/A                26        0     0         0     0        0     0    0         0
+Via01_02           N/A                21        0     0         0     0        0     0    0         0
+
+
+Summary Of Objects
+------------------
+         0 Rects     
+        13 Polygons  
+         0 Paths     
+         0 Texts     
+         0 Ellipses  
+         0 Instances 
+         0 Arrays    
+         0 Pins      
+         0 Drillholes
+
+
+Export Options
+--------------
+Draw path as polygon: 1
+Export pcell instances as cells: 0
+Export subcircuits as cells: 1
+Flatten cell hierarchy: 1
+Merge polygons on the +/- layers: 1
+Union polygons on the same layer: 1
+Write Cell using cached geometry: 0
+Write out pcell parameter maps: 0
+
+
+*** There were 0 warning and 0 error messages ***
+

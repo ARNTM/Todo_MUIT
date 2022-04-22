@@ -1,0 +1,7 @@
+[3816]  Error log for : LEE2_6_PLUS_EVALBOARD.DS4.dsf
+	[3816]	Read lock timed out : Lock being acquired for 'header load' {GetISimDataSetsForProject}
+	[3816]	Unable to acquire file lock for the data set
+	[3816]	Read lock timed out : Lock being acquired for 'header load' {GetISimDataSetsForProject}
+	[3816]	Unable to acquire file lock for the data set
+	[3816]	Read lock timed out : Lock being acquired for 'header load' {GetISimDataSetsForProject}
+	[3816]	Unable to acquire file lock for the data set
