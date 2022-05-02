@@ -48,13 +48,13 @@ PDP_normalizado= PDP/max(PDP);
 t_ns= linspace(0,8192/SPAN,8192);
 
 figure("Name", 'PDP');
-plot(t_ns*1e7, PDP_normalizado);
+plot(t_ns*1e9, PDP_normalizado);
 xlabel('{\tau (ns)}');
 ylabel('DPD');
 set(gca,'FontSize',15)
 
 figure("Name", 'PDP DB');
-plot(t_ns*1e7, 20*log10(PDP_normalizado));
+plot(t_ns*1e9, 20*log10(PDP_normalizado));
 xlabel('Tiempo (ns)');
 ylabel('DPD (dB)');
 set(gca,'FontSize',15)
@@ -68,13 +68,13 @@ delay_spread = sqrt(sum(((t_ns(Thresh) - ret_medio).^2).*abs(PDP_normalizado(Thr
 
 figure(4)
 hold on
-plot(t_ns*1e7,20*log10(PDP_normalizado))
+plot(t_ns*1e9,20*log10(PDP_normalizado))
 media_v = ones(1,8192);
 TH=-20*media_v;
 %hold on
 %plot(t_ns,TH)
 %hold on 
-plot(t_ns*1e7, 20*log10(ADPD))
+plot(t_ns*1e9, 20*log10(ADPD))
 xlabel('Retardo (ns)');
 ylabel('DPD (dB)');
 set(gca,'FontSize',15)

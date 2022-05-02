@@ -1,0 +1,96 @@
+***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	10	GHZ							
+*	>>>	BFP740	<<<								
+*	(C)	2013	Infineon	Technologies	AG							
+*	Version	3.0	April	2013							
+***************************************************************
+* - Please use the global SPICE GP parameter TEMP to specify the 
+*	junction temperature of the device in your application to get
+*	correct simulation results. This procedure is necessary because
+*	the GP model does not consider the self heating of the device.
+* - TEMP is calculated by TEMP=TA+Pdc*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the increment of temperature caused by the dissipated DC power Pdc. 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 380 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note "Thermal Resistance Calculation" AN077.
+* - The model has been verified in the junction temperature range
+*   -25°C to +125°C.
+* - TNOM=25 °C is the nominal ambient temperature during measurement
+*   for the parameter extraction. Please do not change this value.
+**************************************************************** 				
+*.OPTION TNOM=25, GMIN= 1.00e-12
+*BFP740 C B E1 E2
+.SUBCKT BFP740 1 2 3 4
+
+
+CBEPAR 22 33 1.67948E-013
+CBCPAR 22 11 4.00262E-014
+CCEPAR 11 33 2.38872E-013
+LE    33 30 2.34376E-010
+LB    22 20 7.31903E-010
+LC   11 10  5.64051E-010
+CBEPCK 20 30  4E-014
+CBCPCK 20 10  1E-015
+CCEPCK 10 30  4E-014
+LBX    20 2 2.5E-010
+LEX   30 35 7.95105E-011
+LCX   10 1  2.5E-010
+RSUB 30 5 0.01
+RSUBNPN 55 5 648.513
+Rpsinker 5 33 0.32
+
+RE1 35 3 1E-03
+RE2 35 4 1E-03
+
+Q1 11 22 33 55 M_BFP740
+
+.MODEL 	M_BFP740	NPN(										
++	IS	=	6.258E-016									
++	BF	=	731.2									
++	NF	=	0.9957									
++	VAF	=	380.1									
++	IKF	=	0.1155									
++	ISE	=	3.922E-015									
++	NE	=	1.728									
++	BR	=	115		
++	NR	=	0.9945		
++	VAR	=	1.587	
++	IKR	=	0.03122		
++	ISC	=	3.205E-015		
++	NC	=	2		
++	RB	=	5.60166		
++	IRB	=	0		
++	RBM	=	1.12059	
++	RE	=	0.622318		
++	RC	=	4.121	
++	XTB	=	-2.154		
++	EG	=	1.09		
++	XTI	=	2.728		
++	CJE	=	2.271E-013		
++	VJE	=	0.6271		
++	MJE	=	0.08129		
++	TF	=	2.2263E-012		
++	XTF	=	2.66		
++	VTF	=	0.656428		
++	ITF	=	0.244		
++	PTF	=	0.1		
++	CJC	=	4.78953E-014		
++	VJC	=	1		
++	MJC	=	0.00831201		
++	XCJC	=	1		
++	TR	=	1E-009
++	CJS	=	1.158E-013		
++	MJS	=	0.2309
++   VJS =   0.5201 		
++	FC	=	0.77		
++	KF	=	8.93053E-017		
++	AF	=	1.51228)
+***************************************************************					
+					
+
+.ENDS BFP740
