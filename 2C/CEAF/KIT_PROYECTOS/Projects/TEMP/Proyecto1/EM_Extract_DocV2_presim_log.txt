@@ -1,0 +1,4 @@
+11:56:46 mi., 05/04/2022 Log: Do check dataset with the current document
+11:56:46 mi., 05/04/2022 Log: Compare the document with the dataset 'EM_Sim_DS23'
+11:56:47 mi., 05/04/2022 Log: Re-simulation, geometry has changed
+11:56:47 mi., 05/04/2022 Log: Schedule simulation job with AXIEM® - Async
