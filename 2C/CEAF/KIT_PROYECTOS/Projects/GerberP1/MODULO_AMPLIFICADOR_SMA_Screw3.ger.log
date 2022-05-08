@@ -1,0 +1,67 @@
+$AWR Design Environment
+$Version 16.01r build 12506 Rev1 (130759)
+$Export time : Sun May  8 10:30:58 2022
+$Export Format: Gerber
+$Export File Name: C:\Users\Usuario\Documents\GitHub\Todo_MUIT\2C\CEAF\KIT_PROYECTOS\Projects\GerberP1\MODULO_AMPLIFICADOR_SMA_Screw3.ger
+
+
+
+Statistics Of Layers
+
+Drawing Layer      File Layer    Layer DataType Rects Polygons  Paths Ellipses Texts Pins Drillholes
+----------------------------------------------------------------------------------------------------
+BoardRoute         N/A             29        0     0         0     0        0     0    0         0
+Conn_Body          N/A             59        0     0         0     0        0     0    0         0
+Conn_Pin           N/A             58        0     0         0     0        0     0    0         0
+Cu_01              N/A             12        0     0         0     0        0     0    0         0
+Cu_01-             N/A             13        0     0         0     0        0     0    0         0
+Cu_02              N/A             16        0     0         0     0        0     0    0         0
+Cu_02+             N/A             18        0     0         0     0        0     0    0         0
+Cu_02-             N/A             17        0     0         0     0        0     0    0         0
+GALI-TEXT          GALI-TEXT       64        0     0         0     0        0     0    0         0
+Ink_01             N/A              8        0     0         0     0        0     0    0         0
+SMA_Body           N/A             56        0     0         0     0        0     0    0         0
+SMA_Jack           N/A             54        0     0         0     0        0     0    0         0
+SMA_Legs           N/A             57        0     0         0     0        0     0    0         0
+SMA_Pin            N/A             55        0     0         0     0        0     0    0         0
+SMA_Screw1         N/A             51        0     0         0     0        0     0    0         0
+SMA_Screw2         N/A             52        0     0         0     0        0     0    0         0
+SMA_Screw3         N/A             53        0     0         2     0        0     0    0         0
+SMD_Body_0402      N/A             45        0     0         0     0        0     0    0         0
+SMD_Body_0603      N/A             47        0     0         0     0        0     0    0         0
+SMD_Lead_0402      N/A             46        0     0         0     0        0     0    0         0
+SMD_Lead_0603      N/A             48        0     0         0     0        0     0    0         0
+SMT_Lead_Top       N/A              4        0     0         0     0        0     0    0         0
+SMT_Package_Top    N/A              3        0     0         0     0        0     0    0         0
+SolderMask_01      N/A             10        0     0         0     0        0     0    0         0
+SolderMask_02      N/A             20        0     0         0     0        0     0    0         0
+Via01_02           N/A             15        0     0         0     0        0     0    0         0
+
+
+Summary Of Objects
+------------------
+         0 Rects     
+         2 Polygons  
+         0 Paths     
+         0 Texts     
+         0 Ellipses  
+         0 Instances 
+         0 Arrays    
+         0 Pins      
+         0 Drillholes
+
+
+Export Options
+--------------
+Draw path as polygon: 1
+Export pcell instances as cells: 0
+Export subcircuits as cells: 1
+Flatten cell hierarchy: 1
+Merge polygons on the +/- layers: 1
+Union polygons on the same layer: 1
+Write Cell using cached geometry: 0
+Write out pcell parameter maps: 0
+
+
+*** There were 0 warning and 0 error messages ***
+
