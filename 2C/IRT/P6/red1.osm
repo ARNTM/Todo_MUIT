@@ -1,0 +1,51 @@
+// ***********************************************
+// Fichero generado por Open SimMPLS 1.0
+//                                                
+// Este fichero no debe ser modificado manualmente
+// porque incluye un código CRCR y así el simulador
+// puede comprobar su integridad. Si lo modificas
+// el simulador podria detectar el fichero como
+// corrupto.
+// ***********************************************
+
+// ***********************************************
+// Definición global del escenario
+// ***********************************************
+
+@?Escenario
+
+#Titulo#Sin definir#
+#Autor#Sin definir#
+#Descripcion#Sin definir#
+#Temporizacion#2999999#1000#
+
+@!Escenario
+
+// ***********************************************
+// Definición de la topología del escenario
+// ***********************************************
+
+@?Topologia
+
+#Receptor#17#RX#10.0.0.8#0#true#true#1255#227#
+#LER#1#LER1#10.0.0.1#0#true#false#383#560#5120#512#
+#LER#2#LER2#10.0.0.2#0#true#false#1065#91#5120#512#
+#LSR#3#LSR1#10.0.0.3#0#true#false#385#91#5120#512#
+#LSR#4#LSR2#10.0.0.4#0#true#false#545#426#5120#512#
+#LSR#5#LSR3#10.0.0.5#0#true#false#924#88#5120#512#
+#LSR#6#LSR4#10.0.0.6#0#true#false#1061#552#5120#512#
+#LSR#7#LSR5#10.0.0.7#0#true#false#696#288#5120#512#
+#Emisor#19#TX#10.0.0.9#0#true#true#182#399#10.0.0.8#false#0#false#5000#0#10000#
+#EnlaceInterno#8#E_2#false#125000#10.0.0.1#0#10.0.0.3#0#
+#EnlaceInterno#9#E_3#false#125000#10.0.0.1#1#10.0.0.4#0#
+#EnlaceInterno#10#E_6#false#125000#10.0.0.4#1#10.0.0.7#0#
+#EnlaceInterno#11#E_7#false#125000#10.0.0.7#1#10.0.0.5#0#
+#EnlaceInterno#12#E_9#false#125000#10.0.0.5#1#10.0.0.2#0#
+#EnlaceInterno#13#E_4#false#125000#10.0.0.3#1#10.0.0.5#2#
+#EnlaceInterno#14#E_8#false#125000#10.0.0.7#2#10.0.0.6#0#
+#EnlaceInterno#15#E_10#false#125000#10.0.0.2#1#10.0.0.6#1#
+#EnlaceInterno#16#E_5#false#125000#10.0.0.3#2#10.0.0.7#3#
+#EnlaceExterno#18#Ea_2#false#125000#10.0.0.2#2#10.0.0.8#0#
+#EnlaceExterno#20#Ea_1#false#125000#10.0.0.9#0#10.0.0.1#2#
+
+@!Topologia

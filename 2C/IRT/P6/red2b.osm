@@ -1,0 +1,58 @@
+// ***********************************************
+// Fichero generado por Open SimMPLS 1.0
+//                                                
+// Este fichero no debe ser modificado manualmente
+// porque incluye un código CRCR y así el simulador
+// puede comprobar su integridad. Si lo modificas
+// el simulador podria detectar el fichero como
+// corrupto.
+// ***********************************************
+
+// ***********************************************
+// Definición global del escenario
+// ***********************************************
+
+@?Escenario
+
+#Titulo#Multiplexación de tráfico con QoS y tráfico best-effort#
+#Autor#IRT-MUIT-UPV#
+#Descripcion#Tx_QoS_1 tasa cte=100 Mbps PDU=100B, Tx_2, Tx_3, Tx_4  tasa cte=300 Mbps  PDU=variable#
+#Temporizacion#200000#100#
+
+@!Escenario
+
+// ***********************************************
+// Definición de la topología del escenario
+// ***********************************************
+
+@?Topologia
+
+#Receptor#1#Receptor#10.0.0.1#0#true#true#876#372#
+#LERA#2#LERA_1#10.0.0.2#0#true#true#217#48#1000#1#1#
+#LERA#3#LERA_2#10.0.0.3#0#true#true#150#205#1000#1#1#
+#LERA#4#LERA_3#10.0.0.4#0#true#true#188#343#1000#1#1#
+#LER#5#LER_1#10.0.0.5#0#true#true#285#457#10240#1#
+#LER#6#LER_2#10.0.0.6#0#true#true#873#204#1000#100#
+#Emisor#7#Tx_QoS_1#10.0.0.7#0#true#true#51#46#10.0.0.1#false#1#false#100#0#100#
+#Emisor#8#Tx_1#10.0.0.8#0#true#true#10#203#10.0.0.1#false#0#false#300#1#100#
+#Emisor#9#Tx_2#10.0.0.9#0#true#true#20#342#10.0.0.1#false#0#false#300#1#100#
+#Emisor#10#Tx_3#10.0.0.10#0#true#true#32#461#10.0.0.1#false#0#false#300#1#100#
+#LSRA#11#LSRA_1#10.0.0.11#0#true#true#345#204#1000#100#5#
+#LSR#12#LSR_1#10.0.0.12#0#true#true#532#200#1000#100#
+#LSRA#27#LSRA_2#10.0.0.13#0#true#true#700#202#1000#100#5#
+#EnlaceExterno#13#Ea_1#true#1000#10.0.0.2#3#10.0.0.7#0#
+#EnlaceExterno#15#Ea_2#true#1000#10.0.0.3#2#10.0.0.8#0#
+#EnlaceExterno#16#Ea_3#true#1000#10.0.0.4#1#10.0.0.9#0#
+#EnlaceExterno#17#Ea_4#true#1000#10.0.0.5#1#10.0.0.10#0#
+#EnlaceExterno#18#Ea_5#true#1000#10.0.0.6#1#10.0.0.1#0#
+#EnlaceInterno#19#E_6#true#1000#10.0.0.11#1#10.0.0.12#3#
+#EnlaceInterno#21#E_1#true#1000#10.0.0.2#1#10.0.0.11#2#
+#EnlaceInterno#22#E_2#true#1000#10.0.0.3#0#10.0.0.11#4#
+#EnlaceInterno#23#E_3#true#1000#10.0.0.4#2#10.0.0.11#5#
+#EnlaceInterno#24#E_4#true#1000#10.0.0.5#3#10.0.0.11#6#
+#EnlaceInterno#25#E_5#true#10000#10.0.0.2#0#10.0.0.12#4#
+#EnlaceInterno#26#E_7#true#10000#10.0.0.5#0#10.0.0.12#6#
+#EnlaceInterno#29#E_8#true#1000#10.0.0.12#1#10.0.0.13#4#
+#EnlaceInterno#30#E_9#true#1000#10.0.0.13#3#10.0.0.6#5#
+
+@!Topologia
