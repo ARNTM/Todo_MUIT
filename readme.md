@@ -26,8 +26,8 @@ _A continuación encontrarás un índice con las prácticas que hemos hecho._
 | 1º | RTDC | ✔️ |
 | 1º | SSTR | ✔️ |
 | | | |
-| 2º | --- | ❌ |
-| 2º | --- | ❌ |
+| 2º | ITSIT | ❌ |
+| 2º | IRST | ❌ |
 
 
 ## Autor ✒️
