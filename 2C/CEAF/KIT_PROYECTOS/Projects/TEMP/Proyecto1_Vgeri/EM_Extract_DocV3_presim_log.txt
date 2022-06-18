@@ -1,5 +1,0 @@
-3:57:20 lu., 05/09/2022 Log: Do check dataset with the current document
-3:57:20 lu., 05/09/2022 Log: Compare the document with the dataset 'EM_Sim_DS28'
-3:57:20 lu., 05/09/2022 Log: [_AUTO_PORTS_]
-3:57:20 lu., 05/09/2022 Log: Re-simulation, geometry has changed
-3:57:20 lu., 05/09/2022 Log: Schedule simulation job with AXIEM® - Async
