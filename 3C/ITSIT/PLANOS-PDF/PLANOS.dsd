@@ -1,0 +1,88 @@
+[DWF6Version]
+Ver=1
+[DWF6MinorVersion]
+MinorVer=1
+[DWF6Sheet:PLANOS-SEMISOTANO]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=SEMISOTANO
+Setup=
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
+[DWF6Sheet:PLANOS-PRIMER PISO]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=PRIMER PISO
+Setup=
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
+[DWF6Sheet:PLANOS-SEGUNDO PISO]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=SEGUNDO PISO
+Setup=
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
+[DWF6Sheet:PLANOS-TERCER PISO]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=TERCER PISO
+Setup=
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
+[DWF6Sheet:PLANOS-CUARTO PISO]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=CUARTO PISO
+Setup=
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
+[DWF6Sheet:PLANOS-QUINTO PISO]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=QUINTO PISO
+Setup=
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
+[Target]
+Type=2
+DWF=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS-PDF\PLANOS.dwfx
+OUT=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS-PDF\
+PWD=
+[MRU Local]
+MRU=1
+File0=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS-PDF\
+[MRU Sheet List]
+MRU=0
+[PdfOptions]
+IncludeHyperlinks=TRUE
+CreateBookmarks=TRUE
+CaptureFontsInDrawing=TRUE
+ConvertTextToGeometry=FALSE
+VectorResolution=1200
+RasterResolution=400
+[AutoCAD Block Data]
+IncludeBlockInfo=0
+BlockTmplFilePath=
+[SheetSet Properties]
+IsSheetSet=FALSE
+IsHomogeneous=FALSE
+SheetSet Name=
+NoOfCopies=1
+PlotStampOn=FALSE
+ViewFile=FALSE
+JobID=0
+SelectionSetName=
+AcadProfile=ITSIT
+CategoryName=
+LogFilePath=
+IncludeLayer=TRUE
+LineMerge=FALSE
+CurrentPrecision=
+PromptForDwfName=TRUE
+PwdProtectPublishedDWF=FALSE
+PromptForPwd=FALSE
+RepublishingMarkups=FALSE
+PublishSheetSetMetadata=FALSE
+PublishSheetMetadata=FALSE
+3DDWFOptions=0 1
