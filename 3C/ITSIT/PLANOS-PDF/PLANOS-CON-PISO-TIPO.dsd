@@ -23,20 +23,6 @@ Setup=SALIDA
 OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-TERCER PISO]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
-Layout=TERCER PISO
-Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
-Has Plot Port=0
-Has3DDWF=0
-[DWF6Sheet:PLANOS-CUARTO PISO]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
-Layout=CUARTO PISO
-Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
-Has Plot Port=0
-Has3DDWF=0
 [DWF6Sheet:PLANOS-QUINTO PISO]
 DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
 Layout=QUINTO PISO
