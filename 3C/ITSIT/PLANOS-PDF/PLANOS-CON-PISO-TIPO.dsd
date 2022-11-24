@@ -65,13 +65,6 @@ Setup=SALIDA
 OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-PARES]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
-Layout=PARES
-Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
-Has Plot Port=0
-Has3DDWF=0
 [Target]
 Type=2
 DWF=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS-PDF\PLANOS.dwfx
