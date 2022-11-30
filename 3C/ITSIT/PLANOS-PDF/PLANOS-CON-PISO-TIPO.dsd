@@ -16,9 +16,9 @@ Setup=SALIDA
 OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-SEGUNDO PISO]
+[DWF6Sheet:PLANOS-SEGUNDO - CUARTO PISO]
 DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
-Layout=SEGUNDO PISO
+Layout=SEGUNDO - CUARTO PISO
 Setup=SALIDA
 OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
 Has Plot Port=0
@@ -65,6 +65,48 @@ Setup=SALIDA
 OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
 Has Plot Port=0
 Has3DDWF=0
+[DWF6Sheet:PLANOS-ESQUEMA-VIVIENDA-T1T2]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=ESQUEMA-VIVIENDA-T1T2
+Setup=SALIDA
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
+[DWF6Sheet:PLANOS-ESQUEMA-VIVIENDA-GYM-CON]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=ESQUEMA-VIVIENDA-GYM-CON
+Setup=SALIDA
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
+[DWF6Sheet:PLANOS-RTRV1]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=RTRV1
+Setup=SALIDA
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
+[DWF6Sheet:PLANOS-RTRV2]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=RTRV2
+Setup=SALIDA
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
+[DWF6Sheet:PLANOS-RTRG]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=RTRG
+Setup=SALIDA
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
+[DWF6Sheet:PLANOS-RTRC]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=RTRC
+Setup=SALIDA
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
 [Target]
 Type=2
 DWF=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS-PDF\PLANOS.dwfx
@@ -74,9 +116,7 @@ PWD=
 MRU=1
 File0=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS-PDF\
 [MRU Sheet List]
-MRU=2
-File0=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS-PDF\PLANOS-COMPLETO.dsd
-File1=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS-PDF\PLANOS.dsd
+MRU=0
 [PdfOptions]
 IncludeHyperlinks=TRUE
 CreateBookmarks=TRUE
