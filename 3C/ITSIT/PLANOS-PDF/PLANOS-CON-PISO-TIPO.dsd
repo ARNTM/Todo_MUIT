@@ -114,6 +114,27 @@ Setup=SALIDA
 OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
 Has Plot Port=0
 Has3DDWF=0
+[DWF6Sheet:PLANOS-ELECT-RITUA]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=ELECT-RITUA
+Setup=SALIDA
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
+[DWF6Sheet:PLANOS-ANTENAS1]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=ANTENAS1
+Setup=SALIDA
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
+[DWF6Sheet:PLANOS-ANTENAS2]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Layout=ANTENAS2
+Setup=SALIDA
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+Has Plot Port=0
+Has3DDWF=0
 [Target]
 Type=2
 DWF=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS-PDF\PLANOS.dwfx
