@@ -2,142 +2,142 @@
 Ver=1
 [DWF6MinorVersion]
 MinorVer=1
-[DWF6Sheet:PLANOS-SEMISOTANO]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-SEMISOTANO]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=SEMISOTANO
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-PRIMER PISO]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-PRIMER PISO]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=PRIMER PISO
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-SEGUNDO - CUARTO PISO]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-SEGUNDO - CUARTO PISO]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=SEGUNDO - CUARTO PISO
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-QUINTO PISO]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-QUINTO PISO]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=QUINTO PISO
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-GENERAL]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-GENERAL]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=GENERAL
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-RTV]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-RTV]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=RTV
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-TRENZADO]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-TRENZADO]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=TRENZADO
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-COAXIAL]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-COAXIAL]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=COAXIAL
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-FO]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-FO]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=FO
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-ESQUEMA-VIVIENDA-T1T2]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-ESQUEMA-VIVIENDA-T1T2]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=ESQUEMA-VIVIENDA-T1T2
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-ESQUEMA-VIVIENDA-GYM-CON]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-ESQUEMA-VIVIENDA-GYM-CON]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=ESQUEMA-VIVIENDA-GYM-CON
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-RTRV1]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-RTRV1]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=RTRV1
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-RTRV2]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-RTRV2]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=RTRV2
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-RTRG]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-RTRG]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=RTRG
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-RTRC]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-RTRC]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=RTRC
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-INTERIOR-RITUA]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-INTERIOR-RITUA]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=INTERIOR-RITUA
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-ELECT-RITUA]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-ELECT-RITUA]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=ELECT-RITUA
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-ANTENAS1]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-ANTENAS1]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=ANTENAS1
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
-[DWF6Sheet:PLANOS-ANTENAS2]
-DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+[DWF6Sheet:PLANOS-ENTREGA-ANTENAS2]
+DWG=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Layout=ANTENAS2
 Setup=SALIDA
-OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS.dwg
+OriginalSheetPath=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\ENTREGA_22ENE\PLANOS-ENTREGA.dwg
 Has Plot Port=0
 Has3DDWF=0
 [Target]
 Type=2
-DWF=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS-PDF\PLANOS.dwfx
+DWF=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS-PDF\PLANOS-ENTREGA.dwfx
 OUT=C:\Users\Andres\Documents\GIT\Todo_MUIT\3C\ITSIT\PLANOS-PDF\
 PWD=
 [MRU Local]
